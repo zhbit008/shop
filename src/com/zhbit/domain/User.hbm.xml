@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.zhbit.domain.User" table="bit_user">
+		<id name="id">
+			<generator class="native" />
+		</id>
+		<property name="username" type ="string" length="255"/>
+		<property name="password" length="32"/>
+        <property name="islock" />
+        <property name="level"/>
+        <property name="nickname" type="string" length="255"/>
+	</class>
+</hibernate-mapping>
