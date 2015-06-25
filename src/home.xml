@@ -7,34 +7,14 @@
 <struts>
     <package name="home" extends="struts-default" namespace="/home">
         <global-results>
-            <result name="goIndex" type="redirectAction" >
+            <result name="index" type="redirectAction" >
                 <param name="namespace">/home</param>
-                <param name="actionName">index_</param>
+                <param name="actionName">index_index</param>
             </result>
         </global-results>
 
-        <action name="*_*" class="home{1}Action" method="{2}">
-            <result name="success">/WEB-INF/home/{2}.jsp</result>
-        </action>
-        <!--go登录页面-->
-        <action name="goLogin" class="homeIndexAction"  method="GoLogin" >
-            <result name="success">/WEB-INF/home/login.jsp</result>
-        </action>
-        <!--go注册页面-->
-        <action name="goRegister" class="indexActionHome" method="GoRegister" >
-            <result name="success">/WEB-INF/home/register.jsp</result>
-        </action>
-        <!--go物品介绍页面-->
-        <action name="goShow" class="homeIndexAction" method="GoShow" >
-            <result name="success">/WEB-INF/home/show.jsp</result>
-        </action>
-        <!--go支付页面-->
-        <action name="goPay" class="homeIndexAction" method="GoPay" >
-            <result name="success">/WEB-INF/home/pay.jsp</result>
-        </action>
-        <!--个人信息页面-->
-        <action name="goMassage" class="homeIndexAction" method="GoMassage" >
-            <result name="success">/WEB-INF/home/massage.jsp</result>
+        <action name="*_*" class="{1}ActionHome" method="{2}">
+            <result name="success">/WEB-INF/home/{1}/{2}.jsp</result>
         </action>
 
     </package>
