@@ -1,15 +1,7 @@
-<%--
-  Created by zhbitcxy.
-  User: Guangzi
-  Date: 2015/6/23 0023
-  Time: 16:39
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-  <head>
-    <title></title>
-  </head>
-  <body>
-    <h2>hello</h2>
-  </body>
-</html>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<jsp:include page="/WEB-INF/home/layout/header.jsp">
+    <jsp:param name="title" value="家具建材网上商城" />
+</jsp:include>
+<jsp:include page="/WEB-INF/home/layout/nav.jsp"></jsp:include>
+<jsp:include page="/WEB-INF/home/layout/indexmain.jsp"></jsp:include>
+<jsp:include page="/WEB-INF/home/layout/footer.jsp"></jsp:include>

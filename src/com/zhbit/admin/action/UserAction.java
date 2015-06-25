@@ -29,7 +29,7 @@ public class UserAction extends ActionSupport{
         try{
             userService.loginValidate(user);
         }catch (RuntimeException e){;
-
+            e.printStackTrace();
             this.addActionError(e.getMessage());
             return LOGIN;
         }

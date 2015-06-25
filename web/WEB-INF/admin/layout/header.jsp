@@ -5,8 +5,9 @@
   Time: 3:01
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="/struts-tags" prefix="s"%>
 <html>
 <head>
-    <title>${param.title}</title>
+    <title>${title}</title>
 </head>
 
