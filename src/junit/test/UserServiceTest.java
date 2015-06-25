@@ -1,13 +1,11 @@
 package test;
 
-import org.junit.Before;
+import com.zhbit.domain.User;
+import com.zhbit.service.UserService;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import static org.junit.Assert.*;
-import com.zhbit.service.*;
-import com.zhbit.domain.*;
 public class UserServiceTest {
     private static UserService userService;
 
