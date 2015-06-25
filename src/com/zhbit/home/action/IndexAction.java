@@ -23,4 +23,6 @@ public class IndexAction extends ActionSupport{
     public String pay(){return SUCCESS;}
 //    个人信息页面
     public String massage(){return SUCCESS;}
+//    店铺页面
+    public String shop(){return SUCCESS;}
 }

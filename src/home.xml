@@ -6,12 +6,12 @@
 
 <struts>
     <package name="home" extends="struts-default" namespace="/home">
-        <!--<global-results>-->
-            <!--<result name="goIndex" type="redirectAction" >-->
-                <!--<param name="namespace">/home</param>-->
-                <!--<param name="actionName">index_</param>-->
-            <!--</result>-->
-        <!--</global-results>-->
+        <global-results>
+            <result name="index" type="redirectAction" >
+                <param name="namespace">/home</param>
+                <param name="actionName">index_index</param>
+            </result>
+        </global-results>
 
         <action name="*_*" class="{1}ActionHome" method="{2}">
             <result name="success">/WEB-INF/home/{1}/{2}.jsp</result>
