@@ -8,7 +8,7 @@ import org.springframework.stereotype.Controller;
 /**
  * Created by zhbitcxy.
  */
-@Controller("homeIndexAction")
+@Controller("indexActionHome")
 @Scope("prototype")
 public class IndexAction extends ActionSupport{
 //    登录页面
