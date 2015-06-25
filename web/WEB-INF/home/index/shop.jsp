@@ -17,7 +17,7 @@
 			</div>
 			<div class="col-sm-3 media" style="margin-top: 15px;">
 				<a class="pull-left" href="#">
-			        <img class="media-object" src="/resource/home/img04.jpg" style="width: 300px;height: 170px;" alt="...">
+			        <img class="media-object" src="/resource/home/img/04.jpg" style="width: 300px;height: 170px;" alt="...">
 			  	</a>
 			  	<div class="media-body">
 			    	<h4 class="media-heading">系列：十天精通CSS3						<span class="label label-warning">new</span></h4>
