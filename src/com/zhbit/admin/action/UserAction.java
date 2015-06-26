@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * Created by zhbitcxy.
  */
-@Controller("adminUserAction")
+@Controller("userActionAdmin")
 @Scope("prototype")
 public class UserAction extends ActionSupport{
     private User user;

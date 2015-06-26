@@ -11,6 +11,6 @@
 	<constant name="struts.ui.theme" value="simple" />
 	<constant name="struts.objectFactory" value="spring" />
 
-    <include file="admin.xml"/>
-    <include file="home.xml"/>
+    <include file="struts_admin.xml"/>
+    <include file="struts_home.xml"/>
 </struts>

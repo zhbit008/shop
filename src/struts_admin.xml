@@ -13,12 +13,12 @@
             </result>
         </global-results>
 
-        <action name="user_login" class="adminUserAction" method="login">
+        <action name="user_login" class="userActionAdmin" method="login">
             <result name="login">/WEB-INF/admin/login.jsp</result>
         </action>
 
-        <action name="user_*" class="adminUserAction" method="{1}">
-            <result name="success">/WEB-INF/admin/success.jsp</result>
+        <action name="*_*" class="{1}ActionAdmin" method="{2}">
+            <result name="success">/WEB-INF/admin/{1}/{2}.jsp</result>
         </action>
 
     </package>
