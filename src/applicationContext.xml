@@ -32,7 +32,8 @@
 	     <property name="dataSource" ref="datasource"/>
 		 <property name="mappingResources">
 		    <list>
-		      <value>com/zhbit/domain/User.hbm.xml</value>
+		        <value>com/zhbit/domain/User.hbm.xml</value>
+
 		    </list>
 		 </property>
 		 <property name="hibernateProperties">

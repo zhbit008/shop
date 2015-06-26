@@ -1,5 +1,6 @@
 package com.zhbit.domain;
 
+
 import java.io.Serializable;
 
 /**

@@ -16,7 +16,7 @@
 			    <!-- Collect the nav links, forms, and other content for toggling -->
 			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			      <ul class="nav navbar-nav">
-			        <li class="active"><a href="/home/goindex.do">首页 <span class="sr-only">(current)</span></a></li>
+			        <li class="active"><a href="/home/index_index.do">首页 <span class="sr-only">(current)</span></a></li>
 			        <li><a href="#">家具城</a></li>
 			        <li><a href="#">家具城</a></li>
 			        <li><a href="#">家具城</a></li>
@@ -29,8 +29,8 @@
 			        <button type="submit" class="btn btn-default">搜索</button>
 			      </form>
 			   	  <ul class="nav navbar-nav navbar-right">
-			        <li><a href="/home/index/index_login.do">登录</a></li>
-			        <li><a href="/home/index/index_register.do">注册</a></li>
+			        <li><a href="/home/index_login.html">登录</a></li>
+			        <li><a href="/home/index_register.do">注册</a></li>
 			      </ul>
 			     <!--  <ul class="nav navbar-nav navbar-right">
 			      	<li><a href="#">name</a></li>

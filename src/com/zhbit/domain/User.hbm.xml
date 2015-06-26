@@ -5,8 +5,8 @@
 <hibernate-mapping>
 	<class name="com.zhbit.domain.User" table="bit_user">
 		<id name="id">
-			<generator class="native" />
-		</id>
+        <generator class="native" />
+    </id>
 		<property name="username" type ="string" length="255"/>
 		<property name="password" length="32"/>
         <property name="islock" />
