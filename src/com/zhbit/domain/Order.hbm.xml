@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.zhbit.domain.Order" table="bit_order">
+        <id name="id">
+            <generator class="native" />
+        </id>
+        <property name="status" />
+        <property name="customer_id" />
+        <property name="sendname" type ="string" length="255"/>
+        <property name="sendadress" type="String" length="255"/>
+        <property name="sendtel" type="String" length="255"/>
+        <property name="paymet" type="String" length="255"/>
+        <property name="remark" type="String" length="255"/>
+        <property name="createtime" type="java.util.Date" />
+    </class>
+</hibernate-mapping>
