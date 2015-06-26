@@ -11,7 +11,7 @@
     <context:component-scan base-package="com.zhbit"/>
 	<bean id="datasource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
 		<property name="driverClass" value="com.mysql.jdbc.Driver"/>
-        <property name="jdbcUrl" value="jdbc:mysql://115.29.14.247:3306/zhbit"/>
+        <property name="jdbcUrl" value="jdbc:mysql://115.29.14.247:3306/zhbit?useUnicode=true&amp;characterEncoding=UTF-8"/>
         <!--?characterEncoding=utf-8-->
         <property name="user" value="zhbit"/>
         <property name="password" value="zhbitpw"/>
