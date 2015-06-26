@@ -29,8 +29,8 @@
 			        <button type="submit" class="btn btn-default">搜索</button>
 			      </form>
 			   	  <ul class="nav navbar-nav navbar-right">
-			        <li><a href="/home/index/index_login.do">登录</a></li>
-			        <li><a href="/home/index/index_register.do">注册</a></li>
+			        <li><a href="/home/index_login.do">登录</a></li>
+			        <li><a href="/home/index_register.do">注册</a></li>
 			      </ul>
 			     <!--  <ul class="nav navbar-nav navbar-right">
 			      	<li><a href="#">name</a></li>
