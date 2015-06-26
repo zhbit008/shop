@@ -11,10 +11,10 @@
     <context:component-scan base-package="com.zhbit"/>
 	<bean id="datasource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
 		<property name="driverClass" value="com.mysql.jdbc.Driver"/>
-        <property name="jdbcUrl" value="jdbc:mysql://115.29.14.247:3306/zhbit"/>
+        <property name="jdbcUrl" value="jdbc:mysql://127.0.0.1:3306/zhbit"/>
         <!--?characterEncoding=utf-8-->
-        <property name="user" value="zhbit"/>
-		<property name="password" value="zhbitpw"/>
+        <property name="user" value="root"/>
+		<property name="password" value=""/>
 		<!--初始化时获取的连接数，取值应在minPoolSize与maxPoolSize之间。Default: 3 -->
 		<property name="initialPoolSize" value="1"/>
 		<!--连接池中保留的最小连接数。-->
