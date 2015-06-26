@@ -11,8 +11,8 @@
 </jsp:include>
 <body>
     <s:form action="user_loginValidate" namespace="/admin" method="post">
-        <s:textfield name="user.username" label="帐号："/><br/>
-        <s:textfield name="user.password" label="密码："/><br/>
+        帐号：<s:textfield name="user.username" label=""/><br/>
+        密码：<s:textfield name="user.password" label=""/><br/>
         <s:submit value="登陆"/>
     </s:form>
 </body>
