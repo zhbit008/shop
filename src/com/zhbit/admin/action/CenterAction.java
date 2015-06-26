@@ -7,9 +7,9 @@ import org.springframework.stereotype.Controller;
 /**
  * Created by zhbitcxy.
  */
-@Controller("adminAdminAction")
+@Controller("centerActionAdmin")
 @Scope("prototype")
-public class AdminAction extends ActionSupport{
+public class CenterAction extends ActionSupport {
     public String index(){
         return SUCCESS;
     }

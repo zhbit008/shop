@@ -1,0 +1,485 @@
+@charset "UTF-8";
+/* 公共样式 */
+
+/* ------- This is the CSS Reset ------- */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, a,
+abbr, acronym, address, big, cite, code, del,
+dfn, em, img, ins, kbd, q, s, samp, small,
+strike, strong, sub, sup, tt, var, u, i, center,
+dl, dt, dd, ol, ul, li, fieldset, form, label,
+legend, table, caption, tbody, tfoot, thead, tr,
+th, td, article, aside, canvas, details, embed,
+figure, figcaption, footer, header, menu,
+nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* ------- HTML5 display-role reset for older browsers ------- */
+
+article, aside, details, figcaption, figure, footer, header, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+/* ----------- Component -----------------------*/
+.layer-panel{
+    position: absolute;
+    margin-top:5px;
+}
+.layer-panel .layer-content{
+    color: #fff;
+    background: #b94a48;
+    padding:10px 15px;
+    border-radius: 1px;
+    font-size:12px;
+    border:1px solid rgba(255, 255, 255, .15);
+}
+.layer-panel .layer-corner{
+    position:absolute;
+    top:-9px;
+    left:10px;
+    border-style:solid;
+    border-color: transparent;
+    border-width: 0 6px 10px 8px;
+    border-bottom-color:#b94a48;
+}
+
+input:focus{
+    border-left:10px solid rgba(255, 255, 255, .15);
+    padding-left:6px;
+    border-radius:0 6px 6px 0;
+}
+
+#waitingBar{
+    position: fixed;
+    top:-50px;
+    width:100%;
+    text-align: center;
+    display: none;
+    z-index:-1;
+}
+#waitingBar .con{
+    display: inline-block;
+    border:1px solid #e7e1cd;
+    border-radius: 0 0 6px 6px;
+    background: #fff;
+    text-align: left;
+    padding: 10px 20px 10px 32px;
+    font-size: 14px;
+    color:#577eb2;
+}
+#waitingBar .waitingIcon{
+    display: inline-block;
+    width: 16px;
+    position: absolute;
+    top:28px;
+}
+.disable{
+    color: #e7e1cd;
+    background-color: #4c5356;
+}
+
+/** -------------------animation-------------------------- */
+.waiting {
+    width: 16px;
+    height: 16px;
+    margin: -18px auto 0 10px;
+    position: absolute;
+}
+
+.waiting .waiting-bounce1, .waiting .waiting-bounce2 {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #577eb2;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-animation: bounce 2.0s infinite ease-in-out;
+    animation: bounce 2.0s infinite ease-in-out;
+}
+
+.button .waiting .waiting-bounce1,.button .waiting .waiting-bounce2{
+    background-color: #aaa;
+}
+
+.waiting .waiting-bounce2 {
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+}
+
+@-webkit-keyframes bounce {
+    0%, 100% { -webkit-transform: scale(0.0) }
+    50% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: scale(0.0);
+        -webkit-transform: scale(0.0);
+    } 50% {
+          transform: scale(1.0);
+          -webkit-transform: scale(1.0);
+      }
+}
+
+a{
+    color: #5e5e5e;
+    outline: none;
+    text-decoration: none;
+}
+ul,ol,li{
+    list-style: none;
+}
+i,em{
+    font-style: normal;
+}
+i.fa{
+    /*width: 15px;*/
+}
+img{
+    border: none;
+}
+table {
+    table-layout: fixed;    
+    border-collapse: collapse;
+}
+table th, table td{    
+    text-align: center;
+}
+.clearfix {
+    display: block;
+}
+.clearfix::after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+.topbar{
+    position: relative;
+    border-bottom: 1px solid #cedfea;
+}
+.topbar .logo{
+    position: absolute;
+    top: 10px;
+    left: 50px;
+    z-index: 1;
+    display: block;
+}
+.top-panel {
+    height: 48px;
+    position: relative;
+    padding-left: 250px;
+}
+.top-menu {
+    font-size: 14px;
+}
+.top-menu li {
+    float: left;
+    /*transition: background-color 0.3s ease 0.3s;*/
+    /*background: rgba(0, 0, 0, .5) url("../images/line.png") no-repeat scroll right center;*/
+}
+.top-menu li:hover,.top-menu li.cur,.top-menu li.cur:hover{
+    cursor: pointer;
+    background: rgba(0, 0, 0, .1);
+}
+.top-menu li a {
+    color: #333;
+    display: block;
+    line-height: 48px;
+    padding: 0 20px;
+}
+.top-menu li .top-menu-arrows {
+    transform: rotate(0deg);
+    transition: transform 0.3s ease 0s;
+}
+.top-menu-arrows {
+    display: inline-block;
+    height: 6px;
+    margin-left: 5px;
+    vertical-align: middle;
+    width: 11px;
+}
+.top-menu-arrows, .ico-add-menu, .user-msg-btn, .ico-exit, .menu a.act .ico-dot {
+    background-image: url("../img/top-menu.png");
+}
+.top-menu li:hover .top-menu-arrows{
+    transform: rotate(-180deg);
+}
+.product-service {
+    cursor: default;
+    padding: 20px 28px 10px 11px;
+}
+.drop-down-layer {
+    display: none;
+    position: absolute;
+    border: 1px solid #d1d2d3;
+    border-top: none;
+    border-radius: 0 0 3px 3px;
+    background: #fff;
+    box-shadow: 1px 1px 5px rgba(0,23,109,.2);
+    z-index: 20;
+}
+.service-menu {
+    float: left;
+    margin: 0 0 10px 20px;
+    width: 145px;
+}
+.service-menu dt {
+    border-bottom: 1px solid #dfe5e9;
+    color: #7e91b1;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 30px;
+    margin: 0 10px 5px;
+}
+.service-menu dt {
+    color: #7e91b1;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 30px;
+}
+.service-menu dd a {
+    color: #586376;
+    height: 24px;
+    line-height: normal;
+    padding: 4px 0 0;
+}
+.service-menu dd.cur span {
+    color: #0070cc;
+}
+.service-menu dd:hover {
+    cursor: pointer;
+    background-color: #f2f2f2;
+}
+.service-menu dd a {
+    color: #586376;
+    padding: 0;
+    line-height: normal;
+    padding: 4px 0 0 0;
+    height: 24px;
+}
+.service-menu dd a i{
+    margin: 0 5px 0 10px;
+}
+/* 右侧menu */
+.right-menu{
+    position: relative; 
+    margin-right: 20px;
+    float:right;
+}
+.right-menu li{
+    white-space: nowrap;
+}
+.right-menu span{
+    margin: 0 5px;
+}
+.admin-center li {
+    float: none;
+}
+.admin-center li a {
+    line-height: 35px;
+}
+.user-msg-btn {
+    background: rgba(0, 0, 0, 0) url("../img/top-panel.png") no-repeat scroll 10px 0;
+    cursor: pointer;
+    float: right;
+    height: 23px;
+    margin: 13px 10px 0 0;
+    padding: 0 0 0 28px;
+}
+.user-msg-btn {
+    background-position: -55px 2px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    float: right;
+    height: 23px;
+    margin: 13px 0 0;
+    padding: 0 0 0 38px;
+}
+.user-msg-btn em, .user-action-info-btn em {
+    background: #ed711f none repeat scroll 0 0;
+    border-radius: 3px;
+    color: #fff;
+    display: block;
+    font-size: 12px;
+    height: 15px;
+    line-height: 15px;
+    margin: 8px 0 0;
+    padding: 0 5px;
+}
+.user-msg-btn em {
+    background: #ed711f none repeat scroll 0 0;
+    border-radius: 3px;
+    color: #fff;
+    display: inline-block;
+    font-size: 13px;
+    height: 15px;
+    line-height: 15px;
+    margin: 10px 0 0;
+    padding: 0 5px;
+}
+.user-msg-btn span, .user-action-info-btn span {
+    display: none;
+}
+
+/* sidebar */
+.sidebar {
+    background-color: #f0f6f6;
+    border-right: 1px solid #cedfea;
+    display: inline-block;
+    height: 100%;
+    position: relative;
+    vertical-align: top;
+    width: 199px;
+}
+.menu {
+    height: 100%;
+    position: relative;
+}
+.menu h2 {
+    color: #171f2a;
+    display: block;
+    font-size: 22px;
+    font-weight: normal;
+    line-height: 36px;
+    padding: 17px 20px 20px;
+}
+.menu .line-mod {
+    width: 156px;
+    height: 0;
+    margin: 0 auto 15px;
+    border: none;
+    border-top: 1px solid #cadbe6;
+    border-bottom: 1px solid #f8fbfb
+}
+.menu-list {
+    bottom: 0;
+    font-size: 14px;
+    line-height: 35px;
+    overflow: auto;
+    padding-top: 15px;
+    position: absolute;
+    top: 75px;
+    width: 100%;
+}
+.menu-list dd {
+    position: relative;
+    width: 100%;
+}
+.menu-list dd:focus {
+    outline: none;
+}
+.menu-list dd ul.menu-sub {
+    display: none;
+}
+.menu-list dd.act ul.menu-sub {
+    display: block;
+}
+.menu a.act {
+    font-weight: bold;
+    background-color: #d5e2ef;
+}
+.menu a:active, .menu a.act {
+    color: #0070cc;
+}
+.menu-list a {
+    display: block;
+    height: 36px;
+    line-height: 36px;
+}
+.menu .view-all:hover,.menu-list a:hover {
+    font-weight: normal;
+    color: #0070cc;
+    background-color: #d5e2ef;
+}
+.menu a span {
+    display: inline-block;
+    vertical-align: middle;
+}
+.menu-lv2 span {
+    font-weight: bold;
+    margin-left: 25px;
+}
+.btn-fold-menu {
+    line-height: 100;
+    position: absolute;
+    top: 21px;
+    right: 0;
+    overflow: hidden;
+    width: 16px;
+    height: 36px;
+    border: 1px solid #c7e0ef;
+    border-right: none;
+    border-radius: 3px 0 0 3px;
+    background: #f7fdfd url(../img/top-menu.png) -72px -40px no-repeat;
+    z-index: 100;
+}
+.btn-fold-menu.retract{
+    right: -17px;
+    border: 1px solid #c7e0ef;
+    border-left: none;
+    border-radius: 0 3px 3px 0;
+    background: #f0f6f6 url(../img/top-menu.png) -87px -40px no-repeat;
+}
+
+/* container */
+.container.animate {
+    transform: translate3d(0px, 0px, 0px);
+    transition: left 0.3s ease 0s;
+}
+.container {
+    height: auto;
+    transform: none;
+    transition: none 0s ease 0s ;
+}
+#container {
+    background: #fff none repeat scroll 0 0;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    z-index: 0;
+    right: 0;
+    top: 49px;
+    transform: translate3d(0px, 0px, 0px);
+    transition: left 0.3s ease 0.3s;
+}
+
+/* main */
+.main {
+    background-color: #fff;
+    bottom: 0;
+    left: 200px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 20px;
+}
