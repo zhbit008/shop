@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.zhbit.domain.Company" table="bit_company">
+        <id name="id">
+            <generator class="native" />
+        </id>
+        <property name="companyname" type ="string" length="255"/>
+        <property name="tpye" type="String" length="255"/>
+        <property name="tel" type="String" length="255"/>
+        <property name="address" type="String" length="255"/>
+        <property name="admin_id" />
+    </class>
+</hibernate-mapping>
