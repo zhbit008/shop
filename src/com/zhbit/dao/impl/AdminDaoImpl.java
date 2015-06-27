@@ -20,32 +20,33 @@ public class AdminDaoImpl implements AdminDao {
 
     @Override
     public void save(Admin admin) {
-
+        sessionFactory.getCurrentSession().save(admin);
     }
 
     @Override
     public void update(Admin admin) {
-
+        sessionFactory.getCurrentSession().update(admin);
     }
 
     @Override
     public void delete(Integer adminId) {
-
+        sessionFactory.getCurrentSession().delete(sessionFactory.getCurrentSession().load(Admin.class,adminId));
     }
 
     @Override
     public Admin getAdmin(Integer adminId) {
-        return null;
-    }
+        return (Admin)sessionFactory.getCurrentSession().get(Admin.class,adminId);
 
+    }
+    @SuppressWarnings("unchecked")
     @Override
     public List<Admin> getAdminList() {
-        return null;
+        return sessionFactory.getCurrentSession().createQuery("from Admin").list();
     }
 
     @Override
     public Admin getAdminByAdminname(String adminname) {
-        return null;
+        return (Admin)sessionFactory.getCurrentSession().createQuery("from Admin where username=:username").setParameter("username",adminname).uniqueResult();
     }
 
     public SessionFactory getSessionFactory() {
