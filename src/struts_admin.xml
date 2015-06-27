@@ -6,6 +6,7 @@
 
 <struts>
     <package name="user" extends="struts-default" namespace="/admin">
+
         <global-results>
             <result name="login" type="redirectAction">
                 <param name="namespace">/admin</param>
@@ -22,4 +23,5 @@
         </action>
 
     </package>
+
 </struts>
