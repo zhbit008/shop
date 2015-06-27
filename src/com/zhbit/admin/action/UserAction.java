@@ -1,6 +1,5 @@
 package com.zhbit.admin.action;
 
-import com.opensymphony.xwork2.ActionSupport;
 import com.zhbit.domain.User;
 import com.zhbit.service.UserService;
 import org.springframework.context.annotation.Scope;
@@ -14,9 +13,8 @@ import java.util.List;
  */
 @Controller("userActionAdmin")
 @Scope("prototype")
-public class UserAction extends ActionSupport{
-    private User user;
-    private List<User> userList;
+public class UserAction extends JsonActionSupport {
+    private User admin;
 
     @Resource
     private UserService userService;
@@ -27,30 +25,24 @@ public class UserAction extends ActionSupport{
 
     public String loginValidate(){
         try{
-            userService.loginValidate(user);
-        }catch (RuntimeException e){;
-            e.printStackTrace();
-            this.addActionError(e.getMessage());
-            return LOGIN;
+            userService.loginValidate(admin);
+        }catch (RuntimeException e){
+//            e.printStackTrace();
+            System.out.println(e.getMessage());
+            this.ajaxFail(Integer.parseInt( e.getMessage() ));
+            return SUCCESS;
         }
+        this.ajaxRedirect("/admin/center_index");
         return SUCCESS;
-
     }
 
-    public User getUser() {
-        return user;
+
+    public User getAdmin() {
+        return admin;
     }
 
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public List<User> getUserList() {
-        return userList;
-    }
-
-    public void setUserList(List<User> userList) {
-        this.userList = userList;
+    public void setAdmin(User admin) {
+        this.admin = admin;
     }
 
     public UserService getUserService() {

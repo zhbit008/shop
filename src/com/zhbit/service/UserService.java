@@ -1,7 +1,6 @@
 package com.zhbit.service;
 
 import com.zhbit.domain.User;
-
 import java.util.List;
 
 /**
@@ -16,4 +15,6 @@ public interface UserService {
     public void addUser(User user);
     public void lockUser(User user);
     public void editUser(User user);
+    public void deleteUser(int id);
+
 }

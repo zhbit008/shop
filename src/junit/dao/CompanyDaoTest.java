@@ -1,7 +1,7 @@
 package dao;
 
-import com.zhbit.dao.UserDao;
-import com.zhbit.domain.User;
+import com.zhbit.dao.CompanyDao;
+import com.zhbit.domain.Company;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
@@ -10,21 +10,23 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-public class UserDaoTest {
-    private static UserDao userDao;
+public class CompanyDaoTest {
+    private static CompanyDao companyDao;
     @BeforeClass
     public static  void setUpBeforeClass() throws Exception {
         try {
             ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
-            userDao = (UserDao) applicationContext.getBean("userDao");
+            companyDao = (CompanyDao) applicationContext.getBean("companyDao");
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
     @Test
-    public void testGetUsertList() throws Exception {
-        List<User> userList = userDao.getUsertList();
-        System.out.println(userList.size());
+    public void testGetSave() throws Exception {
+        Company company=new Company(9,"mufeng","aa","123","ads",11);
+
+        companyDao.save(company);
+        System.out.println("aa");
     }
 }
