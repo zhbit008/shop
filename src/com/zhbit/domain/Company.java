@@ -12,18 +12,9 @@ public class Company implements Serializable {
     private String tpye;
     private String tel;
     private String address;
-    private Integer admin_id;
+    private Integer adminId;
 
     public Company() {
-    }
-
-    public Company(Integer id, String companyname, String tpye, String tel, String address, Integer admin_id) {
-        this.id = id;
-        this.companyname = companyname;
-        this.tpye = tpye;
-        this.tel = tel;
-        this.address = address;
-        this.admin_id = admin_id;
     }
 
     public Integer getId() {
@@ -66,11 +57,21 @@ public class Company implements Serializable {
         this.address = address;
     }
 
-    public Integer getAdmin_id() {
-        return admin_id;
+    public Integer getAdminId() {
+        return adminId;
     }
 
-    public void setAdmin_id(Integer admin_id) {
-        this.admin_id = admin_id;
+    public void setAdminId(Integer adminId) {
+        this.adminId = adminId;
+    }
+
+    public Company(Integer id, String companyname, String tpye, String tel, String address, Integer adminId) {
+
+        this.id = id;
+        this.companyname = companyname;
+        this.tpye = tpye;
+        this.tel = tel;
+        this.address = address;
+        this.adminId = adminId;
     }
 }

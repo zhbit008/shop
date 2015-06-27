@@ -32,8 +32,22 @@
 	     <property name="dataSource" ref="datasource"/>
 		 <property name="mappingResources">
 		    <list>
-		        <value>com/zhbit/domain/User.hbm.xml</value>
-
+		        <!--<value>com/zhbit/domain/User.hbm.xml</value>-->
+                <!--<value>com/zhbit/domain/Admin.hbm.xml</value>-->
+                <!--<value>com/zhbit/domain/Admin_Profile.hbm.xml</value>-->
+                <value>com/zhbit/domain/Company.hbm.xml</value>
+                <!--<value>com/zhbit/domain/Customer.hbm.xml</value>-->
+                <!--<value>com/zhbit/domain/Customer_Profile.hbm.xml</value>-->
+                <!--<value>com/zhbit/domain/Favorite.hbm.xml</value>-->
+                <!--<value>com/zhbit/domain/Order.hbm.xml</value>-->
+                <!--<value>com/zhbit/domain/Order_Product.hbm.xml</value>-->
+                <!--<value>com/zhbit/domain/Product.hbm.xml</value>-->
+                <!--<value>com/zhbit/domain/Product_Cate.hbm.xml</value>-->
+                <!--<value>com/zhbit/domain/Profile.hbm.xml</value>-->
+                <!--<value>com/zhbit/domain/Role.hbm.xml</value>-->
+                <!--<value>com/zhbit/domain/ShoppingCart.hbm.xml</value>-->
+                <!--<value>com/zhbit/domain/Store.hbm.xml</value>-->
+                <!--<value>com/zhbit/domain/Store_Admin.hbm.xml</value>-->
 		    </list>
 		 </property>
 		 <property name="hibernateProperties">
@@ -43,7 +57,7 @@
 		 		<prop key="hibernate.show_sql">true</prop>
 		 		<prop key="hibernate.format_sql">true</prop>
 		 		<prop key="hibernate.current_session_context_class">org.springframework.orm.hibernate4.SpringSessionContext</prop>
-		 	</props>
+         </props>
 		 </property>
 	</bean> 
 	<bean id="txManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">

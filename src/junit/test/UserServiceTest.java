@@ -24,4 +24,9 @@ public class UserServiceTest {
         User user = new User(null,-1, "12223","123","qwe",false);
         userService.addUser(user);
     }
+
+    @Test
+    public void testDeleteUser() throws Exception {
+        userService.deleteUser(9);
+    }
 }

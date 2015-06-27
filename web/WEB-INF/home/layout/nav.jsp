@@ -30,7 +30,7 @@
 			      </form>
 			   	  <ul class="nav navbar-nav navbar-right">
 			        <li><a href="/home/index_login.html">登录</a></li>
-			        <li><a href="/home/index_register.do">注册</a></li>
+			        <li><a href="/home/index_register.html">注册</a></li>
 			      </ul>
 			     <!--  <ul class="nav navbar-nav navbar-right">
 			      	<li><a href="#">name</a></li>
