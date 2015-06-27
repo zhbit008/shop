@@ -13,5 +13,5 @@ public interface Store_AdminDao {
     public void delete(Integer store_adminId);
     public Store_Admin getStore_Admin(Integer store_adminId);
     public List<Store_Admin> getStore_AdminList();
-    public Store_Admin getStore_AdminByStore_Adminname(String store_adminname);
+    public Store_Admin getStore_AdminByStoreId(String storeId);
 }

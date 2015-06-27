@@ -13,5 +13,5 @@ public interface Order_ProductDao {
     public void delete(Integer order_productId);
     public Order_Product getOrder_Product(Integer order_productId);
     public List<Order_Product> getOrder_ProductList();
-    public Order_Product getOrder_ProductByOrder_Productname(String order_productname);
+    public Order_Product getOrder_ProductByOrder_Productname(String orderId);
 }

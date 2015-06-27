@@ -13,5 +13,5 @@ public interface ProductDao {
     public void delete(Integer productId);
     public Product getProduct(Integer productId);
     public List<Product> getProductList();
-    public Product getProductByProductname(String productname);
+    public Product getProductByProductname(String proname);
 }

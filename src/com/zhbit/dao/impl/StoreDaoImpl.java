@@ -15,38 +15,39 @@ import java.util.List;
 @Repository("storeDap")
 public class StoreDaoImpl implements StoreDao {
     @Autowired
-    @Qualifier("sessonFactory")
+    @Qualifier("sessionFactory")
     private SessionFactory sessionFactory;
 
     @Override
     public void save(Store store) {
-
+        sessionFactory.getCurrentSession().save(store);
     }
 
     @Override
     public void update(Store store) {
-
+        sessionFactory.getCurrentSession().update(store);
     }
 
     @Override
-    public void delete(Integer storeId) {
-
+    public void delete(Integer id) {
+        sessionFactory.getCurrentSession().delete(sessionFactory.getCurrentSession().load(Store.class,id));
     }
 
     @Override
-    public Store getStore(Integer storeId) {
-        return null;
+    public Store getStore(Integer id) {
+        return (Store)sessionFactory.getCurrentSession().get(Store.class,id);
     }
 
     @SuppressWarnings("unchecked")
     @Override
     public List<Store> getStoreList() {
-        return null;
+        return sessionFactory.getCurrentSession().createQuery("from Store").list();
     }
 
     @Override
     public Store getStoreByStorename(String storename) {
-        return null;
+        return (Store)sessionFactory.getCurrentSession().createQuery("from Store where storename=:storename").setParameter("storename",storename).uniqueResult();
+
     }
 
     public SessionFactory getSessionFactory() {

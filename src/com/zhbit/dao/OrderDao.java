@@ -13,5 +13,5 @@ public interface OrderDao {
     public void delete(Integer orderId);
     public Order getOrder(Integer orderId);
     public List<Order> getOrderList();
-    public Order getOrderByOrdername(String ordername);
+    public Order getOrderById(String id);
 }

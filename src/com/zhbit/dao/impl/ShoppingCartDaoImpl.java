@@ -20,33 +20,34 @@ public class ShoppingCartDaoImpl implements ShoppingCartDao {
 
     @Override
     public void save(ShoppingCart shoppingCart) {
-
+        sessionFactory.getCurrentSession().save(shoppingCart);
     }
 
     @Override
     public void update(ShoppingCart shoppingCart) {
-
+        sessionFactory.getCurrentSession().update(shoppingCart);
     }
 
     @Override
-    public void delete(Integer shoppingCartId) {
-
+    public void delete(Integer productId) {
+        sessionFactory.getCurrentSession().delete(sessionFactory.getCurrentSession().load(ShoppingCart.class,productId));
     }
 
     @Override
-    public ShoppingCart getShoppingCart(Integer shoppingCartId) {
-        return null;
+    public ShoppingCart getShoppingCart(Integer productId) {
+        return (ShoppingCart)sessionFactory.getCurrentSession().get(ShoppingCart.class,productId);
     }
 
     @SuppressWarnings("unchecked")
     @Override
     public List<ShoppingCart> getShoppingCartList() {
-        return null;
+        return sessionFactory.getCurrentSession().createQuery("from ShoppingCart").list();
     }
 
     @Override
-    public ShoppingCart getShoppingCartByShoppingCartname(String shoppingCartname) {
-        return null;
+    public ShoppingCart getShoppingCartByProductId(String productId) {
+        return (ShoppingCart)sessionFactory.getCurrentSession().createQuery("from ShoppingCart where productId=:productId").setParameter("productId",productId).uniqueResult();
+
     }
 
     public SessionFactory getSessionFactory() {

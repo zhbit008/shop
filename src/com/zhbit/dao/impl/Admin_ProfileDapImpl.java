@@ -19,34 +19,32 @@ public class Admin_ProfileDapImpl implements Admin_ProfileDao{
     private SessionFactory sessionFactory;
 
     @Override
-    public void save(Admin_Profile admin_profile) {
-
-    }
+    public void save(Admin_Profile admin_profile) {sessionFactory.getCurrentSession().save(admin_profile);}
 
     @Override
     public void update(Admin_Profile admin_profile) {
-
+        sessionFactory.getCurrentSession().update(admin_profile);
     }
 
     @Override
-    public void delete(Integer admin_profileId) {
-
+    public void delete(Integer admin_profileId)  {
+        sessionFactory.getCurrentSession().delete(sessionFactory.getCurrentSession().load(Admin_Profile.class,admin_profileId));
     }
 
     @Override
     public Admin_Profile getAdmin_Profile(Integer admin_profileId) {
-        return null;
+        return (Admin_Profile)sessionFactory.getCurrentSession().get(Admin_Profile.class,admin_profileId);
     }
 
     @SuppressWarnings("unchecked")
     @Override
     public List<Admin_Profile> getAdmin_ProfileList() {
-        return null;
+        return sessionFactory.getCurrentSession().createQuery("from Admin_Profile").list();
     }
 
     @Override
-    public Admin_Profile getAdmin_ProfileByAdmin_Profilename(String admin_profilename) {
-        return null;
+    public Admin_Profile getAdmin_ProfileBykey(String key) {
+        return (Admin_Profile)sessionFactory.getCurrentSession().createQuery("from Admin_Profile where key=:key").setParameter("key",key).uniqueResult();
     }
 
     public SessionFactory getSessionFactory() {

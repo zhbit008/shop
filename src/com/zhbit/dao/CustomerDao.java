@@ -13,5 +13,5 @@ public interface CustomerDao {
     public void delete(Integer customerId);
     public Customer getCustomer(Integer customerId);
     public List<Customer> getCustomerList();
-    public Customer getCustomerByCustomername(String customername);
+    public Customer getCustomerByUsername(String username);
 }

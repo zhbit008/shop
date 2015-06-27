@@ -20,33 +20,34 @@ public class RoleDaoImpl implements RoleDao {
 
     @Override
     public void save(Role role) {
-
+        sessionFactory.getCurrentSession().save(role);
     }
 
     @Override
     public void update(Role role) {
-
+        sessionFactory.getCurrentSession().update(role);
     }
 
     @Override
-    public void delete(Integer roleId) {
-
+    public void delete(Integer id) {
+        sessionFactory.getCurrentSession().delete(sessionFactory.getCurrentSession().load(Role.class,id));
     }
 
     @Override
-    public Role getRole(Integer roleId) {
-        return null;
+    public Role getRole(Integer id) {
+        return (Role)sessionFactory.getCurrentSession().get(Role.class,id);
     }
 
     @SuppressWarnings("unchecked")
     @Override
     public List<Role> getRoleList() {
-        return null;
+        return sessionFactory.getCurrentSession().createQuery("from Role").list();
     }
 
     @Override
     public Role getRoleByRolename(String rolename) {
-        return null;
+        return (Role)sessionFactory.getCurrentSession().createQuery("from Role where rolename=:rolename").setParameter("rolename",rolename).uniqueResult();
+
     }
 
     public SessionFactory getSessionFactory() {

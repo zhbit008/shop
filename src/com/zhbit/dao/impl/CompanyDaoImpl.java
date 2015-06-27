@@ -41,12 +41,12 @@ public class CompanyDaoImpl implements CompanyDao {
     @SuppressWarnings("unchecked")
     @Override
     public List<Company> getCompanyList() {
-        return null;
+        return sessionFactory.getCurrentSession().createQuery("from Company").list();
     }
 
     @Override
     public Company getCompanyByCompanyname(String companyname) {
-        return null;
+        return (Company)sessionFactory.getCurrentSession().createQuery("from Company where companyname=:companyname").setParameter("companyname",companyname).uniqueResult();
     }
 
     public SessionFactory getSessionFactory() {

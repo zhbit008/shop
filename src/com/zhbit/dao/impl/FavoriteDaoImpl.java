@@ -20,33 +20,35 @@ public class FavoriteDaoImpl implements FavoriteDao {
 
     @Override
     public void save(Favorite favorite) {
-
+        sessionFactory.getCurrentSession().save(favorite);
     }
 
     @Override
     public void update(Favorite favorite) {
-
+        sessionFactory.getCurrentSession().update(favorite);
     }
 
     @Override
-    public void delete(Integer favoriteId) {
-
+    public void delete(Integer customerId) {
+        sessionFactory.getCurrentSession().delete(sessionFactory.getCurrentSession().load(Favorite.class,customerId));
     }
 
     @Override
-    public Favorite getFavorite(Integer favoriteId) {
-        return null;
+    public Favorite getFavorite(Integer customerId) {
+        return (Favorite)sessionFactory.getCurrentSession().get(Favorite.class,customerId);
+
     }
 
     @SuppressWarnings("unchecked")
     @Override
     public List<Favorite> getFavoriteList() {
-        return null;
+        return sessionFactory.getCurrentSession().createQuery("from Favorite").list();
     }
 
     @Override
-    public Favorite getFavoriteByFavoritename(String favoritename) {
-        return null;
+    public Favorite getFavoriteByCustomerId(String customerId) {
+        return (Favorite)sessionFactory.getCurrentSession().createQuery("from Favorite where customerId=:customerId").setParameter("customerId",customerId).uniqueResult();
+
     }
 
     public SessionFactory getSessionFactory() {
