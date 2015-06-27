@@ -1,7 +1,7 @@
 package com.zhbit.dao.impl;
 
-import com.zhbit.dao.CompanyDao;
-import com.zhbit.domain.Company;
+import com.zhbit.dao.RoleDao;
+import com.zhbit.domain.Role;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -10,48 +10,49 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 /**
- * Created by zhbitcxy.
+ * Created by acer on 2015/6/27.
  */
-@Repository("companyDao")
-public class CompanyDaoImpl implements CompanyDao {
+@Repository("roleDao")
+public class RoleDaoImpl implements RoleDao {
     @Autowired
     @Qualifier("sessionFactory")
     private SessionFactory sessionFactory;
 
     @Override
-    public void save(Company company) {
-        sessionFactory.getCurrentSession().save(company);
+    public void save(Role role) {
+
     }
 
     @Override
-    public void update(Company company) {
-        sessionFactory.getCurrentSession().update(company);
+    public void update(Role role) {
+
     }
 
     @Override
-    public void delete(Integer companyId) {
-        sessionFactory.getCurrentSession().load(Company.class,companyId);
+    public void delete(Integer roleId) {
+
     }
 
     @Override
-    public Company getCompany(Integer companyId) {
-        return (Company)sessionFactory.getCurrentSession().get(Company.class,companyId);
+    public Role getRole(Integer roleId) {
+        return null;
     }
 
     @SuppressWarnings("unchecked")
     @Override
-    public List<Company> getCompanyList() {
+    public List<Role> getRoleList() {
         return null;
     }
 
     @Override
-    public Company getCompanyByCompanyname(String companyname) {
+    public Role getRoleByRolename(String rolename) {
         return null;
     }
 
     public SessionFactory getSessionFactory() {
         return sessionFactory;
     }
+
     public void setSessionFactory(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }

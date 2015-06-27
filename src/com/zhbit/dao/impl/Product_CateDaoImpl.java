@@ -1,7 +1,7 @@
 package com.zhbit.dao.impl;
 
-import com.zhbit.dao.CompanyDao;
-import com.zhbit.domain.Company;
+import com.zhbit.dao.Product_CateDao;
+import com.zhbit.domain.Product_Cate;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -10,48 +10,49 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 /**
- * Created by zhbitcxy.
+ * Created by acer on 2015/6/27.
  */
-@Repository("companyDao")
-public class CompanyDaoImpl implements CompanyDao {
+@Repository("product_CateDao")
+public class Product_CateDaoImpl implements Product_CateDao{
     @Autowired
     @Qualifier("sessionFactory")
     private SessionFactory sessionFactory;
 
     @Override
-    public void save(Company company) {
-        sessionFactory.getCurrentSession().save(company);
+    public void save(Product_Cate product_cate) {
+
     }
 
     @Override
-    public void update(Company company) {
-        sessionFactory.getCurrentSession().update(company);
+    public void update(Product_Cate product_cate) {
+
     }
 
     @Override
-    public void delete(Integer companyId) {
-        sessionFactory.getCurrentSession().load(Company.class,companyId);
+    public void delete(Integer product_cateId) {
+
     }
 
     @Override
-    public Company getCompany(Integer companyId) {
-        return (Company)sessionFactory.getCurrentSession().get(Company.class,companyId);
+    public Product_Cate getProduct_Cate(Integer product_cateId) {
+        return null;
     }
 
     @SuppressWarnings("unchecked")
     @Override
-    public List<Company> getCompanyList() {
+    public List<Product_Cate> getProduct_CateList() {
         return null;
     }
 
     @Override
-    public Company getCompanyByCompanyname(String companyname) {
+    public Product_Cate getProduct_CateByProduct_Catename(String product_catename) {
         return null;
     }
 
     public SessionFactory getSessionFactory() {
         return sessionFactory;
     }
+
     public void setSessionFactory(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
