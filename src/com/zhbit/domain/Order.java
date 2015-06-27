@@ -10,7 +10,7 @@ import java.util.Date;
 public class Order implements Serializable {
     private Integer id;
     private Integer status;
-    private Integer customer_id;
+    private Integer customerId;
     private String sendname;
     private String sendadress;
     private String sendtel;
@@ -21,10 +21,10 @@ public class Order implements Serializable {
     public Order() {
     }
 
-    public Order(Integer id, Integer status, Integer customer_id, String sendname, String sendadress, String sendtel, String paymet, String remark, Date createtime) {
+    public Order(Integer id, Integer status, Integer customerId, String sendname, String sendadress, String sendtel, String paymet, String remark, Date createtime) {
         this.id = id;
         this.status = status;
-        this.customer_id = customer_id;
+        this.customerId = customerId;
         this.sendname = sendname;
         this.sendadress = sendadress;
         this.sendtel = sendtel;
@@ -49,12 +49,12 @@ public class Order implements Serializable {
         this.status = status;
     }
 
-    public Integer getCustomer_id() {
-        return customer_id;
+    public Integer getCustomerId() {
+        return customerId;
     }
 
-    public void setCustomer_id(Integer customer_id) {
-        this.customer_id = customer_id;
+    public void setCustomerId(Integer customerId) {
+        this.customerId = customerId;
     }
 
     public String getSendname() {

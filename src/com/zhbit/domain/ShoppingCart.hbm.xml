@@ -5,12 +5,12 @@
 <hibernate-mapping>
     <class name="com.zhbit.domain.ShoppingCart" table="bit_shoppingcart">
         <composite-id>
-            <key-property name="product_id" />
+            <key-property name="productId" column="product_id" />
             <key-property name="customer" />
         </composite-id>
 
         <property name="num" />
 
-        <property name="createtime" type="java.util.Date" />
+        <property name="createtime" type="timestamp" />
     </class>
 </hibernate-mapping>

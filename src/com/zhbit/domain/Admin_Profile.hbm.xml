@@ -4,7 +4,7 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
     <class name="com.zhbit.domain.Admin_Profile" table="bit_admin_profile">
-        <id name="admin_id">
+        <id name="adminId" column="admin_id">
             <generator class="native" />
         </id>
         <property name="key" type ="string" length="255"/>

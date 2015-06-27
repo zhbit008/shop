@@ -7,25 +7,25 @@ import java.io.Serializable;
  */
 public class Admin_Profile implements Serializable{
 
-    private Integer admin_id;
+    private Integer adminId;
     private String key;
     private String value;
 
     public Admin_Profile() {
     }
 
-    public Admin_Profile(Integer admin_id, String key, String value) {
-        this.admin_id = admin_id;
+    public Admin_Profile(Integer adminId, String key, String value) {
+        this.adminId = adminId;
         this.key = key;
         this.value = value;
     }
 
-    public Integer getAdmin_id() {
-        return admin_id;
+    public Integer getAdminId() {
+        return adminId;
     }
 
-    public void setAdmin_id(Integer admin_id) {
-        this.admin_id = admin_id;
+    public void setAdminId(Integer adminId) {
+        this.adminId = adminId;
     }
 
     public String getKey() {

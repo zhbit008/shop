@@ -10,17 +10,17 @@ public class Admin  implements Serializable {
     private String username;
     private String password;
     private String nickname;
-    private Integer role_id;
+    private Integer roleId;
 
     public Admin() {
     }
 
-    public Admin(Integer id, String username, String nickname, String password, Integer role_id) {
+    public Admin(Integer id, String username, String password, String nickname, Integer roleId) {
         this.id = id;
         this.username = username;
-        this.nickname = nickname;
         this.password = password;
-        this.role_id = role_id;
+        this.nickname = nickname;
+        this.roleId = roleId;
     }
 
     public Integer getId() {
@@ -55,11 +55,11 @@ public class Admin  implements Serializable {
         this.nickname = nickname;
     }
 
-    public Integer getRole_id() {
-        return role_id;
+    public Integer getRoleId() {
+        return roleId;
     }
 
-    public void setRole_id(Integer role_id) {
-        this.role_id = role_id;
+    public void setRoleId(Integer roleId) {
+        this.roleId = roleId;
     }
 }
