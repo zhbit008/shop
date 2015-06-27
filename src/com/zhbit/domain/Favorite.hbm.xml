@@ -5,10 +5,10 @@
 <hibernate-mapping>
     <class name="com.zhbit.domain.Favorite" table="bit_favorite">
         <composite-id>
-            <key-property name="product_id" />
-            <key-property name="customer_id" />
+            <key-property name="productId" column="product_id" />
+            <key-property name="customerId" column="customer_id" />
         </composite-id>
 
-        <property name="createtime" type="java.util.Date"/>
+        <property name="createtime" type="timestamp"/>
     </class>
 </hibernate-mapping>

@@ -8,9 +8,9 @@
             <generator class="native" />
         </id>
         <property name="companyname" type ="string" length="255"/>
-        <property name="tpye" type="string" length="255"/>
-        <property name="tel" type="string" length="255"/>
-        <property name="address" type="string" length="255"/>
-        <property name="adminId" column="admin_id"/>
+        <property name="tpye" type="String" length="255"/>
+        <property name="tel" type="String" length="255"/>
+        <property name="address" type="String" length="255"/>
+        <property name="admin_id" />
     </class>
 </hibernate-mapping>

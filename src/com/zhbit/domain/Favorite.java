@@ -8,33 +8,33 @@ import java.util.Date;
  * Created by laujei1995-lz on 2015/6/26.
  */
 public class Favorite implements Serializable {
-    private Integer product_id;
-    private Integer customer_id;
+    private Integer productId;
+    private Integer customerId;
     private Date  createtime;
 
     public Favorite() {
     }
 
-    public Favorite(Integer product_id, Integer customer_id, Date createtime) {
-        this.product_id = product_id;
-        this.customer_id = customer_id;
+    public Favorite(Integer productId, Integer customerId, Date createtime) {
+        this.productId = productId;
+        this.customerId = customerId;
         this.createtime = createtime;
     }
 
-    public Integer getProduct_id() {
-        return product_id;
+    public Integer getProductId() {
+        return productId;
     }
 
-    public void setProduct_id(Integer product_id) {
-        this.product_id = product_id;
+    public void setProductId(Integer productId) {
+        this.productId = productId;
     }
 
-    public Integer getCustomer_id() {
-        return customer_id;
+    public Integer getCustomerId() {
+        return customerId;
     }
 
-    public void setCustomer_id(Integer customer_id) {
-        this.customer_id = customer_id;
+    public void setCustomerId(Integer customerId) {
+        this.customerId = customerId;
     }
 
     public Date getCreatetime() {

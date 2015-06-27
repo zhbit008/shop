@@ -8,10 +8,10 @@
             <generator class="native" />
         </id>
         <property name="storename" type ="string" length="255"/>
-        <property name="product_num"/>
-        <property name="create_time" type="java.util.Date"/>
-        <property name="admin_id" />
-        <property name="admin_name" type="String" length="255"/>
+        <property name="productNum" column="product_num"/>
+        <property name="createTime"  column="create_time" type="timestamp"/>
+        <property name="adminId" column="admin_id" />
+        <property name="adminName" column="admin_name" type="string" length="255"/>
         <property name="decript" type="string" length="255"/>
         <property name="address" type="string" length="255"/>
         <property name="tel" type="string" length="255"/>

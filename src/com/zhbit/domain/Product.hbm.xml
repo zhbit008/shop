@@ -13,8 +13,8 @@
         <property name="originprice" />
         <property name="saleprice" />
         <property name="decript" type ="string" length="255"/>
-        <property name="saledate" type="java.util.Date"/>
-        <property name="cate_id" />
+        <property name="saledate" type="timestamp"/>
+        <property name="cateId" column="cate_id" />
 
     </class>
 </hibernate-mapping>

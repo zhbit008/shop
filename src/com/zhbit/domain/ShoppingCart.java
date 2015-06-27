@@ -6,7 +6,7 @@ import java.util.Date;
  * Created by laujei1995-lz on 2015/6/26.
  */
 public class ShoppingCart implements Serializable  {
-    private Integer product_id;
+    private Integer productId;
     private Integer customer;
     private Integer num;
     private Date  createtime;
@@ -14,19 +14,19 @@ public class ShoppingCart implements Serializable  {
     public ShoppingCart() {
     }
 
-    public ShoppingCart(Integer product_id, Integer customer, Integer num, Date createtime) {
-        this.product_id = product_id;
+    public ShoppingCart(Integer productId, Integer customer, Integer num, Date createtime) {
+        this.productId = productId;
         this.customer = customer;
         this.num = num;
         this.createtime = createtime;
     }
 
-    public Integer getProduct_id() {
-        return product_id;
+    public Integer getProductId() {
+        return productId;
     }
 
-    public void setProduct_id(Integer product_id) {
-        this.product_id = product_id;
+    public void setProductId(Integer productId) {
+        this.productId = productId;
     }
 
     public Integer getCustomer() {

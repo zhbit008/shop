@@ -4,11 +4,11 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
     <class name="com.zhbit.domain.Order_Product" table="bit_order_product">
-        <id name="order_id">
+        <id name="orderId">
             <generator class="native" />
         </id>
 
-        <property name="product_id" />
+        <property name="productId" />
         <property name="num"/>
 
     </class>

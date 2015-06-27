@@ -9,10 +9,10 @@ import java.util.Date;
 public class Store implements Serializable {
     private Integer id;
     private String storename;
-    private Integer product_num;
-    private Date  create_time;
-    private Integer admin_id;
-    private String admin_name;
+    private Integer productNum;
+    private Date  createTime;
+    private Integer adminId;
+    private String adminName;
     private String decript;
     private String address;
     private String tel;
@@ -21,13 +21,13 @@ public class Store implements Serializable {
     public Store() {
     }
 
-    public Store(Integer id, String storename, Integer product_num, Date create_time, Integer admin_id, String admin_name, String decript, String address, String tel, String type) {
+    public Store(Integer id, String storename, Integer productNum, Date createTime, Integer adminId, String adminName, String decript, String address, String tel, String type) {
         this.id = id;
         this.storename = storename;
-        this.product_num = product_num;
-        this.create_time = create_time;
-        this.admin_id = admin_id;
-        this.admin_name = admin_name;
+        this.productNum = productNum;
+        this.createTime = createTime;
+        this.adminId = adminId;
+        this.adminName = adminName;
         this.decript = decript;
         this.address = address;
         this.tel = tel;
@@ -50,36 +50,36 @@ public class Store implements Serializable {
         this.storename = storename;
     }
 
-    public Integer getProduct_num() {
-        return product_num;
+    public Integer getProductNum() {
+        return productNum;
     }
 
-    public void setProduct_num(Integer product_num) {
-        this.product_num = product_num;
+    public void setProductNum(Integer productNum) {
+        this.productNum = productNum;
     }
 
-    public Date getCreate_time() {
-        return create_time;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setCreate_time(Date create_time) {
-        this.create_time = create_time;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
-    public Integer getAdmin_id() {
-        return admin_id;
+    public Integer getAdminId() {
+        return adminId;
     }
 
-    public void setAdmin_id(Integer admin_id) {
-        this.admin_id = admin_id;
+    public void setAdminId(Integer adminId) {
+        this.adminId = adminId;
     }
 
-    public String getAdmin_name() {
-        return admin_name;
+    public String getAdminName() {
+        return adminName;
     }
 
-    public void setAdmin_name(String admin_name) {
-        this.admin_name = admin_name;
+    public void setAdminName(String adminName) {
+        this.adminName = adminName;
     }
 
     public String getDecript() {
