@@ -44,8 +44,7 @@
 				<!-- 内容开始 -->
                 <div style="height: 15px;width: 1px;"></div>
                 <div class="row">
-
-                    <s:iterator value="#listProduct">
+                    <s:iterator value="listProduct">
                         <div class="col-6 col-sm-6 col-lg-4 media" style="margin-top: 0px;">
                             <a class="pull-left" href="#">
                                 <img class="media-object" src="/resource/home/img/04.jpg" style="width: 300px;height: 170px;" alt="..."/>
@@ -56,51 +55,7 @@
                             </div>
                         </div>
                     </s:iterator>
-					<div class="col-6 col-sm-6 col-lg-4 media">
-						<a class="pull-left" href="#">
-					        <img class="media-object" src="/resource/home/img/04.jpg" style="width: 300px;height: 170px;" alt="..." />
-					  	</a>
-					  	<div class="media-body">
-					    	<h4 class="media-heading">系列：十天精通CSS3</h4>
-					    	<div>全方位深刻详解CSS3模块知识，经典案例分析，代码同步调试，让网页穿上绚丽装备！</div>
-					  	</div>
-					</div>
-					<div class="col-6 col-sm-6 col-lg-4 media">
-						<a class="pull-left" href="#">
-					        <img class="media-object" src="/resource/home/img/04.jpg" style="width: 300px;height: 170px;" alt="..."/>
-					  	</a>
-					  	<div class="media-body">
-					    	<h4 class="media-heading">系列：十天精通CSS3</h4>
-					    	<div>全方位深刻详解CSS3模块知识，经典案例分析，代码同步调试，让网页穿上绚丽装备！</div>
-					  	</div>
-					</div>
-					<div class="col-6 col-sm-6 col-lg-4 media">
-						<a class="pull-left" href="#">
-					        <img class="media-object" src="/resource/home/img/04.jpg" style="width: 300px;height: 170px;" alt="..."/>
-					  	</a>
-					  	<div class="media-body">
-					    	<h4 class="media-heading">系列：十天精通CSS3</h4>
-					    	<div>全方位深刻详解CSS3模块知识，经典案例分析，代码同步调试，让网页穿上绚丽装备！</div>
-					  	</div>
-					</div>
-					<div class="col-6 col-sm-6 col-lg-4 media">
-						<a class="pull-left" href="#">
-					        <img class="media-object" src="/resource/home/img/04.jpg" style="width: 300px;height: 170px;" alt="..."/>
-					  	</a>
-					  	<div class="media-body">
-					    	<h4 class="media-heading">系列：十天精通CSS3</h4>
-					    	<div>全方位深刻详解CSS3模块知识，经典案例分析，代码同步调试，让网页穿上绚丽装备！</div>
-					  	</div>
-					</div>
-					<div class="col-6 col-sm-6 col-lg-4 media">
-						<a class="pull-left" href="#">
-					        <img class="media-object" src="/resource/home/img/04.jpg" style="width: 300px;height: 170px;" alt="..."/>
-					  	</a>
-					  	<div class="media-body">
-					    	<h4 class="media-heading">系列：十天精通CSS3</h4>
-					    	<div>全方位深刻详解CSS3模块知识，经典案例分析，代码同步调试，让网页穿上绚丽装备！</div>
-					  	</div>
-					</div>
+
 					<!-- 内容结束 -->
 					<center>
 					<ul class="pagination pagination">

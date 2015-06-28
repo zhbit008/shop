@@ -22,7 +22,8 @@ import java.util.Map;
 public class IndexAction extends ActionSupport {
     @Resource
     private ProductService productService;
-    Customer customer;
+    private Customer customer;
+    private List<Product> listProduct;
 //    登录页面
     public String login(){return SUCCESS;}
 
@@ -33,8 +34,7 @@ public class IndexAction extends ActionSupport {
         ActionContext actionContext = ActionContext.getContext();
         Map session = actionContext.getSession();
         customer = (Customer)session.get("customer");
-//        System.out.println(customer.getUsername());
-         List<Product> listProduct = productService.getAllProduct();
+        listProduct = productService.getSomeProduct(1,6);
         System.out.println(listProduct.size());
         return SUCCESS;
     }
@@ -47,11 +47,29 @@ public class IndexAction extends ActionSupport {
 //    店铺页面
     public String shop(){return SUCCESS;}
 
+
+
     public Customer getCustomer() {
         return customer;
     }
 
     public void setCustomer(Customer customer) {
         this.customer = customer;
+    }
+
+    public ProductService getProductService() {
+        return productService;
+    }
+
+    public void setProductService(ProductService productService) {
+        this.productService = productService;
+    }
+
+    public List<Product> getListProduct() {
+        return listProduct;
+    }
+
+    public void setListProduct(List<Product> listProduct) {
+        this.listProduct = listProduct;
     }
 }

@@ -35,4 +35,11 @@ public class ProductServiceImplTest {
         Product product = productService.getProduct("GE00010伊丽莎白餐厅家具");
         System.out.println(product.getImage());
     }
+    @Test
+    public void testGetSomeProduct() throws Exception{
+        List<Product> listProduct=productService.getSomeProduct(1,6);
+        for (Product product : listProduct) {
+            System.out.println(product.getId());
+        }
+    }
 }
