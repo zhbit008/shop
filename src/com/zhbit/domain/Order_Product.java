@@ -11,6 +11,7 @@ public class Order_Product implements Serializable{
     private Integer num;
 
     public Order_Product() {
+
     }
 
     public Order_Product(Integer orderId, Integer productId, Integer num) {
