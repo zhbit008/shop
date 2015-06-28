@@ -5,9 +5,13 @@ import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.zhbit.common.action.JsonActionSupport;
 import com.zhbit.domain.Customer;
+import com.zhbit.domain.Product;
+import com.zhbit.service.ProductService;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
+import javax.annotation.Resource;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -16,6 +20,8 @@ import java.util.Map;
 @Controller("indexActionHome")
 @Scope("prototype")
 public class IndexAction extends ActionSupport {
+    @Resource
+    private ProductService productService;
     Customer customer;
 //    登录页面
     public String login(){return SUCCESS;}
@@ -27,15 +33,9 @@ public class IndexAction extends ActionSupport {
         ActionContext actionContext = ActionContext.getContext();
         Map session = actionContext.getSession();
         customer = (Customer)session.get("customer");
-        String ok = (String)session.get("ok");
-        System.out.println(ok);
-        if (null != customer){
-            System.out.println(customer.getId());
-            System.out.println(customer.getUsername());
-            System.out.println(customer.getPassword());
-        }
-
-
+//        System.out.println(customer.getUsername());
+         List<Product> listProduct = productService.getAllProduct();
+        System.out.println(listProduct.size());
         return SUCCESS;
     }
 //    物品介绍页面

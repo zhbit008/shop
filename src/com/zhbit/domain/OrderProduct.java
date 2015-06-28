@@ -5,15 +5,15 @@ import java.io.Serializable;
 /**
  * Created by laujei1995-lz on 2015/6/26.
  */
-public class Order_Product implements Serializable{
+public class OrderProduct implements Serializable{
     private Integer orderId;
     private Integer productId;
     private Integer num;
 
-    public Order_Product() {
+    public OrderProduct() {
     }
 
-    public Order_Product(Integer orderId, Integer productId, Integer num) {
+    public OrderProduct(Integer orderId, Integer productId, Integer num) {
         this.orderId = orderId;
         this.productId = productId;
         this.num = num;

@@ -4,16 +4,16 @@ import java.io.Serializable;
 /**
  * Created by laujei1995-lz on 2015/6/26.
  */
-public class Product_Cate implements Serializable{
+public class ProductCate implements Serializable{
 
     private Integer id;
     private String catename;
     private Integer childnum;
 
-    public Product_Cate() {
+    public ProductCate() {
     }
 
-    public Product_Cate(Integer id, String catename, Integer childnum) {
+    public ProductCate(Integer id, String catename, Integer childnum) {
         this.id = id;
         this.catename = catename;
         this.childnum = childnum;

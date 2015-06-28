@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
+import javax.management.Query;
 import java.util.List;
 
 /**
@@ -48,6 +49,11 @@ public class ProductDaoImpl implements ProductDao {
     public Product getProductByProductname(String proname) {
         return (Product)sessionFactory.getCurrentSession().createQuery("from Product where proname=:proname").setParameter("proname",proname).uniqueResult();
 
+    }
+
+    @Override
+    public List<Product> getSomeProduct(int pageNo,int pageSize) {
+        return sessionFactory.getCurrentSession().createQuery("from Product").setFirstResult((pageNo-1)*pageSize).setMaxResults(pageSize).list();
     }
 
     public SessionFactory getSessionFactory() {

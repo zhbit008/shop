@@ -16,11 +16,13 @@ public class Product implements Serializable {
     private String decript;
     private Date saledate;
     private Integer cateId;
+    private String title;
+    private String love;
 
     public Product() {
     }
 
-    public Product(Integer id, Integer salecount, String proname, String image, Double originprice, Double saleprice, String decript, Date saledate, Integer cateId) {
+    public Product(Integer id, Integer salecount, String proname, String image, Double originprice, Double saleprice, String decript, Date saledate, Integer cateId, String title, String love) {
         this.id = id;
         this.salecount = salecount;
         this.proname = proname;
@@ -30,6 +32,24 @@ public class Product implements Serializable {
         this.decript = decript;
         this.saledate = saledate;
         this.cateId = cateId;
+        this.title = title;
+        this.love = love;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getLove() {
+        return love;
+    }
+
+    public void setLove(String love) {
+        this.love = love;
     }
 
     public String getImage() {

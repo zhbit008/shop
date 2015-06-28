@@ -3,13 +3,12 @@
         "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class name="com.zhbit.domain.Order_Product" table="bit_order_product">
-        <id name="orderId">
+    <class name="com.zhbit.domain.CustomerProfile" table="bit_customer_prfile">
+        <id name="customerId" column="customer_id">
             <generator class="native" />
         </id>
-
-        <property name="productId" />
-        <property name="num"/>
+        <property name="key" type ="string" length="255"/>
+        <property name="value" type="string" length="255"/>
 
     </class>
 </hibernate-mapping>
