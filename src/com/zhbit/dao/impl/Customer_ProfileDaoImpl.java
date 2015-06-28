@@ -20,33 +20,33 @@ public class Customer_ProfileDaoImpl implements Customer_ProfileDao {
 
     @Override
     public void save(Customer_Profile customer_profile) {
-
+        sessionFactory.getCurrentSession().save(customer_profile);
     }
 
     @Override
     public void update(Customer_Profile customer_profile) {
-
+        sessionFactory.getCurrentSession().update(customer_profile);
     }
 
     @Override
     public void delete(Integer customer_profileId) {
-
+        sessionFactory.getCurrentSession().delete(sessionFactory.getCurrentSession().load(Customer_Profile.class,customer_profileId));
     }
 
     @Override
     public Customer_Profile getCustomer_Profile(Integer customer_profileId) {
-        return null;
+        return (Customer_Profile)sessionFactory.getCurrentSession().get(Customer_Profile.class,customer_profileId);
     }
 
     @SuppressWarnings("unchecked")
     @Override
     public List<Customer_Profile> getCustomer_ProfileList() {
-        return null;
+        return sessionFactory.getCurrentSession().createQuery("from Customer_Profile").list();
     }
 
     @Override
-    public Customer_Profile getCustomer_ProfileyByCustomer_Profilename(String customer_profilename) {
-        return null;
+    public Customer_Profile getCustomer_ProfileyBykey(String key) {
+        return (Customer_Profile)sessionFactory.getCurrentSession().createQuery("from Customer_Profile where key=:key").setParameter("key",key).uniqueResult();
     }
 
     public SessionFactory getSessionFactory() {

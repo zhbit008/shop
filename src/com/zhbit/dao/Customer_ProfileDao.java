@@ -13,5 +13,5 @@ public interface Customer_ProfileDao {
     public void delete(Integer customer_profileId);
     public Customer_Profile getCustomer_Profile(Integer customer_profileId);
     public List<Customer_Profile> getCustomer_ProfileList();
-    public Customer_Profile getCustomer_ProfileyByCustomer_Profilename(String customer_profilename);
+    public Customer_Profile getCustomer_ProfileyBykey(String key);
 }

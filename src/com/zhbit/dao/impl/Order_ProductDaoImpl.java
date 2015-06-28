@@ -20,33 +20,34 @@ public class Order_ProductDaoImpl implements Order_ProductDao{
 
     @Override
     public void save(Order_Product order_product) {
-
+        sessionFactory.getCurrentSession().save(order_product);
     }
 
     @Override
     public void update(Order_Product order_product) {
-
+        sessionFactory.getCurrentSession().update(order_product);
     }
 
     @Override
-    public void delete(Integer order_productId) {
-
+    public void delete(Integer orderId) {
+        sessionFactory.getCurrentSession().delete(sessionFactory.getCurrentSession().load(Order_Product.class,orderId));
     }
 
     @Override
-    public Order_Product getOrder_Product(Integer order_productId) {
-        return null;
+    public Order_Product getOrder_Product(Integer orderId) {
+        return (Order_Product)sessionFactory.getCurrentSession().get(Order_Product.class,orderId);
     }
 
     @SuppressWarnings("unchecked")
     @Override
     public List<Order_Product> getOrder_ProductList() {
-        return null;
+        return sessionFactory.getCurrentSession().createQuery("from Order_Product").list();
     }
 
     @Override
-    public Order_Product getOrder_ProductByOrder_Productname(String order_productname) {
-        return null;
+    public Order_Product getOrder_ProductByOrder_Productname(String orderId) {
+        return (Order_Product)sessionFactory.getCurrentSession().createQuery("from Order_Product where orderId=:orderId").setParameter("orderId",orderId).uniqueResult();
+
     }
 
     public SessionFactory getSessionFactory() {

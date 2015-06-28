@@ -20,33 +20,34 @@ public class Store_AdminDaoImpl implements Store_AdminDao{
 
     @Override
     public void save(Store_Admin store_admin) {
-
+        sessionFactory.getCurrentSession().save(store_admin);
     }
 
     @Override
     public void update(Store_Admin store_admin) {
-
+        sessionFactory.getCurrentSession().update(store_admin);
     }
 
     @Override
-    public void delete(Integer store_adminId) {
-
+    public void delete(Integer storeId) {
+        sessionFactory.getCurrentSession().delete(sessionFactory.getCurrentSession().load(Store_Admin.class,storeId));
     }
 
     @Override
-    public Store_Admin getStore_Admin(Integer store_adminId) {
-        return null;
+    public Store_Admin getStore_Admin(Integer storeId) {
+        return (Store_Admin)sessionFactory.getCurrentSession().get(Store_Admin.class,storeId);
     }
 
     @SuppressWarnings("unchecked")
     @Override
     public List<Store_Admin> getStore_AdminList() {
-        return null;
+        return sessionFactory.getCurrentSession().createQuery("from Store_Admin").list();
     }
 
     @Override
-    public Store_Admin getStore_AdminByStore_Adminname(String store_adminname) {
-        return null;
+    public Store_Admin getStore_AdminByStoreId(String storeId) {
+        return (Store_Admin)sessionFactory.getCurrentSession().createQuery("from Store_Admin where storeId=:storeId").setParameter("storeId",storeId).uniqueResult();
+
     }
 
     public SessionFactory getSessionFactory() {

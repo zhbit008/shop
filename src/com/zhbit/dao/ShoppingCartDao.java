@@ -13,5 +13,5 @@ public interface ShoppingCartDao {
     public void delete(Integer shoppingCartId);
     public ShoppingCart getShoppingCart(Integer shoppingCartId);
     public List<ShoppingCart> getShoppingCartList();
-    public ShoppingCart getShoppingCartByShoppingCartname(String shoppingCartname);
+    public ShoppingCart getShoppingCartByProductId(String productId);
 }

@@ -19,7 +19,7 @@ public class CompanyServiceTest {
         }
     }
     @Test
-    public void testAddCompany() throws Exception {
+    public void testAddCompany() throws  Exception {
         Company company=new Company(null,"mufeng","aa","123","ads",11);
         companyService.addCompany(company);
     }

@@ -20,33 +20,34 @@ public class OrderDaoImpl implements OrderDao {
 
     @Override
     public void save(Order order) {
-
+        sessionFactory.getCurrentSession().save(order);
     }
 
     @Override
     public void update(Order order) {
-
+        sessionFactory.getCurrentSession().update(order);
     }
 
     @Override
-    public void delete(Integer orderId) {
-
+    public void delete(Integer id) {
+        sessionFactory.getCurrentSession().delete(sessionFactory.getCurrentSession().load(Order.class,id));
     }
 
     @Override
-    public Order getOrder(Integer orderId) {
-        return null;
+    public Order getOrder(Integer id) {
+        return (Order)sessionFactory.getCurrentSession().get(Order.class,id);
     }
 
     @SuppressWarnings("unchecked")
     @Override
     public List<Order> getOrderList() {
-        return null;
+        return sessionFactory.getCurrentSession().createQuery("from Order").list();
     }
 
     @Override
-    public Order getOrderByOrdername(String ordername) {
-        return null;
+    public Order getOrderById(String id) {
+        return (Order)sessionFactory.getCurrentSession().createQuery("from Order where id=:id").setParameter("id",id).uniqueResult();
+
     }
 
     public SessionFactory getSessionFactory() {

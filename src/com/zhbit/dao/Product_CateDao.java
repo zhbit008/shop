@@ -13,5 +13,5 @@ public interface Product_CateDao {
     public void delete(Integer product_cateId);
     public Product_Cate getProduct_Cate(Integer product_cateId);
     public List<Product_Cate> getProduct_CateList();
-    public Product_Cate getProduct_CateByProduct_Catename(String product_catename);
+    public Product_Cate getProduct_CateByProduct_Catename(String catename);
 }

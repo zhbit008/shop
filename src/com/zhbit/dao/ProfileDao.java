@@ -13,5 +13,5 @@ public interface ProfileDao {
     public void delete(Integer profileId);
     public Profile getProfile(Integer profileId);
     public List<Profile> getProfileList();
-    public Profile getProfileByProfilename(String profilename);
+    public Profile getProfileByKey(String key);
 }

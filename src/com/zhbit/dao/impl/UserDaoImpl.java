@@ -29,13 +29,13 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public void delete(Integer userId) {
-        sessionFactory.getCurrentSession().delete(sessionFactory.getCurrentSession().load(User.class, userId));
+    public void delete(Integer id) {
+        sessionFactory.getCurrentSession().delete(sessionFactory.getCurrentSession().load(User.class, id));
     }
 
     @Override
-    public User getUser(Integer userId) {
-        return (User) sessionFactory.getCurrentSession().get(User.class,userId);
+    public User getUser(Integer id) {
+        return (User) sessionFactory.getCurrentSession().get(User.class,id);
     }
 
     @SuppressWarnings("unchecked")

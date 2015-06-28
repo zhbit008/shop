@@ -11,8 +11,8 @@ import java.util.List;
 public interface FavoriteDao {
     public void save(Favorite favorite);
     public void update(Favorite favorite);
-    public void delete(Integer favoriteId);
-    public Favorite getFavorite(Integer favoriteId);
+    public void delete(Integer customerId);
+    public Favorite getFavorite(Integer customerId);
     public List<Favorite> getFavoriteList();
-    public Favorite getFavoriteByFavoritename(String favoritename);
+    public Favorite getFavoriteByCustomerId(String customerId);
 }

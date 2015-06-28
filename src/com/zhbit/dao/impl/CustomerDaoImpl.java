@@ -20,33 +20,34 @@ public class CustomerDaoImpl implements CustomerDao {
 
     @Override
     public void save(Customer customer) {
-
+        sessionFactory.getCurrentSession().save(customer);
     }
 
     @Override
     public void update(Customer customer) {
-
+        sessionFactory.getCurrentSession().update(customer);
     }
 
     @Override
     public void delete(Integer customerId) {
-
+        sessionFactory.getCurrentSession().delete(sessionFactory.getCurrentSession().load(Customer.class,customerId));
     }
 
     @Override
     public Customer getCustomer(Integer customerId) {
-        return null;
+        return (Customer)sessionFactory.getCurrentSession().get(Customer.class,customerId);
     }
 
     @SuppressWarnings("unchecked")
     @Override
     public List<Customer> getCustomerList() {
-        return null;
+        return sessionFactory.getCurrentSession().createQuery("from Customer").list();
     }
 
     @Override
-    public Customer getCustomerByCustomername(String customername) {
-        return null;
+    public Customer getCustomerByUsername(String username) {
+        return (Customer)sessionFactory.getCurrentSession().createQuery("from Customer where username=:username").setParameter("username",username).uniqueResult();
+
     }
 
     public SessionFactory getSessionFactory() {

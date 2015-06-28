@@ -20,33 +20,34 @@ public class Product_CateDaoImpl implements Product_CateDao{
 
     @Override
     public void save(Product_Cate product_cate) {
-
+        sessionFactory.getCurrentSession().save(product_cate);
     }
 
     @Override
     public void update(Product_Cate product_cate) {
-
+        sessionFactory.getCurrentSession().update(product_cate);
     }
 
     @Override
-    public void delete(Integer product_cateId) {
-
+    public void delete(Integer id) {
+        sessionFactory.getCurrentSession().delete(sessionFactory.getCurrentSession().load(Product_Cate.class,id));
     }
 
     @Override
-    public Product_Cate getProduct_Cate(Integer product_cateId) {
-        return null;
+    public Product_Cate getProduct_Cate(Integer id) {
+        return (Product_Cate)sessionFactory.getCurrentSession().get(Product_Cate.class,id);
     }
 
     @SuppressWarnings("unchecked")
     @Override
     public List<Product_Cate> getProduct_CateList() {
-        return null;
+        return sessionFactory.getCurrentSession().createQuery("from Product_Cate").list();
     }
 
     @Override
-    public Product_Cate getProduct_CateByProduct_Catename(String product_catename) {
-        return null;
+    public Product_Cate getProduct_CateByProduct_Catename(String catename) {
+        return (Product_Cate)sessionFactory.getCurrentSession().createQuery("from Product_Cate where catename=:catename").setParameter("catename",catename).uniqueResult();
+
     }
 
     public SessionFactory getSessionFactory() {

@@ -20,33 +20,34 @@ public class ProductDaoImpl implements ProductDao {
 
     @Override
     public void save(Product product) {
-
+        sessionFactory.getCurrentSession().save(product);
     }
 
     @Override
     public void update(Product product) {
-
+        sessionFactory.getCurrentSession().update(product);
     }
 
     @Override
-    public void delete(Integer productId) {
-
+    public void delete(Integer id) {
+        sessionFactory.getCurrentSession().delete(sessionFactory.getCurrentSession().load(Product.class,id));
     }
 
     @Override
-    public Product getProduct(Integer productId) {
-        return null;
+    public Product getProduct(Integer id) {
+        return (Product)sessionFactory.getCurrentSession().get(Product.class,id);
     }
 
     @SuppressWarnings("unchecked")
     @Override
     public List<Product> getProductList() {
-        return null;
+        return sessionFactory.getCurrentSession().createQuery("from Product").list();
     }
 
     @Override
-    public Product getProductByProductname(String productname) {
-        return null;
+    public Product getProductByProductname(String proname) {
+        return (Product)sessionFactory.getCurrentSession().createQuery("from Product where proname=:proname").setParameter("proname",proname).uniqueResult();
+
     }
 
     public SessionFactory getSessionFactory() {
