@@ -19,6 +19,11 @@ public class Admin_ProfileDapImpl implements Admin_ProfileDao{
     private SessionFactory sessionFactory;
 
     @Override
+    public Admin_Profile getAdmin_ProfileBykey(String key) {
+        return null;
+    }
+
+    @Override
     public void save(Admin_Profile admin_profile) {
         sessionFactory.getCurrentSession().save(admin_profile);
     }

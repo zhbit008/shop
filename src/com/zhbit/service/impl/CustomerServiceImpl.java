@@ -11,6 +11,12 @@ import javax.annotation.Resource;
 /**
  * Created by acer on 2015/6/27.
  */
+
+/**
+ * 错误代码
+ * 4000 用户不存在
+ * 4100 密码不正确
+ */
 @Service("customerService")
 @Transactional
 public class CustomerServiceImpl implements CustomerService{
@@ -18,10 +24,24 @@ public class CustomerServiceImpl implements CustomerService{
     @Resource
     private CustomerDao customerDao;
 
+    /**
+     * 验证客户登陆
+     * @param customerOrg
+     * @return 验证通过后客户对象
+     */
+    @Override
+    public Customer loginValidate(Customer customerOrg) {
+        if (null == customerOrg) throw new RuntimeException("4000");
+
+        Customer customerObj =  customerDao.getCustomerByUsername(customerOrg.getUsername().trim());
+        if (null == customerObj) throw  new RuntimeException("4000");
+        if (!customerObj.getPassword().equals(customerOrg.getPassword().trim())) throw new RuntimeException("4100");
+        return customerObj;
+    }
+
     @Override
     public Customer getCustomerByCustomername(String username) {
-       customer = new Customer("铭尘沐风","123",username,1);
-        return customer;
+        return  customerDao.getCustomerByUsername(username);
     }
 
     public CustomerDao getCustomerDao() {

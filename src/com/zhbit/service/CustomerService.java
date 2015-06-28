@@ -7,4 +7,5 @@ import com.zhbit.domain.Customer;
  */
 public interface CustomerService {
     public Customer getCustomerByCustomername(String username);
+    public Customer loginValidate(Customer customer);
 }

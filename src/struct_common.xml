@@ -6,10 +6,11 @@
 
 <struts>
     <package name="json" extends="json-default" namespace="/json" >
-        <action name="*_*" class="{1}ActionAdmin" method="{2}">
+        <action name="*_*_*" class="{2}Action{1}" method="{3}">
             <result type="json">
                 <param name="root">dataMap</param>
             </result>
         </action>
     </package>
+
 </struts>

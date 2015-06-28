@@ -1,4 +1,4 @@
-package com.zhbit.admin.action;
+package com.zhbit.common.action;
 
 import com.opensymphony.xwork2.ActionSupport;
 
