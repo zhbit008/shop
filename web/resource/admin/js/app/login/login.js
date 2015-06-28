@@ -46,9 +46,11 @@ require(['supersized'], function(){
 		$this.enable = function(enable){
 			$this[enable?'removeClass':'addClass']('disable');
 		};
-		pass && $this.doPost('/json/user_loginValidate', {'admin.username': u.val(),'admin.password': p.val()}, function(json){
+        var action = $this.parent("form").attr("action");
+
+		pass && $this.doPost(action, {'admin.username': u.val(),'admin.password': p.val()}, function(json){
             console.log(json + "======1");
-            location.href = '/summary';
+            location.href = '/';
 		}, function(json){
             console.log(json);
             if (json.stat){

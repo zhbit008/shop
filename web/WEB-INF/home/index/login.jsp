@@ -1,4 +1,6 @@
-﻿<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+﻿<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="/struts-tags" prefix="s"%>
+
 <jsp:include page="../layout/header.jsp">
     <jsp:param name="title" value="登陆页面" />
     <jsp:param name="js" value="login" />
@@ -11,27 +13,27 @@
 			<img alt="logo" src="/resource/home/img/login.jpg" style=" width:100%; display: block;"/>
 		</div>
 		<div class="col-md-4">
-			<form  id="login"  action="consumer" onsubmit="javascript: return checkLogin();" method="post" role="form">
+			<form  id="login"  action="/json/Home_customer_loginValidate" method="post" role="form">
 				<br/>
 				<label><h2><strong>会员登录：</strong></h2></label>
-				
+
 				 <div class="form-group">
-				    <label for="userName">用户名：</label>
-				    <input  class="form-control" id="userName" placeholder="请输入您的用户名"/>
+				    <label for="username">用户名：</label>
+				    <input  class="form-control" id="username" placeholder="请输入您的用户名" name="customer.username"/>
 				  </div>
 				  <div class="form-group">
-				    <label for="Password">密码：</label>
-				    <input type="password" class="form-control" id="Password" placeholder="请输入您的密码" />
+				    <label for="password">密码：</label>
+				    <input type="password" class="form-control" id="password" placeholder="请输入您的密码"  name="customer.password"/>
 				  </div>
 
 				  <div class="checkbox">
 				    <label>
-				      <input type="checkbox"/> 记住密码
+				      <input type="checkbox" name="check" /> 记住密码
 				    </label>
 				  </div>
-				  <button type="submit" class="btn btn-success">登&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;录</button>
+				  <button  id="submit" class="btn btn-success">登&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;录</button>
 				  &nbsp;&nbsp;&nbsp;
-				  <button type="submit" class="btn btn-success">注&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;册</button>
+				  <button  class="btn btn-success">注&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;册</button>
 			</form>
 		</div>
 	</div>

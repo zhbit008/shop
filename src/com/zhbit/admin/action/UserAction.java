@@ -36,7 +36,6 @@ public class UserAction extends JsonActionSupport {
         return SUCCESS;
     }
 
-
     public User getAdmin() {
         return admin;
     }
