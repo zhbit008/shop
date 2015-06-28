@@ -20,17 +20,17 @@ public class Admin_ProfileDapImpl implements Admin_ProfileDao{
 
     @Override
     public void save(Admin_Profile admin_profile) {
-
+        sessionFactory.getCurrentSession().save(admin_profile);
     }
 
     @Override
     public void update(Admin_Profile admin_profile) {
-
+        sessionFactory.getCurrentSession().update(admin_profile);
     }
 
     @Override
     public void delete(Integer admin_profileId) {
-
+        sessionFactory.getCurrentSession().delete(sessionFactory.getCurrentSession().load(Admin_Profile.class,admin_profileId));
     }
 
     @Override

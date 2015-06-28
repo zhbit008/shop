@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * Created by acer on 2015/6/27.
  */
-@Repository("companyDao")
+@Repository("order_ProductDao")
 public class Order_ProductDaoImpl implements Order_ProductDao{
     @Autowired
     @Qualifier("sessionFactory")

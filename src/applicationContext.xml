@@ -32,7 +32,7 @@
 	     <property name="dataSource" ref="datasource"/>
 		 <property name="mappingResources">
 		    <list>
-		        <!--<value>com/zhbit/domain/User.hbm.xml</value>-->
+		        <value>com/zhbit/domain/User.hbm.xml</value>
                 <!--<value>com/zhbit/domain/Admin.hbm.xml</value>-->
                 <!--<value>com/zhbit/domain/Admin_Profile.hbm.xml</value>-->
                 <value>com/zhbit/domain/Company.hbm.xml</value>

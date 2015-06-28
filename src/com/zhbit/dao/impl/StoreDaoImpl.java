@@ -12,10 +12,10 @@ import java.util.List;
 /**
  * Created by acer on 2015/6/27.
  */
-@Repository("storeDap")
+@Repository("storeDao")
 public class StoreDaoImpl implements StoreDao {
     @Autowired
-    @Qualifier("sessonFactory")
+    @Qualifier("sessionFactory")
     private SessionFactory sessionFactory;
 
     @Override
