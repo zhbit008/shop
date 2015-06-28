@@ -11,6 +11,6 @@
         <property name="tpye" type="string" length="255"/>
         <property name="tel" type="string" length="255"/>
         <property name="address" type="string" length="255"/>
-        <property name="admin_id"/>
+        <property name="admin_id" />
     </class>
 </hibernate-mapping>

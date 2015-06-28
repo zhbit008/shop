@@ -19,6 +19,11 @@ public class Admin_ProfileDapImpl implements Admin_ProfileDao{
     private SessionFactory sessionFactory;
 
     @Override
+    public Admin_Profile getAdmin_ProfileBykey(String key) {
+        return null;
+    }
+
+    @Override
     public void save(Admin_Profile admin_profile) {
 
     }
@@ -44,10 +49,7 @@ public class Admin_ProfileDapImpl implements Admin_ProfileDao{
         return null;
     }
 
-    @Override
-    public Admin_Profile getAdmin_ProfileByAdmin_Profilename(String admin_profilename) {
-        return null;
-    }
+
 
     public SessionFactory getSessionFactory() {
         return sessionFactory;

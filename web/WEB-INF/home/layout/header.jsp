@@ -18,6 +18,19 @@
     <![endif]-->
     <script src="/resource/home/js/jquery-1.11.1.min.js"></script>
     <script src="/resource/home/js/bootstrap.min.js"></script>
+    <%
+        String css = request.getParameter("css");
+        if (null != css){
+            String[] csses = css.split(",");
+            for(String item : csses){
+                out.print("<link rel=\"stylesheet\" href=\"/resource/admin/css/"+item+"\" />");
+            }
+        }
 
+        String js = request.getParameter("js");
+        if (null != js){
+            out.print("<script src=\"/resource/home/js/" +js+".js\"></script>" );
+        }
+    %>
 </head>
 <body>

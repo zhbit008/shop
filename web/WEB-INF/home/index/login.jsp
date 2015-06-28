@@ -1,6 +1,9 @@
 ﻿<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<jsp:include page="/WEB-INF/home/layout/header.jsp"></jsp:include>
-<jsp:include page="/WEB-INF/home/layout/nav.jsp"></jsp:include>
+<jsp:include page="../layout/header.jsp">
+    <jsp:param name="title" value="登陆页面" />
+    <jsp:param name="js" value="login" />
+</jsp:include>
+<jsp:include page="../layout/nav.jsp" />
 <!-- 内容 -->
 <div class="container main" style="border: 1px solid #CCC;">
 	<div class="row">
@@ -34,4 +37,4 @@
 	</div>
 </div>
 
-<jsp:include page="/WEB-INF/home/layout/footer.jsp"></jsp:include>
+<jsp:include page="../layout/footer.jsp"/>
