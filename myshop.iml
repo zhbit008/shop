@@ -13,6 +13,17 @@
           <root url="file://$MODULE_DIR$/src" />
         </sourceRoots>
       </configuration>
+      <facet type="Struts2" name="Struts 2">
+        <configuration>
+          <fileset id="s2fileset" name="My Fileset " removed="false">
+            <file>file://$MODULE_DIR$/src/struct_common.xml</file>
+            <file>file://$MODULE_DIR$/src/struts.xml</file>
+            <file>file://$MODULE_DIR$/src/struts_admin.xml</file>
+            <file>file://$MODULE_DIR$/src/struts_home.xml</file>
+          </fileset>
+          <propertiesKeys disabled="false" />
+        </configuration>
+      </facet>
     </facet>
     <facet type="Spring" name="Spring">
       <configuration>
