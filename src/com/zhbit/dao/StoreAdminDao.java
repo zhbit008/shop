@@ -1,6 +1,6 @@
 package com.zhbit.dao;
 
-import com.zhbit.domain.Store_Admin;
+import com.zhbit.domain.StoreAdmin;
 
 import java.util.List;
 
@@ -8,10 +8,10 @@ import java.util.List;
  * Created by acer on 2015/6/27.
  */
 public interface StoreAdminDao {
-    public void save(Store_Admin store_admin);
-    public void update(Store_Admin store_admin);
-    public void delete(Integer store_adminId);
-    public Store_Admin getStore_Admin(Integer store_adminId);
-    public List<Store_Admin> getStore_AdminList();
-    public Store_Admin getStore_AdminByStoreId(String storeId);
+    public void save(StoreAdmin storeadmin);
+    public void update(StoreAdmin storeadmin);
+    public void delete(Integer storeadminId);
+    public StoreAdmin getStoreAdmin(Integer storeadminId);
+    public List<StoreAdmin> getStoreAdminList();
+    public StoreAdmin getStoreAdminByStoreId(String storeId);
 }

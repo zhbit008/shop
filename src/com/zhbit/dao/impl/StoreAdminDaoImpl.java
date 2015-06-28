@@ -1,7 +1,7 @@
 package com.zhbit.dao.impl;
 
 import com.zhbit.dao.StoreAdminDao;
-import com.zhbit.domain.Store_Admin;
+import com.zhbit.domain.StoreAdmin;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -12,41 +12,41 @@ import java.util.List;
 /**
  * Created by acer on 2015/6/27.
  */
-@Repository("store_Admindao")
+@Repository("storeAdmindao")
 public class StoreAdminDaoImpl implements StoreAdminDao {
     @Autowired
     @Qualifier("sessionFactory")
     private SessionFactory sessionFactory;
 
     @Override
-    public void save(Store_Admin store_admin) {
-        sessionFactory.getCurrentSession().save(store_admin);
+    public void save(StoreAdmin storeadmin) {
+        sessionFactory.getCurrentSession().save(storeadmin);
     }
 
     @Override
-    public void update(Store_Admin store_admin) {
-        sessionFactory.getCurrentSession().update(store_admin);
+    public void update(StoreAdmin storeadmin) {
+        sessionFactory.getCurrentSession().update(storeadmin);
     }
 
     @Override
     public void delete(Integer storeId) {
-        sessionFactory.getCurrentSession().delete(sessionFactory.getCurrentSession().load(Store_Admin.class,storeId));
+        sessionFactory.getCurrentSession().delete(sessionFactory.getCurrentSession().load(StoreAdmin.class,storeId));
     }
 
     @Override
-    public Store_Admin getStore_Admin(Integer storeId) {
-        return (Store_Admin)sessionFactory.getCurrentSession().get(Store_Admin.class,storeId);
+    public StoreAdmin getStoreAdmin(Integer storeId) {
+        return (StoreAdmin)sessionFactory.getCurrentSession().get(StoreAdmin.class,storeId);
     }
 
     @SuppressWarnings("unchecked")
     @Override
-    public List<Store_Admin> getStore_AdminList() {
-        return sessionFactory.getCurrentSession().createQuery("from Store_Admin").list();
+    public List<StoreAdmin> getStoreAdminList() {
+        return sessionFactory.getCurrentSession().createQuery("from StoreAdmin").list();
     }
 
     @Override
-    public Store_Admin getStore_AdminByStoreId(String storeId) {
-        return (Store_Admin)sessionFactory.getCurrentSession().createQuery("from Store_Admin where storeId=:storeId").setParameter("storeId",storeId).uniqueResult();
+    public StoreAdmin getStoreAdminByStoreId(String storeId) {
+        return (StoreAdmin)sessionFactory.getCurrentSession().createQuery("from StoreAdmin where storeId=:storeId").setParameter("storeId",storeId).uniqueResult();
 
     }
 

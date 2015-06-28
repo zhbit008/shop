@@ -1,6 +1,6 @@
 package com.zhbit.dao;
 
-import com.zhbit.domain.Customer_Profile;
+import com.zhbit.domain.CustomerProfile;
 
 import java.util.List;
 
@@ -8,10 +8,10 @@ import java.util.List;
  * Created by acer on 2015/6/27.
  */
 public interface CustomerProfileDao {
-    public void save(Customer_Profile customer_profile);
-    public void update(Customer_Profile customer_profile);
-    public void delete(Integer customer_profileId);
-    public Customer_Profile getCustomer_Profile(Integer customer_profileId);
-    public List<Customer_Profile> getCustomer_ProfileList();
-    public Customer_Profile getCustomer_ProfileyBykey(String key);
+    public void save(CustomerProfile customerprofile);
+    public void update(CustomerProfile customerprofile);
+    public void delete(Integer customerprofileId);
+    public CustomerProfile getCustomer_Profile(Integer customerprofileId);
+    public List<CustomerProfile> getCustomerProfileList();
+    public CustomerProfile getCustomerProfileyBykey(String key);
 }
