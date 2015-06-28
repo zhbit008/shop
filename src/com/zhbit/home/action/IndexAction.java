@@ -2,6 +2,7 @@ package com.zhbit.home.action;
 
 
 import com.opensymphony.xwork2.ActionSupport;
+import com.zhbit.common.action.JsonActionSupport;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
@@ -10,7 +11,7 @@ import org.springframework.stereotype.Controller;
  */
 @Controller("indexActionHome")
 @Scope("prototype")
-public class IndexAction extends ActionSupport{
+public class IndexAction extends JsonActionSupport {
 //    登录页面
     public String login(){return SUCCESS;}
 //    注册页面
