@@ -41,7 +41,7 @@
                 <!--<value>com/zhbit/domain/Favorite.hbm.xml</value>-->
                 <!--<value>com/zhbit/domain/Order.hbm.xml</value>-->
                 <!--<value>com/zhbit/domain/Order_Product.hbm.xml</value>-->
-                <!--<value>com/zhbit/domain/Product.hbm.xml</value>-->
+                <value>com/zhbit/domain/Product.hbm.xml</value>
                 <!--<value>com/zhbit/domain/Product_Cate.hbm.xml</value>-->
                 <!--<value>com/zhbit/domain/Profile.hbm.xml</value>-->
                 <!--<value>com/zhbit/domain/Role.hbm.xml</value>-->
