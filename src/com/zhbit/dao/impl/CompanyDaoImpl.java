@@ -23,36 +23,36 @@ public class CompanyDaoImpl implements CompanyDao {
         sessionFactory.getCurrentSession().save(company);
     }
 
-//    @Override
-//    public void update(Company company) {
-//        sessionFactory.getCurrentSession().update(company);
-//    }
-//
-//    @Override
-//    public void delete(Integer companyId) {
-//        sessionFactory.getCurrentSession().load(Company.class,companyId);
-//    }
-//
-//    @Override
-//    public Company getCompany(Integer companyId) {
-//        return (Company)sessionFactory.getCurrentSession().get(Company.class,companyId);
-//    }
-//
-//    @SuppressWarnings("unchecked")
-//    @Override
-//    public List<Company> getCompanyList() {
-//        return null;
-//    }
-//
-//    @Override
-//    public Company getCompanyByCompanyname(String companyname) {
-//        return null;
-//    }
-//
-//    public SessionFactory getSessionFactory() {
-//        return sessionFactory;
-//    }
-//    public void setSessionFactory(SessionFactory sessionFactory) {
-//        this.sessionFactory = sessionFactory;
-//    }
+    @Override
+    public void update(Company company) {
+        sessionFactory.getCurrentSession().update(company);
+    }
+
+    @Override
+    public void delete(Integer companyId) {
+        sessionFactory.getCurrentSession().load(Company.class,companyId);
+    }
+
+    @Override
+    public Company getCompany(Integer companyId) {
+        return (Company)sessionFactory.getCurrentSession().get(Company.class,companyId);
+    }
+
+    @SuppressWarnings("unchecked")
+    @Override
+    public List<Company> getCompanyList() {
+        return sessionFactory.getCurrentSession().createQuery("from Company").list();
+    }
+
+    @Override
+    public Company getCompanyByCompanyname(String companyname) {
+        return (Company)sessionFactory.getCurrentSession().createQuery("from Company where companyname=:companyname").setParameter("companyname",companyname).uniqueResult();
+    }
+
+    public SessionFactory getSessionFactory() {
+        return sessionFactory;
+    }
+    public void setSessionFactory(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
+    }
 }

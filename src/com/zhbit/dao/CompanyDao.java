@@ -8,9 +8,9 @@ import java.util.List;
  */
 public interface CompanyDao {
     public void save(Company company);
-//    public void update(Company company);
-//    public void delete(Integer companyId);
-//    public Company getCompany(Integer companyId);
-//    public List<Company> getCompanyList();
-//    public Company getCompanyByCompanyname(String companyname);
+    public void update(Company company);
+    public void delete(Integer companyId);
+    public Company getCompany(Integer companyId);
+    public List<Company> getCompanyList();
+    public Company getCompanyByCompanyname(String companyname);
 }

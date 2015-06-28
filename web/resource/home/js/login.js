@@ -16,19 +16,55 @@
 // 		console.log(oWin.height());
 // 	}).resize();
 // })
-function checkLogin(){
-			var userName = document.getElementById("userName").value;
-			var password = document.getElementById("Password").value;
-			var password2 = document.getElementById("Password2").value;
-			if (userName==null || userName==""){
-				alert("ÓÃ»§Ãû²»ÄÜÎª¿Õ£¡");
-				return false;
-			}else if (password==null || password==""){
-				alert("ÃÜÂë²»ÄÜÎª¿Õ£¡");
-				return false;
-			}else if(password != password2){
-				alert("ÃÜÂë²»Ò»Ñù");
-				return false;
-			}
-			return true;
-		}
+//function checkLogin(){
+//			var userName = document.getElementById("userName").value;
+//			var password = document.getElementById("Password").value;
+//			var password2 = document.getElementById("Password2").value;
+//			if (userName==null || userName==""){
+//				alert("ç”¨æˆ·åä¸èƒ½ä¸ºç©º");
+//				return false;
+//			}else if (password==null || password==""){
+//				alert("å¯†ç ä¸èƒ½ä¸ºç©º");
+//				return false;
+//			}else if(password != password2){
+//				alert("ç¡®è®¤å¯†ç ä¸æ­£ç¡®");
+//				return false;
+//			}
+//
+//			return true;
+//		}
+$(function(){
+    var u = $("#username");
+    var p = $("#password");
+    var c = $('#check');
+    $("#submit").on("click", function(){
+        var $this = $(this);
+        if ($this.is(".disable")){
+            return;
+        }
+        var pass =true;
+        if (u.val() == ''){
+            alert('ç”¨æˆ·åä¸èƒ½ä¸ºç©º');
+            pass = false;
+        }
+        if (p.val() == ''){
+            alert('å¯†ç ä¸èƒ½ä¸ºç©º');
+            pass = false;
+        }
+        $this.enable = function(enable){
+            $this[enable?'removeClass' : 'addClass']('disable');
+        };
+
+        var action = $this.parent('form').attr('action');
+
+        pass && $.post(action, { "customer.username": u.val(), "customer.password": p.val() },
+            function(json){
+                if (json.stat){
+                    location.href = json.url;
+                }
+                console.log(json);
+            });
+        return false;
+    });
+
+})

@@ -1,12 +1,12 @@
 package com.zhbit.admin.action;
 
+import com.zhbit.common.action.JsonActionSupport;
 import com.zhbit.domain.User;
 import com.zhbit.service.UserService;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
 import javax.annotation.Resource;
-import java.util.List;
 
 /**
  * Created by zhbitcxy.
@@ -35,7 +35,6 @@ public class UserAction extends JsonActionSupport {
         this.ajaxRedirect("/admin/center_index");
         return SUCCESS;
     }
-
 
     public User getAdmin() {
         return admin;

@@ -16,6 +16,5 @@
         <action name="*_*" class="{1}ActionHome" method="{2}">
             <result name="success">/WEB-INF/home/{1}/{2}.jsp</result>
         </action>
-
     </package>
 </struts>

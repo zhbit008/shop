@@ -1,6 +1,8 @@
 ﻿<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<jsp:include page="/WEB-INF/home/layout/header.jsp"></jsp:include>
-<jsp:include page="/WEB-INF/home/layout/nav.jsp"></jsp:include>
+<jsp:include page="../layout/header.jsp">
+    <jsp:param name="title" value="个人信息"/>
+</jsp:include>
+<jsp:include page="../layout/nav.jsp"/>
 
 <!-- 内容 -->
 
@@ -191,4 +193,4 @@
     </div>
 </div>
 
-<jsp:include page="/WEB-INF/home/layout/footer.jsp"></jsp:include>
+<jsp:include page="../layout/footer.jsp"/>

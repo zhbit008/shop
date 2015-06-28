@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="/struts-tags" prefix="s"%>
+<%@ page import="com.zhbit.domain.*, java.util.*" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -18,6 +19,19 @@
     <![endif]-->
     <script src="/resource/home/js/jquery-1.11.1.min.js"></script>
     <script src="/resource/home/js/bootstrap.min.js"></script>
+    <%
+        String css = request.getParameter("css");
+        if (null != css){
+            String[] csses = css.split(",");
+            for(String item : csses){
+                out.print("<link rel=\"stylesheet\" href=\"/resource/admin/css/"+item+"\" />");
+            }
+        }
 
+        String js = request.getParameter("js");
+        if (null != js){
+            out.print("<script src=\"/resource/home/js/" +js+".js\"></script>" );
+        }
+    %>
 </head>
 <body>

@@ -14,7 +14,8 @@
         <property name="saleprice" />
         <property name="decript" type ="string" length="255"/>
         <property name="saledate" type="timestamp"/>
-        <property name="cateId" column="cate_id" />
-
+        <property name="cateId"  />
+        <property name="title" type ="string" length="255"/>
+        <property name="love" type ="string" length="255"/>
     </class>
 </hibernate-mapping>
