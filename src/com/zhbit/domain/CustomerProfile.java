@@ -4,15 +4,15 @@ import java.io.Serializable;
 /**
  * Created by laujei1995-lz on 2015/6/26.
  */
-public class Customer_Profile implements Serializable{
+public class CustomerProfile implements Serializable{
     private Integer customerId;
     private String key;
     private String value;
 
-    public Customer_Profile() {
+    public CustomerProfile() {
     }
 
-    public Customer_Profile(Integer customerId, String key, String value) {
+    public CustomerProfile(Integer customerId, String key, String value) {
         this.customerId = customerId;
         this.key = key;
         this.value = value;

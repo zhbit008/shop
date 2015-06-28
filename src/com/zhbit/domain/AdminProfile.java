@@ -5,16 +5,16 @@ import java.io.Serializable;
 /**
  * Created by laujei1995-lz on 2015/6/26.
  */
-public class Admin_Profile implements Serializable{
+public class AdminProfile implements Serializable{
 
     private Integer adminId;
     private String key;
     private String value;
 
-    public Admin_Profile() {
+    public AdminProfile() {
     }
 
-    public Admin_Profile(Integer adminId, String key, String value) {
+    public AdminProfile(Integer adminId, String key, String value) {
         this.adminId = adminId;
         this.key = key;
         this.value = value;
