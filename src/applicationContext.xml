@@ -34,20 +34,20 @@
 		    <list>
 		        <!--<value>com/zhbit/domain/User.hbm.xml</value>-->
                 <!--<value>com/zhbit/domain/Admin.hbm.xml</value>-->
-                <!--<value>com/zhbit/domain/Admin_Profile.hbm.xml</value>-->
+                <!--<value>com/zhbit/domain/AdminProfile.hbm.xml</value>-->
                 <value>com/zhbit/domain/Company.hbm.xml</value>
                 <!--<value>com/zhbit/domain/Customer.hbm.xml</value>-->
-                <!--<value>com/zhbit/domain/Customer_Profile.hbm.xml</value>-->
+                <!--<value>com/zhbit/domain/CustomerProfile.hbm.xml</value>-->
                 <!--<value>com/zhbit/domain/Favorite.hbm.xml</value>-->
                 <!--<value>com/zhbit/domain/Order.hbm.xml</value>-->
-                <!--<value>com/zhbit/domain/Order_Product.hbm.xml</value>-->
+                <!--<value>com/zhbit/domain/OrderProduct.hbm.xml</value>-->
                 <!--<value>com/zhbit/domain/Product.hbm.xml</value>-->
-                <!--<value>com/zhbit/domain/Product_Cate.hbm.xml</value>-->
+                <!--<value>com/zhbit/domain/ProductCate.hbm.xml</value>-->
                 <!--<value>com/zhbit/domain/Profile.hbm.xml</value>-->
                 <!--<value>com/zhbit/domain/Role.hbm.xml</value>-->
                 <!--<value>com/zhbit/domain/ShoppingCart.hbm.xml</value>-->
                 <!--<value>com/zhbit/domain/Store.hbm.xml</value>-->
-                <!--<value>com/zhbit/domain/Store_Admin.hbm.xml</value>-->
+                <!--<value>com/zhbit/domain/StoreAdmin.hbm.xml</value>-->
 		    </list>
 		 </property>
 		 <property name="hibernateProperties">

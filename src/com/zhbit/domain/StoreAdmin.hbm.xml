@@ -3,7 +3,7 @@
         "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class name="com.zhbit.domain.Store_Admin" table="bit_store_admin">
+    <class name="com.zhbit.domain.StoreAdmin" table="bit_store_admin">
         <composite-id>
             <key-property name="storeId" column="store_id" />
             <key-property name="adminId" column="admin_id" />
