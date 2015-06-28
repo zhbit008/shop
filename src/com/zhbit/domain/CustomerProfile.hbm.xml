@@ -9,5 +9,6 @@
         </id>
         <property name="key" type ="string" length="255"/>
         <property name="value" type="string" length="255"/>
+
     </class>
 </hibernate-mapping>
