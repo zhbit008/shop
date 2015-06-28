@@ -11,7 +11,7 @@ public interface Admin_ProfileDao {
     public void save(Admin_Profile admin_profile);
     public void update(Admin_Profile admin_profile);
     public void delete(Integer admin_profileId);
-    public Admin_Profile getAdmin_Profile(Integer admin_profileId);
-    public List<Admin_Profile> getAdmin_ProfileList();
-    public Admin_Profile getAdmin_ProfileBykey(String key);
+    public Admin_Profile getAdminProfile(Integer admin_profileId);
+    public List<Admin_Profile> getAdminProfileList();
+    public Admin_Profile getAdminProfileBykey(String key);
 }

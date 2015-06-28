@@ -45,7 +45,7 @@
                 <div style="height: 15px;width: 1px;"></div>
                 <div class="row">
 
-                    <s:iterator value="#productList">
+                    <s:iterator value="#listProduct">
                         <div class="col-6 col-sm-6 col-lg-4 media" style="margin-top: 0px;">
                             <a class="pull-left" href="#">
                                 <img class="media-object" src="/resource/home/img/04.jpg" style="width: 300px;height: 170px;" alt="..."/>

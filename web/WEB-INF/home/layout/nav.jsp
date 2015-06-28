@@ -29,52 +29,53 @@
                           </div>
                      <button type="submit" class="btn btn-default">搜索</button>
                      </form>
-                     <s:if test="false">
-                     <ul class="nav navbar-nav navbar-right">
-                       <li><a href="/home/index_login.html">登录</a></li>
-                       <li><a href="/home/index_register.html">注册</a></li>
-                     </ul>
-                     </s:if>
-                     <s:elseif test="true">
-                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="/home/index_index.html">name</a></li>
 
-			            <li class="dropdown ">
-			            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">消息 <span class="badge">3</span><span class="caret"></span></a>
-                        <ul class="dropdown-menu dropdown-menu-left media-list" role="menu">
-                            <li class="media">
-                                <a class="pull-left" href="#">
-                                    <img class="media-object" src="/resource/home/img/try01.png"/>
-                                </a>
-                                <div class="media-body">
-                                    <h6 class="media-heading">订单号：1000</h6>
-                                    <div><a href=""><h6>去看看</h6></a></div>
-                                </div>
-                            </li>
-                            <li class="media">
-                                <a class="pull-left" href="#">
-                                    <img class="media-object" src="/resource/home/img/try01.png"/>
-                                </a>
-                                <div class="media-body">
-                                    <h6 class="media-heading">订单号：1000</h6>
-                                     <div><a href=""><h6>去看看</h6></a></div>
-                                </div>
-                            </li>
-                            <li class="divider"></li>
-                            <li class="media">
-                                <a class="pull-left" href="#">
-                                    <img class="media-object" src="/resource/home/img/try01.png"/>
-                                </a>
-                                <div class="media-body">
-                                    <h6 class="media-heading">订单号：1000</h6>
-                                    <div><a href=""><h6>去看看</h6></a></div>
-                                </div>
-                            </li>
-                          </ul>
-                        </li>
-                        <li><a href="#">退出</a></li>
-                      </ul>
-                     </s:elseif>
+                     <s:if test="true">
+                         <ul class="nav navbar-nav navbar-right">
+                             <li><a href="/home/index_index.html">${customer.username}</a></li>
+
+                             <li class="dropdown ">
+                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">消息 <span class="badge">3</span><span class="caret"></span></a>
+                                 <ul class="dropdown-menu dropdown-menu-left media-list" role="menu">
+                                     <li class="media">
+                                         <a class="pull-left" href="#">
+                                             <img class="media-object" src="/resource/home/img/try01.png"/>
+                                         </a>
+                                         <div class="media-body">
+                                             <h6 class="media-heading">订单号：1000</h6>
+                                             <div><a href=""><h6>去看看</h6></a></div>
+                                         </div>
+                                     </li>
+                                     <li class="media">
+                                         <a class="pull-left" href="#">
+                                             <img class="media-object" src="/resource/home/img/try01.png"/>
+                                         </a>
+                                         <div class="media-body">
+                                             <h6 class="media-heading">订单号：1000</h6>
+                                             <div><a href=""><h6>去看看</h6></a></div>
+                                         </div>
+                                     </li>
+                                     <li class="divider"></li>
+                                     <li class="media">
+                                         <a class="pull-left" href="#">
+                                             <img class="media-object" src="/resource/home/img/try01.png"/>
+                                         </a>
+                                         <div class="media-body">
+                                             <h6 class="media-heading">订单号：1000</h6>
+                                             <div><a href=""><h6>去看看</h6></a></div>
+                                         </div>
+                                     </li>
+                                 </ul>
+                             </li>
+                             <li><a href="#">退出</a></li>
+                         </ul>
+                     </s:if>
+                     <s:else>
+                         <ul class="nav navbar-nav navbar-right">
+                             <li><a href="/home/index_login.html">登录</a></li>
+                             <li><a href="/home/index_register.html">注册</a></li>
+                         </ul>
+                     </s:else>
 			    </div><!-- /.navbar-collapse -->
 			</div>
 		</div><!-- /.container-fluid -->
