@@ -62,6 +62,11 @@ public class ProductDaoImpl implements ProductDao {
         return cnt;
     }
 
+    @Override
+    public List<Product> getProductByCateId(int cateId) {
+        return sessionFactory.getCurrentSession().createQuery("from Product where cateId=:cateId").setParameter("cateId",cateId).list();
+    }
+
     public SessionFactory getSessionFactory() {
         return sessionFactory;
     }

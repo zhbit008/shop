@@ -3,6 +3,7 @@ package com.zhbit.home.action;
 
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
+import com.zhbit.common.action.JsonActionSupport;
 import com.zhbit.domain.Customer;
 import com.zhbit.domain.Product;
 import com.zhbit.service.ProductService;
@@ -42,8 +43,10 @@ public class IndexAction extends ActionSupport {
     public String massage(){return SUCCESS;}
 //    店铺页面
     public String shop(){return SUCCESS;}
-
-
+//    类型展示页
+    public String type(){return SUCCESS;}
+    //    成功展示页
+    public String success(){return SUCCESS;}
 
     public Customer getCustomer() {
         return customer;

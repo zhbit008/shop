@@ -1,73 +1,31 @@
-<%@ taglib prefix="s" uri="/struts-tags" %>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-    <div class="container">
+﻿<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<jsp:include page="../layout/header.jsp">
+    <jsp:param name="title" value="类型展示页"/>
+</jsp:include>
+<jsp:include page="../layout/nav.jsp"/>
+	<div class="container">
 		<div class="row">
 			<div class="col-sm-9">
-				<p class="pull-right visible-xs">
-					<button class="btn-xs btn btn-primary">Taggle</button>
-				</p>
-				<!-- 图片轮播开始 -->
-				<div id="myCarousel" class="carousel slide">
-			        <ol class="carousel-indicators">
-			           <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-			           <li data-target="#myCarousel" data-slide-to="1"></li>
-			           <li data-target="#myCarousel" data-slide-to="2"></li>
-			        </ol>
-			        <div class="carousel-inner">
-			            <div class="item active">
-			                <img src="/resource/home/img/01.jpg" alt=""/>
-			                <div class="carousel-caption">
-			                  <h4>圣托里尼卧房</h4>
-			                  <p>这般充满灵魂的简欧风尚家居设计，在典雅中呈现简洁清爽的视觉效果。</p>
-			                </div>
-			            </div>
-			            <div class="item">
-			                <img src="/resource/home/img/02.jpg" alt=""/>
-			                <div class="carousel-caption">
-			                   <h4>加勒比客餐厅</h4>
-			                   <p>大理石铺就的客餐厅，时尚，舒适，大气，别致！</p>
-			                </div>
-			            </div>
-			            <div class="item">
-			            	<img src="/resource/home/img/03.jpg" alt=""/>
-			                <div class="carousel-caption">
-			                  <h4>圣托里尼客厅</h4>
-			                  <p>圣托里尼是“碧蓝可酣饮的火山”，这也是对这款客厅家具最恰当的形容。</p>
-			                </div>
-			            </div>
-			      	</div>
+				<ol class="breadcrumb">
+				  <li><a href="#">首页</a></li>
+				  <li><a href="#">书桌</a></li>
+				  <li class="active">类型</li>
+				</ol>
 
-			        <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-			        <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
-		    	</div>
-				<!-- 图片轮播结束 -->
-                <center>
-                    <ul class="pagination pagination" id="page">
-
-                    </ul>
-                </center>
-                <!-- 内容开始 -->
-                <div style="height: 15px;width: 1px;"></div>
-                <div class="row">
-                    <div id="boxes">
-
-                    </div>
-                    <div class="col-6 col-sm-6 col-lg-4 media" style="margin-top: 0px;display: none;" id="template-box">
-                        <a class="pull-left" href="#">
-                            <img class="media-object" src="/resource/home/img/04.jpg" style="width: 300px;height: 170px;" alt="..."/>
+                <s:iterator value="listProduct">
+                    <div class="col-6 col-sm-6 col-lg-4 media" style="margin-top: 0px;">
+                        <a class="pull-left thumbnail" href="#">
+                            <img class="media-object" src="/resource/home/img/04.jpg" style="width: 251px;height: 176px;" alt="..."/>
                         </a>
                         <div class="media-body">
-                            <h4 class="media-heading"><span class="proname"></span> <span class="label label-warning">new</span></h4>
-                            <div><span class="title"></span></div>
+                            <h4 class="media-heading"><s:property value="proname"></s:property> 系列：十天精通CSS3						<span class="label label-warning">new</span></h4>
+                            <div><s:property value="title"></s:property></div>
                         </div>
                     </div>
-					<!-- 内容结束 -->
-
-				</div>
+                </s:iterator>
 			</div>
 			<div class="col-sm-3">
-			<!-- 右边栏开始 -->
-                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+				<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                     <div class="panel panel-default">
                         <div class="panel-heading" role="tab" id="headingOne">
                             <center>
@@ -169,9 +127,88 @@
                         </div>
                     </div>
                 </div>
-
-				<!-- 右边栏结束 -->
+                <br/>
+                <ul id="myTab" class="nav nav-tabs" role="tablist">
+					    <li class="active"><a href="#bulletin" role="tab" data-toggle="tab">热销排行</a></li>
+					    <li><a href="#rule" role="tab" data-toggle="tab">最近浏览</a></li>
+					</ul>
+                <div id="myTabContent" class="tab-content">
+						<div class="tab-pane active" id="bulletin" style="border:1px solid #CCC;">
+							<div class="media" style="margin-top: 5px;">		
+								<center>
+								<a class="pull-left" href="#">
+							        <img class="media-object" src="/resource/home/img/04.jpg" style="width: 80%;height: 170px;" alt="..."/>
+							  	</a>
+							  	<div class="media-body">
+							    	<h4 class="media-heading">系列：十天精通CSS3						<span class="label label-warning">fire</span></h4>
+							    	<div style="margin: 0 15px;">全方位深刻详解CSS3模块知识，经典案例分析，代码同步调试，让网页穿上绚丽装备！</div>
+							  	</div>
+							  	</center>
+							</div>
+							<div class="media" style="margin-top: 5px;">		
+								<center>
+								<a class="pull-left" href="#">
+							        <img class="media-object" src="/resource/home/img/04.jpg" style="width: 80%;height: 170px;" alt="..."/>
+							  	</a>
+							  	<div class="media-body">
+							    	<h4 class="media-heading">系列：十天精通CSS3						<span class="label label-warning">fire</span></h4>
+							    	<div style="margin: 0 15px;">全方位深刻详解CSS3模块知识，经典案例分析，代码同步调试，让网页穿上绚丽装备！</div>
+							  	</div>
+							  	</center>
+							</div>
+							<div class="media" style="margin-top: 5px;">		
+								<center>
+								<a class="pull-left" href="#">
+							        <img class="media-object" src="/resource/home/img/04.jpg" style="width: 80%;height: 170px;" alt="..."/>
+							  	</a>
+							  	<div class="media-body">
+							    	<h4 class="media-heading">系列：十天精通CSS3						<span class="label label-warning">fire</span></h4>
+							    	<div style="margin: 0 15px;">全方位深刻详解CSS3模块知识，经典案例分析，代码同步调试，让网页穿上绚丽装备！</div>
+							  	</div>
+							  	</center>
+							</div>						
+						</div>
+						<div class="tab-pane" id="rule" style="border:1px solid #CCC;">
+							<div class="media" style="margin-top: 5px;">		
+								<center>
+								<a class="pull-left" href="#">
+							        <img class="media-object" src="/resource/home/img/04.jpg" style="width: 80%;height: 170px;" alt="..."/>
+							  	</a>
+							  	<div class="media-body">
+							    	<h4 class="media-heading">系列：十天精通CSS3						<span class="label label-warning">fire</span></h4>
+							    	<div style="margin: 0 15px;">全方位深刻详解CSS3模块知识，经典案例分析，代码同步调试，让网页穿上绚丽装备！</div>
+							  	</div>
+							  	</center>
+							</div>
+							<div class="media" style="margin-top: 5px;">		
+								<center>
+								<a class="pull-left" href="#">
+							        <img class="media-object" src="/resource/home/img/04.jpg" style="width: 80%;height: 170px;" alt="..."/>
+							  	</a>
+							  	<div class="media-body">
+							    	<h4 class="media-heading">系列：十天精通CSS3						<span class="label label-warning">fire</span></h4>
+							    	<div style="margin: 0 15px;">全方位深刻详解CSS3模块知识，经典案例分析，代码同步调试，让网页穿上绚丽装备！</div>
+							  	</div>
+							  	</center>
+							</div>
+							<div class="media" style="margin-top: 5px;">		
+								<center>
+								<a class="pull-left" href="#">
+							        <img class="media-object" src="/resource/home/img/04.jpg" style="width: 80%;height: 170px;" alt="..."/>
+							  	</a>
+							  	<div class="media-body">
+							    	<h4 class="media-heading">系列：十天精通CSS3						<span class="label label-warning">fire</span></h4>
+							    	<div style="margin: 0 15px;">全方位深刻详解CSS3模块知识，经典案例分析，代码同步调试，让网页穿上绚丽装备！</div>
+							  	</div>
+							  	</center>
+							</div>
+						</div>
+				
+					</div>
+					<br/>
 			</div>
 		</div>
-		<br/>
 	</div>
+
+
+<jsp:include page="../layout/footer.jsp"/>

@@ -30,7 +30,7 @@
                      <button type="submit" class="btn btn-default">搜索</button>
                      </form>
 
-                     <s:if test="customer==null">
+                     <s:if test="#session.customer==null">
                          <ul class="nav navbar-nav navbar-right">
                              <li><a href="/home/index_login.html">登录</a></li>
                              <li><a href="/home/index_register.html">注册</a></li>
@@ -38,7 +38,7 @@
                      </s:if>
                      <s:else>
                          <ul class="nav navbar-nav navbar-right">
-                             <li><a href="/home/index_index.html"><s:property value="customer.getUsername()"></s:property> </a></li>
+                             <li><a href="/home/index_index.html"><s:property value="#session.customer.getNickname()"></s:property> </a></li>
 
                              <li class="dropdown ">
                                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">消息 <span class="badge">3</span><span class="caret"></span></a>
@@ -73,7 +73,7 @@
                                      </li>
                                  </ul>
                              </li>
-                             <li><a href="#">退出</a></li>
+                             <li><a href="/json/Home_customer_exitValidate">退出</a></li>
                          </ul>
                      </s:else>
 			    </div><!-- /.navbar-collapse -->

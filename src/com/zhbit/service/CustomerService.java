@@ -8,4 +8,6 @@ import com.zhbit.domain.Customer;
 public interface CustomerService {
     public Customer getCustomerByCustomername(String username);
     public Customer loginValidate(Customer customer);
+    public boolean registerValidate(String username, String password1 ,String password2);
+    public void saveCustomer(String username,String password);
 }

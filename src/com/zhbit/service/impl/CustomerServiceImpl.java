@@ -24,6 +24,12 @@ public class CustomerServiceImpl implements CustomerService{
     @Resource
     private CustomerDao customerDao;
 
+    @Override
+    public void saveCustomer(String username, String password) {
+        customer = new Customer(null,username,password,null);
+        customerDao.save(customer);
+    }
+
     /**
      * 验证客户登陆
      * @param customerOrg
@@ -37,6 +43,20 @@ public class CustomerServiceImpl implements CustomerService{
         if (null == customerObj) throw  new RuntimeException("4000");
         if (!customerObj.getPassword().equals(customerOrg.getPassword().trim())) throw new RuntimeException("4100");
         return customerObj;
+    }
+
+    /**
+     * 错误代码
+     * 5000 两次输入密码不相同
+     * 5100 用户名已注册
+     */
+    @Override
+    public boolean registerValidate(String username, String password1, String password2) {
+        if (!password1.equals(password2)) throw new RuntimeException("5000");
+
+        Customer customerObj =  customerDao.getCustomerByUsername(username.trim());
+        if (null != customerObj) throw  new RuntimeException("5100");
+        return true;
     }
 
     @Override

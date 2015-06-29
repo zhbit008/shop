@@ -24,5 +24,4 @@ public class CompanyServiceTest {
         companyService.addCompany(company);
     }
 
-
 }
