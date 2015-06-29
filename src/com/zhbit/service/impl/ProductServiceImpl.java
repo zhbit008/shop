@@ -55,11 +55,11 @@ public class ProductServiceImpl implements ProductService {
         return productDao.count();
     }
 
-    @Override
-    public List<Product> getProductByType(String type) {
-        ProductCate productCate =productCateDao.getProductCateByProductCatename(type);
-        return productDao.getProductByCateId(productCate.getId());
-    }
+//    @Override
+//    public List<Product> getProductByType(String type) {
+//        ProductCate productCate =productCateDao.getProductCateByProductCatename(type);
+//        return productDao.getProductByCateId(productCate.getId());
+//    }
 
     public ProductDao getProductDao() {
         return productDao;

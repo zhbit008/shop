@@ -1,2 +1,2 @@
-#boxes{height: 878px;}
+#boxes{min-height: 878px;}
 #boxes>div{height: 280px;overflow: hidden;}

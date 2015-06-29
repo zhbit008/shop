@@ -15,21 +15,21 @@
 			        </ol>
 			        <div class="carousel-inner">
 			            <div class="item active">
-			                <img src="/resource/home/img/01.jpg" alt=""/>
+			                <img src="/upload/lunbo/01.jpg" alt=""/>
 			                <div class="carousel-caption">
 			                  <h4>圣托里尼卧房</h4>
 			                  <p>这般充满灵魂的简欧风尚家居设计，在典雅中呈现简洁清爽的视觉效果。</p>
 			                </div>
 			            </div>
 			            <div class="item">
-			                <img src="/resource/home/img/02.jpg" alt=""/>
+			                <img src="/upload/lunbo/02.jpg" alt=""/>
 			                <div class="carousel-caption">
 			                   <h4>加勒比客餐厅</h4>
 			                   <p>大理石铺就的客餐厅，时尚，舒适，大气，别致！</p>
 			                </div>
 			            </div>
 			            <div class="item">
-			            	<img src="/resource/home/img/03.jpg" alt=""/>
+			            	<img src="/upload/lunbo/03.jpg" alt=""/>
 			                <div class="carousel-caption">
 			                  <h4>圣托里尼客厅</h4>
 			                  <p>圣托里尼是“碧蓝可酣饮的火山”，这也是对这款客厅家具最恰当的形容。</p>
