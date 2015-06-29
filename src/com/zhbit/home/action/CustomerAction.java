@@ -18,7 +18,9 @@ import java.util.Map;
 @Scope("prototype")
 public class CustomerAction extends JsonActionSupport {
     Customer customer;
-
+    String username;
+    String password1;
+    String password2;
     @Resource
     CustomerService customerService;
 
@@ -56,6 +58,20 @@ public class CustomerAction extends JsonActionSupport {
         return SUCCESS;
     }
 
+    public String registerValidate(){
+        Customer customerObj = null;
+        try{
+           if(customerService.registerValidate(username,password1,password2)){
+               customerService.saveCustomer(username,password1);
+           }
+        }catch (RuntimeException e){
+//          e.printStackTrace();
+            ajaxFail(Integer.parseInt(e.getMessage()));
+            return SUCCESS;
+        }
+        ajaxRedirect("/home/index_index");
+        return SUCCESS;
+    }
     public Customer getCustomer() {
         return customer;
     }
@@ -64,4 +80,35 @@ public class CustomerAction extends JsonActionSupport {
         this.customer = customer;
     }
 
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword1() {
+        return password1;
+    }
+
+    public void setPassword1(String password1) {
+        this.password1 = password1;
+    }
+
+    public String getPassword2() {
+        return password2;
+    }
+
+    public void setPassword2(String password2) {
+        this.password2 = password2;
+    }
+
+    public CustomerService getCustomerService() {
+        return customerService;
+    }
+
+    public void setCustomerService(CustomerService customerService) {
+        this.customerService = customerService;
+    }
 }

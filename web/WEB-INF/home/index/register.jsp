@@ -11,22 +11,22 @@
 			<img alt="100%x180" src="/resource/home/img/login.jpg" style=" width: 100%; display: block;"/>
 		</div>
 		<div class="col-md-4">
-			<form  id="register"  action="#"  method="post" role="form">
-				<br/>
+			<form  id="register"  action="/json/Home_customer_registerValidate"  method="post" role="form">
+				 <br/>
 				<label><h2><strong>会员注册：</strong></h2></label>
 				
 				 <div class="form-group">
 				    <label for="userName">用户名：</label>
-				    <input  class="form-control" id="userName" placeholder="请输入您的用户名"/>
-				  </div>
-				  <div class="form-group">
-				    <label for="Password1">密码：</label>
-				    <input type="password" class="form-control" id="Password" placeholder="请输入您的密码"/>
-				  </div>
-				   <div class="form-group">
-				    <label for="Password2">确定密码：</label>
-				    <input type="password" class="form-control" id="Password2" placeholder="请再次输入密码"/>
-				  </div>
+				    <input  class="form-control" id="userName" placeholder="请输入您的用户名" name="username"/>
+				 </div>
+                 <div class="form-group">
+                    <label for="Password1">密码：</label>
+                    <input type="password" class="form-control" id="Password1" placeholder="请输入您的密码" name="password1"/>
+                 </div>
+                 <div class="form-group">
+                    <label for="Password2">确定密码：</label>
+                    <input type="password" class="form-control" id="Password2" placeholder="请再次输入密码" name="password2"/>
+                 </div>
 
                 <div class="radio-inline">
                     <input type="radio" name="login" id="customer" value="customer"/>客户
@@ -35,6 +35,7 @@
                     <!-- 	shop manager==Smanager -->
                     <input type="radio" name="login" id="Smanager" value="Smanager"/>商家
                 </div>
+
                <center><h6>
                <label><input type="checkbox"/></label>
                 请阅读《艾家网用户协议》</h6></center>
