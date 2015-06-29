@@ -25,10 +25,16 @@ public class CustomerAction extends JsonActionSupport {
     CustomerService customerService;
 
     /**
+     * 客户主页
+     * @return
+     */
+    public String index(){
+        return SUCCESS;
+    }
+    /**
      * 客户登陆验证
      * @return
      */
-//    登录
     public String loginValidate(){
         Customer customerObj = null;
         try{
@@ -42,22 +48,17 @@ public class CustomerAction extends JsonActionSupport {
         ActionContext actionContext = ActionContext.getContext();
         Map session = actionContext.getSession();
         session.put("customer", customerObj);
-//        session.put("nickname", "ok");
 
         //跳转到首页
         ajaxRedirect("/home/index_index");
 
         return SUCCESS;
     }
-//    退出
-    public String exitValidate(){
-        ActionContext actionContext = ActionContext.getContext();
-        Map session = actionContext.getSession();
-        session.put("customer", null);
-        ajaxRedirect("/home/index_index");
-        return SUCCESS;
-    }
-//  注册
+
+    /**
+     * 注册验证
+     * @return
+     */
     public String registerValidate(){
         Customer customerObj = null;
         try{
@@ -72,6 +73,23 @@ public class CustomerAction extends JsonActionSupport {
         ajaxRedirect("/home/index_index");
         return SUCCESS;
     }
+
+    /**
+     * 注销登陆
+     * @return
+     */
+    public String exitHandle(){
+        ActionContext actionContext = ActionContext.getContext();
+        Map session = actionContext.getSession();
+        session.put("customer", null);
+//        TODO session注销不完整
+        return LOGIN;
+    }
+
+    /**
+     * getter and setter
+     * @return
+     */
     public Customer getCustomer() {
         return customer;
     }

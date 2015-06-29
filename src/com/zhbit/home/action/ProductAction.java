@@ -1,6 +1,5 @@
 package com.zhbit.home.action;
 
-import com.opensymphony.xwork2.ActionSupport;
 import com.zhbit.common.action.JsonActionSupport;
 import com.zhbit.domain.Product;
 import com.zhbit.service.ProductService;
@@ -14,12 +13,12 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created by acer on 2015/6/28.
+ * Created by zhbitcxy on 2015/6/29.
  */
 @Controller("productActionHome")
 @Scope("prototype")
 public class ProductAction extends JsonActionSupport {
-    private Product product;
+    private  Product product;
     private  List<Product> listProduct;
     private  int p;
     private  int num;
@@ -44,18 +43,17 @@ public class ProductAction extends JsonActionSupport {
         ajaxSuccess(data);
         return SUCCESS;
     }
-    public String productGetAll(){
-        listProduct = productService.getAllProduct();
-        System.out.println(listProduct.size());
-        return SUCCESS;
-    }
 
-    public String productGetAll2(int pageNo,int pageSize){
-//        listProduct = productService.getSomeProduct(pageNo,pageSize);
-        return SUCCESS;
-    }
+    /**
+     * 商品介绍页面
+     * @return
+     */
+    public String show(){return SUCCESS;}
 
 
+    /**
+     *  getter and setter
+     */
     public void setP(int p) {
         this.p = p;
     }

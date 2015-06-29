@@ -6,7 +6,7 @@ $(function(){
     var $boxes = $('#boxes');
     var $box = $("#template-box");
     $box.removeAttr('id');
-    var $page = $("#page");
+    var $page = $('#page');
     var page = {
         url: '/json/Home_product_getPage',
         data: {'p':1,'num':10},
@@ -20,13 +20,14 @@ $(function(){
             //重新生成物品
             for(var i = 0; i < list.length; i++){
                 var $item = $box.clone(true);
-//                $item.css('display', 'block');
                 $item.find('.proname').text(list[i].proname);
                 $item.find('.title').text(list[i].title);
+                $item.find('.url').attr('href','/home/product_show.html?productId='+list[i].id);
+                $item.find('.img').attr('src', '/upload/product/'+list[i].image+'.jpg');
                 $boxes.append($item);
             }
-
-            $boxes.children().show(1200);
+            //显示特效
+            $boxes.children().slideDown(800);
             //删除分页
             $page.empty();
             //重新生成分页
