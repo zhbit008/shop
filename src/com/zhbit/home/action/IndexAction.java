@@ -48,7 +48,8 @@ public class IndexAction extends ActionSupport {
     public String shop(){return SUCCESS;}
 //    类型展示页
     public String type(){return SUCCESS;}
-
+    //    成功展示页
+    public String success(){return SUCCESS;}
 
     public Customer getCustomer() {
         return customer;

@@ -13,9 +13,8 @@
 			</div>
 			<div class="col-sm-12"><h4><strong>
                 <ol class="breadcrumb">
-                <li><a href="#">首页</a></li>
-                <li><a href="#">书桌</a></li>
-                <li class="active">类型</li>
+                <li><a href="/home/index_index.html">首页</a></li>
+                <li class="active"><a href="#">书桌</a></li>
             </ol></strong></h4></div>
 			<div class="col-sm-12">
 				<a href="#" class="thumbnail" style="border: 0;">

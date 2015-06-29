@@ -1,7 +1,9 @@
 package com.zhbit.service.impl;
 
+import com.zhbit.dao.ProductCateDao;
 import com.zhbit.dao.ProductDao;
 import com.zhbit.domain.Product;
+import com.zhbit.domain.ProductCate;
 import com.zhbit.service.ProductService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -30,6 +32,8 @@ public class ProductServiceImpl implements ProductService {
      */
     @Resource
     private ProductDao productDao;
+    @Resource
+    private ProductCateDao productCateDao;
 
     @Override
     public List<Product> getAllProduct() {
@@ -44,6 +48,12 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public List<Product> getSomeProduct(int pageNo, int pageSize) {
         return productDao.getSomeProduct(pageNo,pageSize);
+    }
+
+    @Override
+    public List<Product> getProductByType(String type) {
+        ProductCate productCate =productCateDao.getProductCateByProductCatename(type);
+        return productDao.getProductByCateId(productCate.getId());
     }
 
     public ProductDao getProductDao() {

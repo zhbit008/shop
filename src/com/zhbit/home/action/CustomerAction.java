@@ -28,7 +28,7 @@ public class CustomerAction extends JsonActionSupport {
      * 客户登陆验证
      * @return
      */
-
+//    登录
     public String loginValidate(){
         Customer customerObj = null;
         try{
@@ -49,7 +49,7 @@ public class CustomerAction extends JsonActionSupport {
 
         return SUCCESS;
     }
-
+//    退出
     public String exitValidate(){
         ActionContext actionContext = ActionContext.getContext();
         Map session = actionContext.getSession();
@@ -57,7 +57,7 @@ public class CustomerAction extends JsonActionSupport {
         ajaxRedirect("/home/index_index");
         return SUCCESS;
     }
-
+//  注册
     public String registerValidate(){
         Customer customerObj = null;
         try{

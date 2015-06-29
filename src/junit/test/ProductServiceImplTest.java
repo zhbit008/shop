@@ -42,4 +42,9 @@ public class ProductServiceImplTest {
             System.out.println(product.getId());
         }
     }
+
+    @Test
+    public void testGetProductByType() throws Exception{
+//        productService.getProductByType();
+    }
 }
