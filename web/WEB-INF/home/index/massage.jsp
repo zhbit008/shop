@@ -1,6 +1,7 @@
 ﻿<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <jsp:include page="../layout/header.jsp">
     <jsp:param name="title" value="个人信息"/>
+    <jsp:param name="js" value=""/>
 </jsp:include>
 <jsp:include page="../layout/nav.jsp"/>
 
@@ -15,8 +16,8 @@
                 </div>
                 <div class="col-sm-10">
                     <ul class="nav nav-tabs">
-                        <li><a href="##">所有订单</a></li>
-                        <li><a href="##">个人资料修改</a></li>
+                        <li><a href="##" id="orderOnclick">所有订单</a></li>
+                        <li><a href="##" id="massageOnclick">个人资料修改</a></li>
                         <li><a href="##">收藏夹</a></li>
                     </ul>
                 </div>
@@ -44,7 +45,7 @@
                 <br/>
             </div>
             <!-- /*个人资料修改*/ -->
-            <div class="col-sm-9 col-sm-offset-1" style="background: #FFF;display: none;">
+            <div class="col-sm-9 col-sm-offset-1" style="background: #FFF;display: none;" id="massage">
                 <br/>
                 <form role="form" action="#" class="form-horizontal">
                     <div class="form-group">
@@ -121,7 +122,7 @@
 
             <!-- /*个人订单*/ -->
 
-            <div class="col-sm-9 col-sm-offset-1" style="background: #FFF;">
+            <div class="col-sm-9 col-sm-offset-1" style="background: #FFF;" id="order">
                 <br/>
                 <div class="panel panel-default">
                     <div class="panel-heading">

@@ -23,6 +23,7 @@ $(function(){
 //                $item.css('display', 'block');
                 $item.find('.proname').text(list[i].proname);
                 $item.find('.title').text(list[i].title);
+                $item.find('.url').attr('href','/home/index_show.html?productId='+list[i].id);
                 $boxes.append($item);
             }
 

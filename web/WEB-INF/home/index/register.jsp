@@ -30,7 +30,7 @@
                  </div>
 
                 <div class="radio-inline">
-                    <input type="radio" name="login" id="customer" value="customer"/>客户
+                    <input type="radio" name="login" id="customer" value="customer" checked/>客户
                 </div>
                 <div class="radio-inline">
                     <!-- 	shop manager==Smanager -->

@@ -53,7 +53,7 @@
 
                     </div>
                     <div class="col-6 col-sm-6 col-lg-4 media" style="margin-top: 0px;display: none;" id="template-box">
-                        <a class="pull-left" href="#">
+                        <a class="pull-left url" href="#" >
                             <img class="media-object" src="/resource/home/img/04.jpg" style="width: 300px;height: 170px;" alt="..."/>
                         </a>
                         <div class="media-body">

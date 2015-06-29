@@ -38,7 +38,7 @@
                      </s:if>
                      <s:else>
                          <ul class="nav navbar-nav navbar-right">
-                             <li><a href="/home/index_index.html"><s:property value="#session.customer.getNickname()"></s:property> </a></li>
+                             <li><a href="/home/index_massage.html?id=#session.customer.getId()"><s:property value="#session.customer.getNickname()"></s:property> </a></li>
 
                              <li class="dropdown ">
                                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">消息 <span class="badge">3</span><span class="caret"></span></a>
@@ -73,7 +73,7 @@
                                      </li>
                                  </ul>
                              </li>
-                             <li><a href="/json/Home_customer_exitValidate">退出</a></li>
+                             <li><a href="/json/Home_customer_exitHandle">退出</a></li>
                          </ul>
                      </s:else>
 			    </div><!-- /.navbar-collapse -->

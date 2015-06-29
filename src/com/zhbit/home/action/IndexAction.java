@@ -26,6 +26,8 @@ public class IndexAction extends ActionSupport {
     private Customer customer;
     private List<Product> listProduct;
     private String pageShow;
+    private String productId;
+    private Integer id;
 //    登录页面
     public String login(){return SUCCESS;}
 
@@ -36,11 +38,17 @@ public class IndexAction extends ActionSupport {
         return SUCCESS;
     }
 //    物品介绍页面
-    public String show(){return SUCCESS;}
+    public String show(){
+        System.out.println(productId);
+        return SUCCESS;
+    }
 //    支付页面
     public String pay(){return SUCCESS;}
 //    个人信息页面
-    public String massage(){return SUCCESS;}
+    public String massage(){
+        System.out.println(id);
+        return SUCCESS;
+    }
 //    店铺页面
     public String shop(){return SUCCESS;}
 //    类型展示页
@@ -78,5 +86,21 @@ public class IndexAction extends ActionSupport {
 
     public void setPageShow(String pageShow) {
         this.pageShow = pageShow;
+    }
+
+    public String getProductId() {
+        return productId;
+    }
+
+    public void setProductId(String productId) {
+        this.productId = productId;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 }

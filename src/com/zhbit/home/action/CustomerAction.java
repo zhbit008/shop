@@ -3,6 +3,7 @@ package com.zhbit.home.action;
 import com.opensymphony.xwork2.ActionContext;
 import com.zhbit.common.action.JsonActionSupport;
 import com.zhbit.domain.Customer;
+import com.zhbit.service.AdminService;
 import com.zhbit.service.CustomerService;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
@@ -21,9 +22,11 @@ public class CustomerAction extends JsonActionSupport {
     String username;
     String password1;
     String password2;
+    private String cate;
     @Resource
     CustomerService customerService;
-
+    @Resource
+    AdminService adminService;
     /**
      * 客户登陆验证
      * @return
@@ -50,7 +53,7 @@ public class CustomerAction extends JsonActionSupport {
         return SUCCESS;
     }
 //    退出
-    public String exitValidate(){
+    public String exitHandle(){
         ActionContext actionContext = ActionContext.getContext();
         Map session = actionContext.getSession();
         session.put("customer", null);
@@ -59,11 +62,17 @@ public class CustomerAction extends JsonActionSupport {
     }
 //  注册
     public String registerValidate(){
-        Customer customerObj = null;
         try{
-           if(customerService.registerValidate(username,password1,password2)){
-               customerService.saveCustomer(username,password1);
-           }
+            if(cate.equals("Smanager")){
+                if (adminService.registerValidate(username,password1,password2)){
+                    adminService.save(username,password1);
+                }
+
+            }else{
+                if(customerService.registerValidate(username,password1,password2)){
+                  customerService.save(username,password1);
+                }
+            }
         }catch (RuntimeException e){
 //          e.printStackTrace();
             ajaxFail(Integer.parseInt(e.getMessage()));
@@ -110,5 +119,13 @@ public class CustomerAction extends JsonActionSupport {
 
     public void setCustomerService(CustomerService customerService) {
         this.customerService = customerService;
+    }
+
+    public String getCate() {
+        return cate;
+    }
+
+    public void setCate(String cate) {
+        this.cate = cate;
     }
 }
