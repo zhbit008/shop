@@ -7,8 +7,8 @@
 				<p class="pull-right visible-xs">
 					<button class="btn-xs btn btn-primary">Taggle</button>
 				</p>
-                <ol class="breadcrumb">
-                    <li><a href="#">首页</a></li>
+                <ol class="breadcrumb" id="breadcrumb" style="display: none;">
+                    <li><a href="0">所有</a></li>
                     <li><a href="#">书桌</a></li>
                     <li class="active">类型</li>
                 </ol>
@@ -49,7 +49,6 @@
 				<!-- 图片轮播结束 -->
                 <center>
                     <ul class="pagination pagination" id="page">
-
                     </ul>
                 </center>
                 <!-- 内容开始 -->
@@ -59,11 +58,13 @@
 
                     </div>
                     <div class="col-6 col-sm-6 col-lg-4 media" style="margin-top: 0px;display: none;" id="template-box">
+                        <span class="label label-warning">分类名称</span>
                         <a class="pull-left url" href="#" >
+
                             <img class="media-object img" src="" style="width: 300px;height: 170px;" alt="..."/>
                         </a>
                         <div class="media-body">
-                            <h4 class="media-heading"><span class="proname"></span> <span class="label label-warning">new</span></h4>
+                            <h4 class="media-heading"><span class="proname"></span> </h4>
                             <div><span class="title"></span></div>
                         </div>
                     </div>
@@ -79,7 +80,7 @@
                         <div class="panel-heading" role="tab" id="productCate<s:property value="#item.id" />">
                             <center>
                             <h4 class="panel-title ">
-                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#productCate<s:property value="#item.id" />sss" aria-expanded="true" aria-controls="productCate<s:property value="#item.id" />sss">
+                                <a role="button" data-id="<s:property value="#item.id" />" data-toggle="collapse" data-parent="#accordion" href="#productCate<s:property value="#item.id" />sss" aria-expanded="true" aria-controls="productCate<s:property value="#item.id" />sss">
                                     <s:property value="#item.catename" />
                                 </a>
                             </h4>

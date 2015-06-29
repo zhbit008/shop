@@ -34,7 +34,8 @@ public class ProductAction extends JsonActionSupport {
         //获取分页数据
         listProduct = productService.getPage(p,num, cid);
         //实例化分页
-        Page page = new Page(productService.count(), p, num);
+        Page page = new Page(productService.count(cid), p, num);
+//        TODO 获取一个分类及其子分类下面所有商品
         //封装返回数据
         Map<String, Object> data = new HashMap();
         data.put("page",  page.show());

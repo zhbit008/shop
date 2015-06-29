@@ -62,8 +62,13 @@ public class ProductDaoImpl implements ProductDao {
     }
 
     @Override
-    public long count() {
-        Long cnt = (Long)sessionFactory.getCurrentSession().createQuery("select count(*) from Product").uniqueResult();
+    public long count(int cid) {
+        Long cnt;
+        if (cid == 0){
+            cnt = (Long)sessionFactory.getCurrentSession().createQuery("select count(*) from Product").uniqueResult();
+        }else{
+            cnt = (Long)sessionFactory.getCurrentSession().createQuery("select count(*) from Product where cateId = :cateId").setParameter("cateId", cid).uniqueResult();
+        }
         return cnt;
     }
 

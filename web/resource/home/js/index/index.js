@@ -9,7 +9,7 @@ $(function(){
     var $page = $('#page');
     var page = {
         url: '/ajax/Home_product_getPage',
-        data: {'p':1,'num':10},
+        data: {'p':1,'num':9, 'cid': 0},
         success : function(json){
             console.log(json);
             var list = json.data.list;
@@ -33,23 +33,57 @@ $(function(){
             //重新生成分页
             $page.append(page);
         },
-        get : function (p, num) {
+        //p为第几页，cid为分类id
+        get : function (p, cid, num) {
             var _this = this;
+            _this.data.cid = cid || _this.data.cid;
+            _this.data.num = num || _this.data.num;
             _this.data.p = p;
-            _this.data.num = num;
             var _url = _this.url;
             var _data = _this.data;
             $.post(_url,_data ,_this.success);
         }
     };
+    /**
+     * 异步分页
+     */
     $("#page").on("click","a", function(){
         var $this = $(this);
         if ($this.parent().is('.active')) return false;
 
-        page.get($this.attr('href'), 9);
+        page.get($this.attr('href'));
         return false;
     });
-    page.get(1, 9);
+    //初始化分页
+    page.get(1, 0);
+
+    var $myCarousel = $('#myCarousel');
+    var $breadcrumb = $('#breadcrumb');
+    /**
+     * 右侧分类展示
+     */
+    $(".nav-tabs a").on('click', function(){
+        //显示导航条
+        $breadcrumb.show();
+        var $this = $(this);
+        //隐藏图片轮播
+        $myCarousel.hide();
+        page.get(1, $this.attr('href'));
+        //第三项导航信息更新
+        $breadcrumb.find('li.active').text($this.text());
+        //第二项导航信息更新
+        $breadcrumb.find('a').eq(1).text($this.closest('.panel').find('a[role="button"]').text());
+        $breadcrumb.find('a').eq(1).attr('href',$this.closest('.panel').find('a[role="button"]').attr('data-id'));
+//        TODO 这里应该写成支持无限极
+        return false;
+    });
+    //导航条分类展示
+    $breadcrumb.find('a').on('click',function(){
+        var $this = $(this);
+        page.get(1, $this.attr('href'));
+        return false;
+    })
+
 });
 
 

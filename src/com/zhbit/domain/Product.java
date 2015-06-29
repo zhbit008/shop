@@ -16,6 +16,7 @@ public class Product implements Serializable {
     private String decript;
     private Date saledate;
     private Integer cateId;
+    private Integer storeId;
     private String title;
     private String love;
 
@@ -122,5 +123,13 @@ public class Product implements Serializable {
 
     public void setCateId(Integer cateId) {
         this.cateId = cateId;
+    }
+
+    public Integer getStoreId() {
+        return storeId;
+    }
+
+    public void setStoreId(Integer storeId) {
+        this.storeId = storeId;
     }
 }

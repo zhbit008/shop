@@ -37,8 +37,8 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public long count() {
-        return productDao.count();
+    public long count(int cid) {
+         return productDao.count(cid);
     }
 
     /**
