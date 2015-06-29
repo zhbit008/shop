@@ -15,5 +15,6 @@ public interface ProductDao {
     public List<Product> getProductList();
     public Product getProductByProductname(String proname);
     public List<Product> getSomeProduct(int pageNo,int pageSize);
+    public long count();
     public List<Product> getProductByCateId(int cateId);
 }

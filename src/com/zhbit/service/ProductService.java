@@ -10,6 +10,6 @@ import java.util.List;
 public interface ProductService {
     public List<Product> getAllProduct();
     public Product getProduct(String proname);
-    public List<Product> getSomeProduct(int pageNo,int pageSize);
-    public List<Product> getProductByType(String tpye);
+    public List<Product> getPage(int pageNo,int pageSize);
+    public long count();
 }

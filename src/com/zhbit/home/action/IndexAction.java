@@ -7,6 +7,7 @@ import com.zhbit.common.action.JsonActionSupport;
 import com.zhbit.domain.Customer;
 import com.zhbit.domain.Product;
 import com.zhbit.service.ProductService;
+import com.zhbit.utils.Page;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
@@ -24,6 +25,7 @@ public class IndexAction extends ActionSupport {
     private ProductService productService;
     private Customer customer;
     private List<Product> listProduct;
+    private String pageShow;
 //    登录页面
     public String login(){return SUCCESS;}
 
@@ -31,11 +33,6 @@ public class IndexAction extends ActionSupport {
     public String register(){return SUCCESS;}
 //    主页页面
     public String index(){
-//        ActionContext actionContext = ActionContext.getContext();
-//        Map session = actionContext.getSession();
-//        customer = (Customer)session.get("customer");
-        listProduct = productService.getSomeProduct(1,6);
-        System.out.println(listProduct.size());
         return SUCCESS;
     }
 //    物品介绍页面
@@ -73,5 +70,13 @@ public class IndexAction extends ActionSupport {
 
     public void setListProduct(List<Product> listProduct) {
         this.listProduct = listProduct;
+    }
+
+    public String getPageShow() {
+        return pageShow;
+    }
+
+    public void setPageShow(String pageShow) {
+        this.pageShow = pageShow;
     }
 }

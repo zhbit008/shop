@@ -41,33 +41,28 @@
 			        <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
 		    	</div>
 				<!-- 图片轮播结束 -->
-				<!-- 内容开始 -->
+                <center>
+                    <ul class="pagination pagination" id="page">
+
+                    </ul>
+                </center>
+                <!-- 内容开始 -->
                 <div style="height: 15px;width: 1px;"></div>
                 <div class="row">
-                    <s:iterator value="listProduct">
-                        <div class="col-6 col-sm-6 col-lg-4 media" style="margin-top: 0px;">
-                            <a class="pull-left thumbnail" href="#">
-                                <img class="media-object" src="/resource/home/img/04.jpg" alt="..."/>
-                            </a>
-                            <div class="media-body">
-                                <h4 class="media-heading"><s:property value="proname"></s:property> 系列：十天精通CSS3						<span class="label label-warning">new</span></h4>
-                                <div><s:property value="title"></s:property></div>
-                            </div>
-                        </div>
-                    </s:iterator>
+                    <div id="boxes">
 
+                    </div>
+                    <div class="col-6 col-sm-6 col-lg-4 media" style="margin-top: 0px;display: none;" id="template-box">
+                        <a class="pull-left" href="#">
+                            <img class="media-object" src="/resource/home/img/04.jpg" style="width: 300px;height: 170px;" alt="..."/>
+                        </a>
+                        <div class="media-body">
+                            <h4 class="media-heading"><span class="proname"></span> <span class="label label-warning">new</span></h4>
+                            <div><span class="title"></span></div>
+                        </div>
+                    </div>
 					<!-- 内容结束 -->
-					<center>
-					<ul class="pagination pagination">
-					  <li><a href="#">&laquo;第一页</a></li>
-					  <li class="active"><a href="#">1</a></li>
-					  <li><a href="#">2</a></li>
-					  <li ><a href="#">3</a></li>
-					  <li><a href="#">4</a></li>
-					  <li class="disabled"><a href="#">5</a></li>
-					  <li ><a href="#">最后一页&raquo;</a></li>
-					</ul>  
-					</center> 
+
 				</div>
 			</div>
 			<div class="col-sm-3">
