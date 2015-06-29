@@ -40,7 +40,7 @@ $(function(){
     $("#submit").on("click", function(){
         var $this = $(this);
         if ($this.is(".disable")){
-            return;
+            return false;
         }
         var pass =true;
         if (u.val() == ''){
@@ -56,12 +56,13 @@ $(function(){
         };
 
         var action = $this.parent('form').attr('action');
-
+        $this.enable(false);
         pass && $.post(action, { "customer.username": u.val(), "customer.password": p.val() },
             function(json){
                 if (json.stat){
                     location.href = json.url;
                 }
+                $this.enable(true);
                 console.log(json);
             });
         return false;

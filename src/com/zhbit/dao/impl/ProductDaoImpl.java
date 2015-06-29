@@ -56,6 +56,12 @@ public class ProductDaoImpl implements ProductDao {
         return sessionFactory.getCurrentSession().createQuery("from Product").setFirstResult((pageNo-1)*pageSize).setMaxResults(pageSize).list();
     }
 
+    @Override
+    public long count() {
+        Long cnt = (Long)sessionFactory.getCurrentSession().createQuery("select count(*) from Product").uniqueResult();
+        return cnt;
+    }
+
     public SessionFactory getSessionFactory() {
         return sessionFactory;
     }

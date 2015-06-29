@@ -42,8 +42,13 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public List<Product> getSomeProduct(int pageNo, int pageSize) {
+    public List<Product> getPage(int pageNo, int pageSize) {
         return productDao.getSomeProduct(pageNo,pageSize);
+    }
+
+    @Override
+    public long count() {
+        return productDao.count();
     }
 
     public ProductDao getProductDao() {

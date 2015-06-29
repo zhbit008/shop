@@ -20,6 +20,9 @@
             <file>file://$MODULE_DIR$/src/struts.xml</file>
             <file>file://$MODULE_DIR$/src/struts_admin.xml</file>
             <file>file://$MODULE_DIR$/src/struts_home.xml</file>
+            <file>jar://$MODULE_DIR$/web/WEB-INF/lib/struts2-core-2.2.3.jar!/struts-default.xml</file>
+            <file>jar://$MODULE_DIR$/web/WEB-INF/lib/struts2-json-plugin-2.2.3.jar!/struts-plugin.xml</file>
+            <file>jar://$MODULE_DIR$/web/WEB-INF/lib/struts2-spring-plugin-2.2.3.jar!/struts-plugin.xml</file>
           </fileset>
           <propertiesKeys disabled="false" />
         </configuration>

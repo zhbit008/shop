@@ -24,7 +24,7 @@
         if (null != css){
             String[] csses = css.split(",");
             for(String item : csses){
-                out.print("<link rel=\"stylesheet\" href=\"/resource/admin/css/"+item+"\" />");
+                out.print("<link rel=\"stylesheet\" href=\"/resource/home/css/"+item+".css\" />");
             }
         }
 
