@@ -21,7 +21,6 @@
                         <li><a href="#">收藏夹</a></li>
                         <li><a href="/home/index_pay.html">购物车</a></li>
                         <li><a href="#">联系客服</a></li>
-
                      </ul>
                      <form class="navbar-form navbar-left" role="search">
                           <div class="form-group">
@@ -73,7 +72,7 @@
                                      </li>
                                  </ul>
                              </li>
-                             <li><a href="/home/customer_exitHandle">退出</a></li>
+                             <li><a href="/home/system_exitHandle">退出</a></li>
                          </ul>
                      </s:else>
 			    </div><!-- /.navbar-collapse -->

@@ -11,6 +11,6 @@ import java.util.List;
 public interface ProductService {
     public List<Product> getProductList();
     public Product getProduct(String proname);
-    public List<Product> getPage(int pageNo,int pageSize);
+    public List<Product> getPage(int pageNo,int pageSize, int cip);
     public long count();
 }

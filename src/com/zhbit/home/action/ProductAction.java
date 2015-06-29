@@ -22,7 +22,7 @@ public class ProductAction extends JsonActionSupport {
     private  List<Product> listProduct;
     private  int p;
     private  int num;
-
+    private int cid = 0;
     @Resource
     private ProductService productService;
 
@@ -32,7 +32,7 @@ public class ProductAction extends JsonActionSupport {
      */
     public String getPage(){
         //获取分页数据
-        listProduct = productService.getPage(p,num);
+        listProduct = productService.getPage(p,num, cid);
         //实例化分页
         Page page = new Page(productService.count(), p, num);
         //封装返回数据
@@ -62,4 +62,7 @@ public class ProductAction extends JsonActionSupport {
         this.num = num;
     }
 
+    public void setCid(int cid) {
+        this.cid = cid;
+    }
 }

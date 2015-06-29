@@ -52,8 +52,13 @@ public class ProductDaoImpl implements ProductDao {
     }
 
     @Override
-    public List<Product> getSomeProduct(int pageNo,int pageSize) {
-        return sessionFactory.getCurrentSession().createQuery("from Product").setFirstResult((pageNo-1)*pageSize).setMaxResults(pageSize).list();
+    public List<Product> getPage(int pageNo,int pageSize, int cid) {
+        if (cid == 0){
+            return sessionFactory.getCurrentSession().createQuery("from Product").setFirstResult((pageNo-1)*pageSize).setMaxResults(pageSize).list();
+        }else{
+            return sessionFactory.getCurrentSession().createQuery("from Product where cateId = :cateId").setParameter("cateId", cid).setFirstResult((pageNo-1)*pageSize).setMaxResults(pageSize).list();
+        }
+
     }
 
     @Override

@@ -12,7 +12,7 @@
 			<img alt="100%x180" src="/resource/home/img/login.jpg" style=" width: 100%; display: block;"/>
 		</div>
 		<div class="col-md-4">
-			<form  id="register"  action="/json/Home_customer_registerValidate"  method="post" role="form">
+			<form  id="register"  action="/json/Home_system_registerValidate"  method="post" role="form">
 				 <br/>
 				<label><h2><strong>会员注册：</strong></h2></label>
 				
