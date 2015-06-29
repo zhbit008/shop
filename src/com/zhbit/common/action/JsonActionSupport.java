@@ -31,7 +31,6 @@ public class JsonActionSupport extends ActionSupport {
         dataMap.clear();
         dataMap.put("data", obj);
         dataMap.put("stat", true);
-
     }
     protected void ajaxSuccess(Object obj, String msg){
         dataMap.clear();
@@ -51,13 +50,11 @@ public class JsonActionSupport extends ActionSupport {
         dataMap.put("stat", true);
     }
 
-
     protected void  ajaxFail(String msg){
         dataMap.clear();
         dataMap.put("msg", msg);
         dataMap.put("stat", false);
     }
-
 
     protected void ajaxFail(){
         dataMap.clear();

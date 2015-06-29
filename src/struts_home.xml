@@ -12,7 +12,6 @@
                 <param name="actionName">index_index</param>
             </result>
         </global-results>
-
         <action name="*_*" class="{1}ActionHome" method="{2}">
             <result name="success">/WEB-INF/home/{1}/{2}.jsp</result>
         </action>

@@ -1,6 +1,7 @@
 ﻿<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <jsp:include page="../layout/header.jsp">
     <jsp:param name="title" value="注册页面" />
+
 </jsp:include>
 <jsp:include page="../layout/nav.jsp"/>
 <!-- 内容 -->
@@ -10,7 +11,7 @@
 			<img alt="100%x180" src="/resource/home/img/login.jpg" style=" width: 100%; display: block;"/>
 		</div>
 		<div class="col-md-4">
-			<form  id="register"  action="#" onsubmit="javascript: return checkLogin();" method="post" role="form">
+			<form  id="register"  action="#"  method="post" role="form">
 				<br/>
 				<label><h2><strong>会员注册：</strong></h2></label>
 				
@@ -32,12 +33,12 @@
                 </div>
                 <div class="radio-inline">
                     <!-- 	shop manager==Smanager -->
-                    <input type="radio" name="login" id="Smanager" value="Smanager"/>分店店长
+                    <input type="radio" name="login" id="Smanager" value="Smanager"/>商家
                 </div>
                <center><h6>
                <label><input type="checkbox"/></label>
                 请阅读《艾家网用户协议》</h6></center>
-              <button type="submit" class="btn btn-success">同意以上协议并注册</button>
+              <button id="submit" class="btn btn-success">同意以上协议并注册</button>
 			</form>
 		</div>
 	</div>

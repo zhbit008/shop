@@ -46,8 +46,8 @@
                 <div class="row">
                     <s:iterator value="listProduct">
                         <div class="col-6 col-sm-6 col-lg-4 media" style="margin-top: 0px;">
-                            <a class="pull-left" href="#">
-                                <img class="media-object" src="/resource/home/img/04.jpg" style="width: 300px;height: 170px;" alt="..."/>
+                            <a class="pull-left thumbnail" href="#">
+                                <img class="media-object" src="/resource/home/img/04.jpg" alt="..."/>
                             </a>
                             <div class="media-body">
                                 <h4 class="media-heading"><s:property value="proname"></s:property> 系列：十天精通CSS3						<span class="label label-warning">new</span></h4>
@@ -83,7 +83,7 @@
                             </h4>
                             </center>
                         </div>
-                        <div id="room" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                        <div id="room" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
                             <div class="panel-body">
                                 <ul class="nav nav-tabs">
                                     <li><a href="##">定制床</a></li>

@@ -31,9 +31,9 @@ public class IndexAction extends ActionSupport {
     public String register(){return SUCCESS;}
 //    主页页面
     public String index(){
-        ActionContext actionContext = ActionContext.getContext();
-        Map session = actionContext.getSession();
-        customer = (Customer)session.get("customer");
+//        ActionContext actionContext = ActionContext.getContext();
+//        Map session = actionContext.getSession();
+//        customer = (Customer)session.get("customer");
         listProduct = productService.getSomeProduct(1,6);
         System.out.println(listProduct.size());
         return SUCCESS;
@@ -46,7 +46,8 @@ public class IndexAction extends ActionSupport {
     public String massage(){return SUCCESS;}
 //    店铺页面
     public String shop(){return SUCCESS;}
-
+//    类型展示页
+    public String type(){return SUCCESS;}
 
 
     public Customer getCustomer() {
