@@ -8,7 +8,7 @@ $(function(){
     $box.removeAttr('id');
     var $page = $('#page');
     var page = {
-        url: '/json/Home_product_getPage',
+        url: '/ajax/Home_product_getPage',
         data: {'p':1,'num':10},
         success : function(json){
             console.log(json);

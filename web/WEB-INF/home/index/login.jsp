@@ -13,7 +13,7 @@
 			<img alt="logo" src="/resource/home/img/login.jpg" style=" width:100%; display: block;"/>
 		</div>
 		<div class="col-md-4">
-			<form  id="login"  action="/json/Home_customer_loginValidate" method="post" role="form">
+			<form  id="login"  action="/ajax/Home_customer_loginValidate" method="post" role="form">
 				<br/>
 				<label><h2><strong>会员登录：</strong></h2></label>
 

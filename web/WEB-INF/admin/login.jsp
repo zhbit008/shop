@@ -16,7 +16,7 @@
 <div class="page-container">
     <h1>家具商城后台登陆</h1>
 
-    <form action="/json/Admin_user_loginValidate" method="post">
+    <form action="/ajax/Admin_user_loginValidate" method="post">
         <s:textfield name="admin.username" cssClass="username"  placeholder="用户名" autocomplete="off" /><br/>
         <s:password name="admin.password" cssClass="password" placeholder="密码" oncontextmenu="return false" onpaste="return false" /><br/>
         <input type="button" value="登陆" class="button" id="submit"/>
