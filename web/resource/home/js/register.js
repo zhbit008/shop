@@ -43,7 +43,6 @@ $(function(){
                             alert('用户名已经存在');break;
                     }
                 }
-
                 console.log(json);
             });
 
