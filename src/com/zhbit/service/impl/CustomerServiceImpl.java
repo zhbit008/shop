@@ -25,7 +25,7 @@ public class CustomerServiceImpl implements CustomerService{
     private CustomerDao customerDao;
 
     @Override
-    public void saveCustomer(String username, String password) {
+    public void save(String username, String password) {
         customer = new Customer(null,username,password,null);
         customerDao.save(customer);
     }

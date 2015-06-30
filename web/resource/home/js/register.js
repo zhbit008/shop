@@ -6,8 +6,10 @@ $(function(){
     var u = $("#username");
     var p1 = $("#password1");
     var p2 = $("#password2");
-    var c = $('#check');
+
+
     $("#submit").on("click", function(){
+        var cate = $('.radio-inline input:checked');
 
         var $this = $(this);
         if ($this.is(".disable")){
@@ -32,8 +34,13 @@ $(function(){
         };
 
         var action = $this.parent('form').attr('action');
-
-        pass && $.post(action, { "username": u.val(), "password1": p1.val() ,"password2":p2.val()},
+        var params = {
+            "username": u.val(),
+            "password1": p1.val() ,
+            "password2":p2.val(),
+            "cate"  :  cate.val()
+        };
+        pass && $.post(action, params,
             function(json){
                 if (json.stat){
                     location.href = json.url;

@@ -6,7 +6,11 @@
 	
 	<div class="container">
 		<!-- 头部物品介绍 -->
-		<h4><a>首页</a>>GE00010伊丽莎白餐厅家具</h4>
+        <ol class="breadcrumb">
+            <li><a href="#">首页</a></li>
+            <li><a href="#">书桌</a></li>
+            <li class="active">类型</li>
+        </ol>
 		<ul class="media-list">
 		    <li class="media">
 		        <a class="pull-left" href="#">
