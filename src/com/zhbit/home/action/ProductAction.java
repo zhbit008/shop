@@ -50,10 +50,7 @@ public class ProductAction extends JsonActionSupport {
         return SUCCESS;
     }
 
-    public String productGetAll2(int pageNo,int pageSize){
-//        listProduct = productService.getSomeProduct(pageNo,pageSize);
-        return SUCCESS;
-    }
+
 
 
     public void setP(int p) {

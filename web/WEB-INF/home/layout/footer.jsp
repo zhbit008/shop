@@ -1,4 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3"><img class="thumbnail" src="/resource/home/img/foot1.png"></div>
+        <div class="col-sm-3"><img class="thumbnail" src="/resource/home/img/foot2.png"></div>
+        <div class="col-sm-3"><img class="thumbnail" src="/resource/home/img/foot3.png"></div>
+        <div class="col-sm-3"><img class="thumbnail" src="/resource/home/img/foot4.png"></div>
+    </div>
+</div>
    <nav class="navbar navbar-inverse" style="margin-bottom:0;">
 	    <div align="center">
 	    <!-- Brand and toggle get grouped for better mobile display -->

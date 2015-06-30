@@ -11,11 +11,13 @@
 		<div class="col-md-8" id="main">
 			<img alt="100%x180" src="/resource/home/img/login.jpg" style=" width: 100%; display: block;"/>
 		</div>
+
 		<div class="col-md-4">
 			<form  id="register"  action="/json/Home_customer_registerValidate"  method="post" role="form">
-				 <br/>
-				<label><h2><strong>会员注册：</strong></h2></label>
-				
+				<center><label><h3><strong>会员注册：</strong></h3></label></center>
+                <div class="hide alert alert-danger" id="warning-block" >
+                    <h5>Warning!<em id="warn"></em></h5>
+                </div>
 				 <div class="form-group">
 				    <label for="username">用户名：</label>
 				    <input  class="form-control" id="username" placeholder="请输入您的用户名" name="username"/>

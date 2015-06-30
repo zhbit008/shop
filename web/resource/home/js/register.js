@@ -6,8 +6,8 @@ $(function(){
     var u = $("#username");
     var p1 = $("#password1");
     var p2 = $("#password2");
-
-
+    var warning = $("#warning-block");
+    var em = $("#warn");
     $("#submit").on("click", function(){
         var cate = $('.radio-inline input:checked');
 
@@ -18,15 +18,18 @@ $(function(){
         }
         var pass =true;
         if (u.val() == ''){
-            alert('用户名不能为空');
+            warning.removeClass('hide');
+            em.html("Username cannot be empty!!!");
             pass = false;
         }
-        if (p1.val() == ''){
-            alert('密码不能为空');
+        else if (p1.val() == ''){
+            warning.removeClass('hide');
+            em.html("Password cant be empty!!!");
             pass = false;
         }
-        if (p1.val() != p2.val()){
-            alert('输入密码不一致');
+        else if (p1.val() != p2.val()){
+            warning.removeClass('hide');
+            em.html("I'm sorry, you enter a wrong password!");
             pass = false;
         }
         $this.enable = function(enable){
@@ -46,8 +49,9 @@ $(function(){
                     location.href = json.url;
                 }else{
                     switch (json.code){
+                        case 5400:
                         case 5100:
-                            alert('用户名已经存在');break;
+                            alert('User name already exists！！！');break;
                     }
                 }
                 console.log(json);
