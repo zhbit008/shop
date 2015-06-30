@@ -29,7 +29,7 @@ public class SystemAction extends JsonActionSupport{
         Customer customerObj = null;
         try{
             if(customerService.registerValidate(username,password1,password2)){
-                customerService.saveCustomer(username,password1);
+                customerService.save(username,password1);
             }
         }catch (RuntimeException e){
 //          e.printStackTrace();
