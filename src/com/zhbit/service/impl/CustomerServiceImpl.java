@@ -38,9 +38,10 @@ public class CustomerServiceImpl implements CustomerService{
     @Override
     public Customer loginValidate(Customer customerOrg) {
         if (null == customerOrg) throw new RuntimeException("4000");
-
+        System.out.println("cccc");
         Customer customerObj =  customerDao.getCustomerByUsername(customerOrg.getUsername().trim());
         if (null == customerObj) throw  new RuntimeException("4000");
+
         if (!customerObj.getPassword().equals(customerOrg.getPassword().trim())) throw new RuntimeException("4100");
         return customerObj;
     }

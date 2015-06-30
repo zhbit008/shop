@@ -4,6 +4,7 @@
 <jsp:include page="../layout/header.jsp">
     <jsp:param name="title" value="登陆页面" />
     <jsp:param name="js" value="login" />
+    <jsp:param name="css" value="index/register" />
 </jsp:include>
 <jsp:include page="../layout/nav.jsp" />
 <!-- 内容 -->
@@ -15,8 +16,10 @@
 		<div class="col-md-4">
 			<form  id="login"  action="/ajax/Home_customer_loginValidate" method="post" role="form">
 				<br/>
-				<label><h2><strong>会员登录：</strong></h2></label>
-
+				<center><label><h2><strong>会员登录：</strong></h2></label></center>
+                <div class="hide alert alert-danger" id="warning-block-login">
+                    <h5>Warning!<em id="warn-login"></em></h5>
+                </div>
 				 <div class="form-group">
 				    <label for="username">用户名：</label>
 				    <input  class="form-control" id="username" placeholder="请输入您的用户名" name="customer.username"/>

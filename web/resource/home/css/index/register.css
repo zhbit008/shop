@@ -1,0 +1,7 @@
+/*覆盖bootstrap样式*/
+.alert {
+    padding: 0px 10px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}

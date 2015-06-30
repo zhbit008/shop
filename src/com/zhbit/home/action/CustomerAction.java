@@ -37,6 +37,7 @@ public class CustomerAction extends JsonActionSupport {
         Customer customerObj = null;
         try{
             customerObj = customerService.loginValidate(customer);
+            System.out.println("ccc");
         }catch (RuntimeException e){
 //          e.printStackTrace();
             ajaxFail(Integer.parseInt(e.getMessage()));

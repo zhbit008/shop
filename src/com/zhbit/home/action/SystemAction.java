@@ -19,6 +19,7 @@ public class SystemAction extends JsonActionSupport{
     String username;
     String password1;
     String password2;
+    String cate;
     @Resource
     CustomerService customerService;
     /**
@@ -26,11 +27,15 @@ public class SystemAction extends JsonActionSupport{
      * @return
      */
     public String registerValidate(){
-        Customer customerObj = null;
         try{
-            if(customerService.registerValidate(username,password1,password2)){
-                customerService.save(username,password1);
+            if(cate.equals("Smanager")){
+                System.out.println("ddd");
+            }else{
+//                if(customerService.registerValidate(username,password1,password2)){
+//                    customerService.save(username,password1);
+//                }
             }
+
         }catch (RuntimeException e){
 //          e.printStackTrace();
             ajaxFail(Integer.parseInt(e.getMessage()));

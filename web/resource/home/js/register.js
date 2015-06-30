@@ -6,8 +6,8 @@ $(function(){
     var u = $("#username");
     var p1 = $("#password1");
     var p2 = $("#password2");
-    var warning = $("#warning-block");
-    var em = $("#warn");
+    var warning = $("#warning-block-register");
+    var em = $("#warn-register");
     $("#submit").on("click", function(){
         var cate = $('.radio-inline input:checked');
 

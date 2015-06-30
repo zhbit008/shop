@@ -3,6 +3,7 @@
 <jsp:include page="../layout/header.jsp">
     <jsp:param name="title" value="注册页面" />
     <jsp:param name="js" value="register" />
+    <jsp:param name="css" value="index/register" />
 </jsp:include>
 <jsp:include page="../layout/nav.jsp"/>
 <!-- 内容 -->
@@ -14,9 +15,10 @@
 
 		<div class="col-md-4">
 			<form  id="register"  action="/ajax/Home_system_registerValidate"  method="post" role="form">
-				 <br/>
-				<label><h2><strong>会员注册：</strong></h2></label>
-				
+				<center><label><h2><strong>会员注册：</strong></h2></label></center>
+                <div class="hide alert alert-danger" id="warning-block-register">
+                    <h5>Warning!<em id="warn-register"></em></h5>
+                </div>
 				 <div class="form-group">
 				    <label for="username">用户名：</label>
 				    <input  class="form-control" id="username" placeholder="请输入您的用户名" name="username"/>
