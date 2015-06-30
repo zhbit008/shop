@@ -9,5 +9,7 @@
         </id>
         <property name="catename" type ="string" length="255"/>
         <property name="childnum" />
+        <property name="pid" />
+
     </class>
 </hibernate-mapping>

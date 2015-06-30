@@ -14,6 +14,6 @@
         <property name="sendtel" type="string" length="255"/>
         <property name="paymet" type="string" length="255"/>
         <property name="remark" type="string" length="255"/>
-        <property name="createtime"  type="timestamp" />
+        <property name="createtime"  type="date" />
     </class>
 </hibernate-mapping>

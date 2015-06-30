@@ -3,7 +3,6 @@ package com.zhbit.home.action;
 import com.opensymphony.xwork2.ActionContext;
 import com.zhbit.common.action.JsonActionSupport;
 import com.zhbit.domain.Customer;
-import com.zhbit.service.AdminService;
 import com.zhbit.service.CustomerService;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
@@ -19,19 +18,21 @@ import java.util.Map;
 @Scope("prototype")
 public class CustomerAction extends JsonActionSupport {
     Customer customer;
-    String username;
-    String password1;
-    String password2;
-    private String cate;
+
     @Resource
     CustomerService customerService;
-    @Resource
-    AdminService adminService;
+
+    /**
+     * 客户主页
+     * @return
+     */
+    public String index(){
+        return SUCCESS;
+    }
     /**
      * 客户登陆验证
      * @return
      */
-//    登录
     public String loginValidate(){
         Customer customerObj = null;
         try{
@@ -45,42 +46,17 @@ public class CustomerAction extends JsonActionSupport {
         ActionContext actionContext = ActionContext.getContext();
         Map session = actionContext.getSession();
         session.put("customer", customerObj);
-//        session.put("nickname", "ok");
 
         //跳转到首页
         ajaxRedirect("/home/index_index");
 
         return SUCCESS;
     }
-//    退出
-    public String exitHandle(){
-        ActionContext actionContext = ActionContext.getContext();
-        Map session = actionContext.getSession();
-        session.put("customer", null);
-        ajaxRedirect("/home/index_index");
-        return SUCCESS;
-    }
-//  注册
-    public String registerValidate(){
-        try{
-            if(cate.equals("Smanager")){
-                if (adminService.registerValidate(username,password1,password2)){
-                    adminService.save(username,password1);
-                }
 
-            }else{
-                if(customerService.registerValidate(username,password1,password2)){
-                  customerService.save(username,password1);
-                }
-            }
-        }catch (RuntimeException e){
-//          e.printStackTrace();
-            ajaxFail(Integer.parseInt(e.getMessage()));
-            return SUCCESS;
-        }
-        ajaxRedirect("/home/index_index");
-        return SUCCESS;
-    }
+    /**
+     * getter and setter
+     * @return
+     */
     public Customer getCustomer() {
         return customer;
     }
@@ -89,29 +65,6 @@ public class CustomerAction extends JsonActionSupport {
         this.customer = customer;
     }
 
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPassword1() {
-        return password1;
-    }
-
-    public void setPassword1(String password1) {
-        this.password1 = password1;
-    }
-
-    public String getPassword2() {
-        return password2;
-    }
-
-    public void setPassword2(String password2) {
-        this.password2 = password2;
-    }
 
     public CustomerService getCustomerService() {
         return customerService;
@@ -119,13 +72,5 @@ public class CustomerAction extends JsonActionSupport {
 
     public void setCustomerService(CustomerService customerService) {
         this.customerService = customerService;
-    }
-
-    public String getCate() {
-        return cate;
-    }
-
-    public void setCate(String cate) {
-        this.cate = cate;
     }
 }

@@ -11,6 +11,6 @@
 
         <property name="num" />
 
-        <property name="createtime" type="timestamp" />
+        <property name="createtime" type="date" />
     </class>
 </hibernate-mapping>

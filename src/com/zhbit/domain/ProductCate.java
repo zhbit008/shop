@@ -1,6 +1,8 @@
 package com.zhbit.domain;
 
 import java.io.Serializable;
+import java.util.List;
+
 /**
  * Created by laujei1995-lz on 2015/6/26.
  */
@@ -9,7 +11,8 @@ public class ProductCate implements Serializable{
     private Integer id;
     private String catename;
     private Integer childnum;
-
+    private Integer pid;
+    private List<ProductCate> childCateList;
     public ProductCate() {
     }
 
@@ -42,5 +45,21 @@ public class ProductCate implements Serializable{
 
     public void setCatename(String catename) {
         this.catename = catename;
+    }
+
+    public Integer getPid() {
+        return pid;
+    }
+
+    public void setPid(Integer pid) {
+        this.pid = pid;
+    }
+
+    public List<ProductCate> getChildCateList() {
+        return childCateList;
+    }
+
+    public void setChildCateList(List<ProductCate> childCateList) {
+        this.childCateList = childCateList;
     }
 }

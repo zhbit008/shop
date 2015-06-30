@@ -21,7 +21,6 @@
                         <li><a href="#">收藏夹</a></li>
                         <li><a href="/home/index_pay.html">购物车</a></li>
                         <li><a href="#">联系客服</a></li>
-
                      </ul>
                      <form class="navbar-form navbar-left" role="search">
                           <div class="form-group">
@@ -38,7 +37,7 @@
                      </s:if>
                      <s:else>
                          <ul class="nav navbar-nav navbar-right">
-                             <li><a href="/home/index_massage.html?id=#session.customer.getId()"><s:property value="#session.customer.getNickname()"></s:property> </a></li>
+                             <li><a href="/home/customer_index.html?customerId=<s:property value="#session.customer.getId()" />"><s:property value="#session.customer.getNickname()"/> </a></li>
 
                              <li class="dropdown ">
                                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">消息 <span class="badge">3</span><span class="caret"></span></a>
@@ -73,7 +72,7 @@
                                      </li>
                                  </ul>
                              </li>
-                             <li><a href="/json/Home_customer_exitHandle">退出</a></li>
+                             <li><a href="/home/system_exitHandle">退出</a></li>
                          </ul>
                      </s:else>
 			    </div><!-- /.navbar-collapse -->

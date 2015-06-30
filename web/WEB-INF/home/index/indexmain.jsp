@@ -1,11 +1,17 @@
-<%@ taglib prefix="s" uri="/struts-tags" %>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
     <div class="container">
 		<div class="row">
 			<div class="col-sm-9">
 				<p class="pull-right visible-xs">
 					<button class="btn-xs btn btn-primary">Taggle</button>
 				</p>
+                <ol class="breadcrumb" id="breadcrumb" style="display: none;">
+                    <li><a href="0">所有</a></li>
+                    <li><a href="#">书桌</a></li>
+                    <li class="active">类型</li>
+                </ol>
 				<!-- 图片轮播开始 -->
 				<div id="myCarousel" class="carousel slide">
 			        <ol class="carousel-indicators">
@@ -43,7 +49,6 @@
 				<!-- 图片轮播结束 -->
                 <center>
                     <ul class="pagination pagination" id="page">
-
                     </ul>
                 </center>
                 <!-- 内容开始 -->
@@ -53,11 +58,13 @@
 
                     </div>
                     <div class="col-6 col-sm-6 col-lg-4 media" style="margin-top: 0px;display: none;" id="template-box">
+                        <span class="label label-warning">分类名称</span>
                         <a class="pull-left url" href="#" >
-                            <img class="media-object" src="/resource/home/img/04.jpg" style="width: 300px;height: 170px;" alt="..."/>
+
+                            <img class="media-object img" src="" style="width: 300px;height: 170px;" alt="..."/>
                         </a>
                         <div class="media-body">
-                            <h4 class="media-heading"><span class="proname"></span> <span class="label label-warning">new</span></h4>
+                            <h4 class="media-heading"><span class="proname"></span> </h4>
                             <div><span class="title"></span></div>
                         </div>
                     </div>
@@ -68,106 +75,28 @@
 			<div class="col-sm-3">
 			<!-- 右边栏开始 -->
                 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    <s:iterator value="productCateList" id="item">
                     <div class="panel panel-default">
-                        <div class="panel-heading" role="tab" id="headingOne">
+                        <div class="panel-heading" role="tab" id="productCate<s:property value="#item.id" />">
                             <center>
                             <h4 class="panel-title ">
-                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#room" aria-expanded="true" aria-controls="room">
-                                    卧室
+                                <a role="button" data-id="<s:property value="#item.id" />" data-toggle="collapse" data-parent="#accordion" href="#productCate<s:property value="#item.id" />sss" aria-expanded="true" aria-controls="productCate<s:property value="#item.id" />sss">
+                                    <s:property value="#item.catename" />
                                 </a>
                             </h4>
                             </center>
                         </div>
-                        <div id="room" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                        <div id="productCate<s:property value="#item.id" />sss" class="panel-collapse collapse" role="tabpanel" aria-labelledby="productCate<s:property value="#item.id" />">
                             <div class="panel-body">
                                 <ul class="nav nav-tabs">
-                                    <li><a href="##">定制床</a></li>
-                                    <li><a href="##">梳妆</a></li>
-                                    <li><a href="##">衣帽间</a></li>
+                                    <s:iterator value="#item.childCateList">
+                                    <li><a href="<s:property value="id"/> "><s:property value="catename"/> </a></li>
+                                    </s:iterator>
                                 </ul>
                             </div>
                         </div>
                     </div>
-                    <div class="panel panel-default">
-                        <div class="panel-heading" role="tab" id="headingTwo">
-                            <center>
-                            <h4 class="panel-title">
-                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#book" aria-expanded="false" aria-controls="book">
-                                    书房
-                                </a>
-                            </h4>
-                            </center>
-                        </div>
-                        <div id="book" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                            <div class="panel-body">
-                                <ul class="nav nav-tabs">
-                                    <li><a href="##">书柜</a></li>
-                                    <li><a href="##">书桌</a></li>
-                                    <li><a href="##">榻榻米</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="panel panel-default">
-                        <div class="panel-heading" role="tab" id="headingThree">
-                            <center>
-                            <h4 class="panel-title">
-                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#kitchen" aria-expanded="false" aria-controls="kitchen">
-                                    餐厅
-                                </a>
-                            </h4>
-                            </center>
-                        </div>
-                        <div id="kitchen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-                            <div class="panel-body">
-                                <ul class="nav nav-tabs">
-                                    <li><a href="##">餐边柜</a></li>
-                                    <li><a href="##">斗柜</a></li>
-                                    <li><a href="##">酒柜</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="panel panel-default">
-                        <div class="panel-heading" role="tab" id="headingFour">
-                            <center>
-                            <h4 class="panel-title">
-                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#living_room" aria-expanded="true" aria-controls="living_room">
-                                    客厅
-                                </a>
-                            </h4>
-                            </center>
-                        </div>
-                        <div id="living_room" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
-                            <div class="panel-body">
-                                <ul class="nav nav-tabs">
-                                    <li><a href="##">茶几</a></li>
-                                    <li><a href="##">电视柜</a></li>
-                                    <li><a href="##">玄关柜</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="panel panel-default">
-                        <div class="panel-heading" role="tab" id="headingFive">
-                            <center>
-                            <h4 class="panel-title">
-                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#else" aria-expanded="true" aria-controls="else">
-                                    其他
-                                </a>
-                            </h4>
-                            </center>
-                        </div>
-                        <div id="else" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
-                            <div class="panel-body">
-                                <ul class="nav nav-tabs">
-                                    <li><a href="##">飘窗柜</a></li>
-                                    <li><a href="##">鞋柜</a></li>
-                                    <li><a href="##">阳台柜</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                    </s:iterator>
                 </div>
 
 				<!-- 右边栏结束 -->

@@ -52,13 +52,23 @@ public class ProductDaoImpl implements ProductDao {
     }
 
     @Override
-    public List<Product> getSomeProduct(int pageNo,int pageSize) {
-        return sessionFactory.getCurrentSession().createQuery("from Product").setFirstResult((pageNo-1)*pageSize).setMaxResults(pageSize).list();
+    public List<Product> getPage(int pageNo,int pageSize, int cid) {
+        if (cid == 0){
+            return sessionFactory.getCurrentSession().createQuery("from Product").setFirstResult((pageNo-1)*pageSize).setMaxResults(pageSize).list();
+        }else{
+            return sessionFactory.getCurrentSession().createQuery("from Product where cateId = :cateId").setParameter("cateId", cid).setFirstResult((pageNo-1)*pageSize).setMaxResults(pageSize).list();
+        }
+
     }
 
     @Override
-    public long count() {
-        Long cnt = (Long)sessionFactory.getCurrentSession().createQuery("select count(*) from Product").uniqueResult();
+    public long count(int cid) {
+        Long cnt;
+        if (cid == 0){
+            cnt = (Long)sessionFactory.getCurrentSession().createQuery("select count(*) from Product").uniqueResult();
+        }else{
+            cnt = (Long)sessionFactory.getCurrentSession().createQuery("select count(*) from Product where cateId = :cateId").setParameter("cateId", cid).uniqueResult();
+        }
         return cnt;
     }
 

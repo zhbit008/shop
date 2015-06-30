@@ -44,17 +44,12 @@
                 <!--<value>com/zhbit/domain/Favorite.hbm.xml</value>-->
                 <!--<value>com/zhbit/domain/Order.hbm.xml</value>-->
                 <!--<value>com/zhbit/domain/OrderProduct.hbm.xml</value>-->
-                <!--<value>com/zhbit/domain/Product.hbm.xml</value>-->
-                <!--<value>com/zhbit/domain/ProductCate.hbm.xml</value>-->
-
                 <value>com/zhbit/domain/Customer.hbm.xml</value>
                 <!--<value>com/zhbit/domain/Customer_Profile.hbm.xml</value>-->
                 <!--<value>com/zhbit/domain/Favorite.hbm.xml</value>-->
                 <!--<value>com/zhbit/domain/Order.hbm.xml</value>-->
-                <!--<value>com/zhbit/domain/Order_Product.hbm.xml</value>-->
                 <value>com/zhbit/domain/Product.hbm.xml</value>
-                <!--<value>com/zhbit/domain/Product_Cate.hbm.xml</value>-->
-
+                <value>com/zhbit/domain/ProductCate.hbm.xml</value>
                 <!--<value>com/zhbit/domain/Profile.hbm.xml</value>-->
                 <!--<value>com/zhbit/domain/Role.hbm.xml</value>-->
                 <!--<value>com/zhbit/domain/ShoppingCart.hbm.xml</value>-->

@@ -5,7 +5,7 @@
         "http://struts.apache.org/dtds/struts-2.1.7.dtd">
 
 <struts>
-    <package name="json" extends="json-default" namespace="/json" >
+    <package name="json" extends="json-default" namespace="/ajax" >
         <action name="*_*_*" class="{2}Action{1}" method="{3}">
             <result type="json">
                 <param name="root">dataMap</param>
