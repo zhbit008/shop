@@ -11,7 +11,7 @@ public interface ProductDao {
     public void save(Product product);
     public void update(Product product);
     public void delete(Integer productId);
-    public Product getProduct(Integer productId);
+    public Product get(Integer productId);
     public List<Product> getProductList();
     public Product getProductByProductname(String proname);
     public List<Product> getPage(int pageNo,int pageSize, int cid);

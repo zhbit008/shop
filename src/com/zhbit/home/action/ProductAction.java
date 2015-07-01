@@ -19,10 +19,13 @@ import java.util.Map;
 @Scope("prototype")
 public class ProductAction extends JsonActionSupport {
     private  Product product;
-    private  List<Product> listProduct;
+    private  List<Product> productList;
+    //分页参数
     private  int p;
     private  int num;
     private int cid = 0;
+    //产品id
+    private int productId;
     @Resource
     private ProductService productService;
 
@@ -32,14 +35,14 @@ public class ProductAction extends JsonActionSupport {
      */
     public String getPage(){
         //获取分页数据
-        listProduct = productService.getPage(p,num, cid);
+        productList = productService.getPage(p,num, cid);
         //实例化分页
         Page page = new Page(productService.count(cid), p, num);
 //        TODO 获取一个分类及其子分类下面所有商品
         //封装返回数据
         Map<String, Object> data = new HashMap();
         data.put("page",  page.show());
-        data.put("list", listProduct);
+        data.put("list", productList);
 
         ajaxSuccess(data);
         return SUCCESS;
@@ -49,7 +52,10 @@ public class ProductAction extends JsonActionSupport {
      * 商品介绍页面
      * @return
      */
-    public String show(){return SUCCESS;}
+    public String show(){
+        product = productService.get(productId);
+        return SUCCESS;
+    }
 
 
     /**
@@ -65,5 +71,17 @@ public class ProductAction extends JsonActionSupport {
 
     public void setCid(int cid) {
         this.cid = cid;
+    }
+
+    public void setProductId(int productId) {
+        this.productId = productId;
+    }
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
     }
 }

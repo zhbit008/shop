@@ -7,13 +7,13 @@
         <id name="id">
             <generator class="native" />
         </id>
-        <property name="proname" type ="string" length="255"/>
-        <property name="salecount" />
+        <property name="name" type ="string" length="255"/>
+        <property name="saleNum" column="sale_num"/>
         <property name="image" type ="string" length="255"/>
-        <property name="originprice" />
-        <property name="saleprice" />
-        <property name="decript" type ="string" length="255"/>
-        <property name="saledate" type="date"/>
+        <property name="originPrice" column="origin_price"/>
+        <property name="salePrice" column="sale_price"/>
+        <property name="describe" type ="string" length="255"/>
+        <property name="dateline" type="date"/>
         <property name="cateId"  column="cate_id"/>
         <property name="storeId"  column="store_id"/>
         <property name="title" type ="string" length="255"/>

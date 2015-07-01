@@ -8,13 +8,13 @@ import java.util.Date;
  */
 public class Product implements Serializable {
     private Integer id;
-    private Integer salecount;  
-    private String proname;
+    private Integer saleNum;
+    private String name;
     private String image;
-    private Double originprice;
-    private Double saleprice;
-    private String decript;
-    private Date saledate;
+    private Double originPrice;
+    private Double salePrice;
+    private String describe;
+    private Date dateline;
     private Integer cateId;
     private Integer storeId;
     private String title;
@@ -23,42 +23,19 @@ public class Product implements Serializable {
     public Product() {
     }
 
-    public Product(Integer id, Integer salecount, String proname, String image, Double originprice, Double saleprice, String decript, Date saledate, Integer cateId, String title, String love) {
+    public Product(Integer id, Integer saleNum, String name, String image, Double originPrice, Double salePrice, String describe, Date dateline, Integer cateId, Integer storeId, String title, String love) {
         this.id = id;
-        this.salecount = salecount;
-        this.proname = proname;
+        this.saleNum = saleNum;
+        this.name = name;
         this.image = image;
-        this.originprice = originprice;
-        this.saleprice = saleprice;
-        this.decript = decript;
-        this.saledate = saledate;
+        this.originPrice = originPrice;
+        this.salePrice = salePrice;
+        this.describe = describe;
+        this.dateline = dateline;
         this.cateId = cateId;
+        this.storeId = storeId;
         this.title = title;
         this.love = love;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getLove() {
-        return love;
-    }
-
-    public void setLove(String love) {
-        this.love = love;
-    }
-
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
     }
 
     public Integer getId() {
@@ -69,52 +46,60 @@ public class Product implements Serializable {
         this.id = id;
     }
 
-    public Integer getSalecount() {
-        return salecount;
+    public Integer getSaleNum() {
+        return saleNum;
     }
 
-    public void setSalecount(Integer salecount) {
-        this.salecount = salecount;
+    public void setSaleNum(Integer saleNum) {
+        this.saleNum = saleNum;
     }
 
-    public String getProname() {
-        return proname;
+    public String getName() {
+        return name;
     }
 
-    public void setProname(String proname) {
-        this.proname = proname;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public Double getSaleprice() {
-        return saleprice;
+    public String getImage() {
+        return image;
     }
 
-    public void setSaleprice(Double saleprice) {
-        this.saleprice = saleprice;
+    public void setImage(String image) {
+        this.image = image;
     }
 
-    public Double getOriginprice() {
-        return originprice;
+    public Double getOriginPrice() {
+        return originPrice;
     }
 
-    public void setOriginprice(Double originprice) {
-        this.originprice = originprice;
+    public void setOriginPrice(Double originPrice) {
+        this.originPrice = originPrice;
     }
 
-    public String getDecript() {
-        return decript;
+    public Double getSalePrice() {
+        return salePrice;
     }
 
-    public void setDecript(String decript) {
-        this.decript = decript;
+    public void setSalePrice(Double salePrice) {
+        this.salePrice = salePrice;
     }
 
-    public Date getSaledate() {
-        return saledate;
+    public String getDescribe() {
+        return describe;
     }
 
-    public void setSaledate(Date saledate) {
-        this.saledate = saledate;
+    public void setDescribe(String describe) {
+        this.describe = describe;
+    }
+
+    public Date getDateline() {
+        return dateline;
+    }
+
+    public void setDateline(Date dateline) {
+        this.dateline = dateline;
     }
 
     public Integer getCateId() {
@@ -131,5 +116,21 @@ public class Product implements Serializable {
 
     public void setStoreId(Integer storeId) {
         this.storeId = storeId;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getLove() {
+        return love;
+    }
+
+    public void setLove(String love) {
+        this.love = love;
     }
 }

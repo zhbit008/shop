@@ -4,16 +4,15 @@
 
 $(function(){
     var $boxes = $('#boxes');
-    var $box = $("#template-box");
-    $box.removeAttr('id');
+    var $box = $("#template-box");  $box.removeAttr('id');
     var $page = $('#page');
-    /**
-     * 分页对象
-     * @type {{cache: Array, url: string, data: {p: number, num: number, cid: number}, success: success, get: get}}
-     */
+
 //        TODO  需要能设置初始值
     var pageHandle = (function(){
-
+        /**
+         * 分页对象
+         * @type {{cache: Array, url: string, data: {p: number, num: number, cid: number}, success: success, get: get}}
+         */
         var _page = {
             timeout : 60, //s
             cache : [],
@@ -22,10 +21,8 @@ $(function(){
 //            TODO 这里的参数不够通用
             data: {'p':1,'num':9, 'cid': 0},
             success : function(json){
-//            console.log(json);
                 var list = json.data.list;
                 var page = json.data.page;
-                var _this = this;
                 //缓存
                 _page.cache[_page.cacheField] = {
                     'json' : json,
@@ -91,7 +88,10 @@ $(function(){
         pageHandle.get($this.attr('href'));
         return false;
     });
-    //初始化分页
+
+    /**
+     * 初始化分页
+     */
     pageHandle.get(1, 0);
 
     var $myCarousel = $('#myCarousel');
@@ -114,7 +114,9 @@ $(function(){
 //        TODO 这里应该写成支持无限极
         return false;
     });
-    //导航条分类展示
+    /**
+     * 导航条分类展示
+     */
     $breadcrumb.find('a').on('click',function(){
         var $this = $(this);
         pageHandle.get(1, $this.attr('href'));

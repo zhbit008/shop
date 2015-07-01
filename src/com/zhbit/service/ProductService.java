@@ -12,5 +12,6 @@ public interface ProductService {
     public List<Product> getProductList();
     public Product getProduct(String proname);
     public List<Product> getPage(int pageNo,int pageSize, int cip);
+    public Product get(Integer id);
     public long count(int cid);
 }
