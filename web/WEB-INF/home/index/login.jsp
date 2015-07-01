@@ -4,42 +4,59 @@
 <jsp:include page="../layout/header.jsp">
     <jsp:param name="title" value="登陆页面" />
     <jsp:param name="js" value="login" />
-    <jsp:param name="css" value="index/register" />
+    <jsp:param name="css" value="index/login" />
 </jsp:include>
 <jsp:include page="../layout/nav.jsp" />
 <!-- 内容 -->
 <div class="container main" style="border: 1px solid #CCC;">
-	<div class="row">
-		<div class="col-md-8" id="main">
-			<img alt="logo" src="/resource/home/img/login.jpg" style=" width:100%; display: block;"/>
-		</div>
-		<div class="col-md-4">
-			<form  id="login"  action="/ajax/Home_customer_loginValidate" method="post" role="form">
-				<br/>
-				<center><label><h2><strong>会员登录：</strong></h2></label></center>
-                <div class="hide alert alert-danger" id="warning-block-login">
-                    <h5>Warning!<em id="warn-login"></em></h5>
+    <div class="row">
+        <div class="col-sm-12 hidden-xs" style="height:100px;">
+        </div>
+        <div class="col-md-6 col-sm-offset-1" id="main" style="border-right: 1px solid #CCC;">
+            <img alt="logo" src="/resource/home/img/login.jpg"/>
+        </div>
+        <div class="col-md-5">
+            <form  id="login"  action="/ajax/Home_customer_loginValidate" method="post" role="form">
+                <div class="col-sm-12">
+                    <label><h3><strong>会员登录：</strong></h3></label>
+                    <label style="float: right;margin-right: 15px;margin-top: 10px;"><a href=""><h4>还不是会员？立即注册</h4></a></label>
                 </div>
-				 <div class="form-group">
-				    <label for="username">用户名：</label>
-				    <input  class="form-control" id="username" placeholder="请输入您的用户名" name="customer.username"/>
-				  </div>
-				  <div class="form-group">
-				    <label for="password">密码：</label>
-				    <input type="password" class="form-control" id="password" placeholder="请输入您的密码"  name="customer.password"/>
-				  </div>
 
-				  <div class="checkbox">
-				    <label>
-				      <input type="checkbox" name="check" /> 记住密码
-				    </label>
-				  </div>
-				  <button  id="submit" class="btn btn-success">登&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;录</button>
-				  &nbsp;&nbsp;&nbsp;
-				  <button  class="btn btn-success">注&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;册</button>
-			</form>
-		</div>
-	</div>
+                <div class="col-sm-10">
+                    <div class="form-group">
+                        <label for="username">用户名：</label>
+                        <input  class="form-control" id="username" placeholder="请输入您的用户名" name="customer.username"/>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <span id="info_LoginName" class=" tips_error">不能为空</span>
+                </div>
+                <br/><br/><br/><br/>
+                <div class="col-sm-10">
+                    <div class="form-group">
+                        <label for="password">密&nbsp;&nbsp;&nbsp;码：</label>
+                        <input type="password" class="form-control" id="password" placeholder="请输入您的密码"  name="customer.password"/>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <span id="info_PassWord" class=" tips_error">不能为空</span>
+                </div>
+                <br/>
+                <br/>
+                <br/>
+                <div class="checkbox col-sm-12">
+                    <label>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="check" /> 记住密码
+                    </label>
+                </div>
+                <div class="col-sm-12">
+                    <button  id="submit" class="btn btn-success" onclick="return false;">登&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;录</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-sm-12 hidden-xs" style="height:100px;">
+        </div>
+    </div>
 </div>
 
 <jsp:include page="../layout/footer.jsp"/>

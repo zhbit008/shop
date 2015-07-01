@@ -6,9 +6,13 @@ $(function(){
     var u = $("#username");
     var p1 = $("#password1");
     var p2 = $("#password2");
-    var warning = $("#warning-block-register");
-    var em = $("#warn-register");
+    var loginName = $("#info_LoginName");
+    var passWord1 = $("#info_PassWord1");
+    var passWord2 = $("#info_PassWord2");
     $("#submit").on("click", function(){
+        loginName.addClass('hide');
+        passWord1.addClass('hide');
+        passWord2.addClass('hide');
         var cate = $('.radio-inline input:checked');
 
         var $this = $(this);
@@ -18,31 +22,33 @@ $(function(){
         }
         var pass =true;
         if (u.val() == ''){
-            warning.removeClass('hide');
-            em.html("Username cannot be empty!!!");
+            loginName.removeClass('hide');
+            loginName.html('用户名不能为空');
             pass = false;
         }
-        else if (p1.val() == ''){
-            warning.removeClass('hide');
-            em.html("Password cant be empty!!!");
+        if (p1.val() == ''){
+            passWord1.removeClass('hide');
+            passWord1.html('密码不能为空');
             pass = false;
         }
-        else if (p1.val() != p2.val()){
-            warning.removeClass('hide');
-            em.html("I'm sorry, you enter a wrong password!");
+        if (p1.val() != p2.val()){
+            passWord2.removeClass('hide');
+            passWord2.html('两次输入的密码不一致');
             pass = false;
         }
         $this.enable = function(enable){
             $this[enable?'removeClass' : 'addClass']('disable');
         };
 
-        var action = $this.parent('form').attr('action');
+        var action = $('#register').attr('action');
+
         var params = {
             "username": u.val(),
             "password1": p1.val() ,
             "password2":p2.val(),
             "cate"  :  cate.val()
         };
+
         pass && $.post(action, params,
             function(json){
                 if (json.stat){
@@ -51,7 +57,8 @@ $(function(){
                     switch (json.code){
                         case 5400:
                         case 5100:
-                            alert('User name already exists！！！');break;
+                            loginName.removeClass('hide');
+                            loginName.html('用户名已存在');break;
                     }
                 }
                 console.log(json);

@@ -3,6 +3,7 @@ package com.zhbit.home.action;
 import com.opensymphony.xwork2.ActionContext;
 import com.zhbit.common.action.JsonActionSupport;
 import com.zhbit.domain.Customer;
+import com.zhbit.service.AdminService;
 import com.zhbit.service.CustomerService;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
@@ -20,8 +21,11 @@ public class SystemAction extends JsonActionSupport{
     String password1;
     String password2;
     String cate;
+
     @Resource
     CustomerService customerService;
+    @Resource
+    AdminService adminService;
     /**
      * 注册验证
      * @return
@@ -29,13 +33,14 @@ public class SystemAction extends JsonActionSupport{
     public String registerValidate(){
         try{
             if(cate.equals("Smanager")){
-                System.out.println("ddd");
+                if(adminService.registerValidate(username,password1,password2)){
+                    adminService.save(username,password1);
+                }
             }else{
-//                if(customerService.registerValidate(username,password1,password2)){
-//                    customerService.save(username,password1);
-//                }
+                if(customerService.registerValidate(username,password1,password2)){
+                    customerService.save(username,password1);
+                }
             }
-
         }catch (RuntimeException e){
 //          e.printStackTrace();
             ajaxFail(Integer.parseInt(e.getMessage()));
@@ -91,5 +96,21 @@ public class SystemAction extends JsonActionSupport{
 
     public void setCustomerService(CustomerService customerService) {
         this.customerService = customerService;
+    }
+
+    public String getCate() {
+        return cate;
+    }
+
+    public void setCate(String cate) {
+        this.cate = cate;
+    }
+
+    public AdminService getAdminService() {
+        return adminService;
+    }
+
+    public void setAdminService(AdminService adminService) {
+        this.adminService = adminService;
     }
 }

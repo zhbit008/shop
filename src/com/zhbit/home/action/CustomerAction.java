@@ -16,9 +16,15 @@ import java.util.Map;
 
 @Controller("customerActionHome")
 @Scope("prototype")
-public class CustomerAction extends JsonActionSupport {
+public class CustomerAction extends JsonActionSupport{
     Customer customer;
-
+    String nickName;
+    String username;
+    String password1;
+    String password2;
+    String realname;
+    String rel;
+    String email;
     @Resource
     CustomerService customerService;
 
@@ -27,6 +33,7 @@ public class CustomerAction extends JsonActionSupport {
      * @return
      */
     public String index(){
+
         return SUCCESS;
     }
     /**
@@ -36,8 +43,8 @@ public class CustomerAction extends JsonActionSupport {
     public String loginValidate(){
         Customer customerObj = null;
         try{
-            customerObj = customerService.loginValidate(customer);
-            System.out.println("ccc");
+            System.out.println("customer");
+//            customerObj = customerService.loginValidate(customer);
         }catch (RuntimeException e){
 //          e.printStackTrace();
             ajaxFail(Integer.parseInt(e.getMessage()));
@@ -54,6 +61,11 @@ public class CustomerAction extends JsonActionSupport {
         return SUCCESS;
     }
 
+    public String alter(){
+        System.out.println(nickName+username+password1+password2);
+
+        return SUCCESS;
+    }
     /**
      * getter and setter
      * @return
@@ -73,5 +85,61 @@ public class CustomerAction extends JsonActionSupport {
 
     public void setCustomerService(CustomerService customerService) {
         this.customerService = customerService;
+    }
+
+    public String getNickName() {
+        return nickName;
+    }
+
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword1() {
+        return password1;
+    }
+
+    public void setPassword1(String password1) {
+        this.password1 = password1;
+    }
+
+    public String getPassword2() {
+        return password2;
+    }
+
+    public void setPassword2(String password2) {
+        this.password2 = password2;
+    }
+
+    public String getRealname() {
+        return realname;
+    }
+
+    public void setRealname(String realname) {
+        this.realname = realname;
+    }
+
+    public String getRel() {
+        return rel;
+    }
+
+    public void setRel(String rel) {
+        this.rel = rel;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

@@ -16,6 +16,10 @@
                 <param name="actionName">index_login</param>
             </result>
         </global-results>
+        <!--暂时这样写着-->
+        <action name="customer_alter" class="customerActionHome" method="alter">
+            <result name="success">/WEB-INF/home/customer/index.jsp</result>
+        </action>
         <action name="*_*" class="{1}ActionHome" method="{2}">
             <result name="success">/WEB-INF/home/{1}/{2}.jsp</result>
         </action>

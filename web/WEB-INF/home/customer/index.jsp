@@ -1,4 +1,5 @@
 ﻿<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="/struts-tags" prefix="s"%>
 <jsp:include page="../layout/header.jsp">
     <jsp:param name="title" value="个人信息"/>
     <jsp:param name="js" value="massage"/>
@@ -44,81 +45,6 @@
                 </ul>
                 <br/>
             </div>
-            <!-- /*个人资料修改*/ -->
-            <div class="col-sm-9 col-sm-offset-1" style="background: #FFF;display: none;" id="massage">
-                <br/>
-                <form role="form" action="#" class="form-horizontal">
-                    <div class="form-group">
-                        <label for="Name0" class="col-sm-2 control-label">昵&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;称：</label>
-                        <div class="col-sm-4">
-                            <input type="text" class="form-control" id="Name0" placeholder="请输入名字">
-                        </div>
-                        <div class="col-sm-6"></div>
-                    </div>
-                    <!-- 单选按钮开始 -->
-                    <div class="col-sm-2"></div>
-                    <div class="form-group col-sm-10">
-                        <label class="checkbox-inline">
-                            <input type="radio" name="post" id="man" value="man" checked />男
-                        </label>
-                        <label class="checkbox-inline">
-                            <input type="radio" name="post" id="woman" value="woman"  />女
-                        </label>
-                    </div>
-                    <!-- 单选按钮结束 -->
-                    <div class="form-group">
-                        <label for="Name1" class="col-sm-2 control-label">登录名：</label>
-                        <div class="col-sm-4">
-                            <input type="text" class="form-control" id="Name1" placeholder="请输入登录名">
-                        </div>
-                        <div class="col-sm-6"></div>
-                    </div>
-                    <div class="form-group">
-                        <label for="Password" class="col-sm-2 control-label">密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码：</label>
-                        <div class="col-sm-4">
-                            <input type="text" class="form-control" id="Password" placeholder="请输入密码">
-                        </div>
-                        <div class="col-sm-6"></div>
-                    </div>
-                    <div class="form-group">
-                        <label for="Password1" class="col-sm-2 control-label">确认密码：</label>
-                        <div class="col-sm-4">
-                            <input type="text" class="form-control" id="Password1" placeholder="请再次输入密码">
-                        </div>
-                        <div class="col-sm-6"></div>
-                    </div>
-                    <div class="form-group">
-                        <label for="realname" class="col-sm-2 control-label">真实姓名：</label>
-                        <div class="col-sm-4">
-                            <input type="text" class="form-control" id="realname" placeholder="请输入真实名字">
-                        </div>
-                        <div class="col-sm-6"></div>
-                    </div>
-                    <div class="form-group">
-                        <label for="rel" class="col-sm-2 control-label">电&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;话：</label>
-                        <div class="col-sm-4">
-                            <input type="text" class="form-control" id="rel" placeholder="请输入电话">
-                        </div>
-                        <div class="col-sm-6"></div>
-                    </div>
-                    <div class="form-group">
-                        <label for="email" class="col-sm-2 control-label">电子邮箱：</label>
-                        <div class="col-sm-4">
-                            <input type="email" class="form-control" id="email" placeholder="请输入您的邮箱地址">
-                        </div>
-                        <div class="col-sm-6"></div>
-                    </div>
-                    <div class="col-sm-2"></div>
-
-                    <div class="col-sm-offset-2">
-                        <button class="btn btn-success" type="sumbit" >确认提交</button>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <button class="btn btn-success" type="sumbit" >重&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;置</button>
-                    </div>
-                </form>
-                <br/>
-            </div>
-
 
             <!-- /*个人订单*/ -->
 
@@ -190,6 +116,37 @@
                     </div>
                 </div>
             </div>
+            <!-- /*个人资料修改*/ -->
+            <div class="col-sm-9 col-sm-offset-1" style="background: #FFF;display: none;" id="massage">
+                <br/>
+                <section>
+                    ${errorMsg}
+                    <s:form role="form" action="customer_alter" method="post" namespace="/home" cssClass="form-horizontal">
+                         <div class="col-sm-5" >
+                              <h4><strong>昵&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;称：</strong></h4>
+                              <s:textfield  cssClass="form-control" id="nickName" name="nickName" placeholder="请输入昵称" key="nickName"/><br/>
+                              <s:radio list="#{'man':' 男','woman':'  女'}" value="sex" name="sex" id="sex"></s:radio><br/>
+                              <h4><strong>用户名：</strong></h4>
+                              <s:textfield  cssClass="form-control" id="username" name="username" key="username" placeholder="请输入用户名" /><br/>
+                              <h4><strong>密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码：</strong></h4>
+                              <s:password cssClass="form-control" id="password1" name="password1" key="password1" placeholder="请输入密码" /><br/>
+                              <h4><strong>确认密码:</strong></h4>
+                              <s:password cssClass="form-control" id="password2" name="password2" key="password2" placeholder="请再次输入密码"/><br/>
+                         </div>
+                        <div class="col-sm-5 col-sm-offset-2">
+                             <h4><strong>真实姓名：</strong></h4>
+                             <s:textfield cssClass="form-control" id="realname" name="realname" key="realname" placeholder="请输入真实名字" /><br/>
+                             <h4><strong>电&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;话：</strong></h4>
+                             <s:textfield cssClass="form-control" id="rel" name="rel" key="rel" placeholder="请输入电话"/><br/>
+                             <h4><strong>电子邮箱：</strong></h4>
+                             <s:textfield cssClass="form-control" id="email" name="email" key="email" placeholder="请输入您的邮箱地址"/><br/>
+                             <s:submit cssClass="btn btn-success" value="确认提交" key="submit" /><br/>
+                        </div>
+
+                    </s:form>
+                </section>
+            </div>
+
         </div>
     </div>
 </div>

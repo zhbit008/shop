@@ -1,7 +1,9 @@
 package com.zhbit.service.impl;
 
 import com.zhbit.dao.CustomerDao;
+import com.zhbit.dao.CustomerProfileDao;
 import com.zhbit.domain.Customer;
+import com.zhbit.domain.CustomerProfile;
 import com.zhbit.service.CustomerService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -21,8 +23,13 @@ import javax.annotation.Resource;
 @Transactional
 public class CustomerServiceImpl implements CustomerService{
     private Customer customer;
+    private Customer customerObj;
+    private CustomerProfile customerProfile;
+
     @Resource
     private CustomerDao customerDao;
+    @Resource
+    private CustomerProfileDao customerProfileDao;
 
     @Override
     public void save(String username, String password) {
@@ -38,7 +45,7 @@ public class CustomerServiceImpl implements CustomerService{
     @Override
     public Customer loginValidate(Customer customerOrg) {
         if (null == customerOrg) throw new RuntimeException("4000");
-        System.out.println("cccc");
+
         Customer customerObj =  customerDao.getCustomerByUsername(customerOrg.getUsername().trim());
         if (null == customerObj) throw  new RuntimeException("4000");
 
@@ -54,10 +61,25 @@ public class CustomerServiceImpl implements CustomerService{
     @Override
     public boolean registerValidate(String username, String password1, String password2) {
         if (!password1.equals(password2)) throw new RuntimeException("5000");
-
+        System.out.println("cccc");
         Customer customerObj =  customerDao.getCustomerByUsername(username.trim());
         if (null != customerObj) throw  new RuntimeException("5100");
         return true;
+    }
+
+    @Override
+    public void savemassage(String nickName, String username, String password, String realname, String rel, String email,String sex) {
+        customerObj = customerDao.getCustomerByUsername(username);
+        customer = new Customer(customerObj.getId(),username,password,nickName);
+        customerProfile = new CustomerProfile(customerObj.getId(),"realname",realname);
+        customerProfileDao.save(customerProfile);
+        customerProfile = new CustomerProfile(customerObj.getId(),"rel",rel);
+        customerProfileDao.save(customerProfile);
+        customerProfile = new CustomerProfile(customerObj.getId(),"email",email);
+        customerProfileDao.save(customerProfile);
+        customerProfile = new CustomerProfile(customerObj.getId(),"sex",sex);
+        customerProfileDao.save(customerProfile);
+        customerDao.update(customer);
     }
 
     @Override
@@ -71,5 +93,37 @@ public class CustomerServiceImpl implements CustomerService{
 
     public void setCustomerDao(CustomerDao customerDao) {
         this.customerDao = customerDao;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
+    public CustomerProfile getCustomerProfile() {
+        return customerProfile;
+    }
+
+    public void setCustomerProfile(CustomerProfile customerProfile) {
+        this.customerProfile = customerProfile;
+    }
+
+    public CustomerProfileDao getCustomerProfileDao() {
+        return customerProfileDao;
+    }
+
+    public void setCustomerProfileDao(CustomerProfileDao customerProfileDao) {
+        this.customerProfileDao = customerProfileDao;
+    }
+
+    public Customer getCustomerObj() {
+        return customerObj;
+    }
+
+    public void setCustomerObj(Customer customerObj) {
+        this.customerObj = customerObj;
     }
 }

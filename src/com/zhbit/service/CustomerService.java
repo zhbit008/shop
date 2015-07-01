@@ -10,4 +10,5 @@ public interface CustomerService {
     public Customer loginValidate(Customer customer);
     public boolean registerValidate(String username, String password1 ,String password2);
     public void save(String username,String password);
+    public void savemassage(String nickName,String username,String password,String realname,String rel,String email,String sex);
 }
