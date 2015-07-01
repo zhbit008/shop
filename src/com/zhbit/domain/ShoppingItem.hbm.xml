@@ -3,7 +3,7 @@
         "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class name="com.zhbit.domain.ShoppingCart" table="bit_shoppingcart">
+    <class name="com.zhbit.domain.ShoppingItem" table="bit_shopping_item">
         <composite-id>
             <key-property name="productId" column="product_id" />
             <key-property name="customer" />
@@ -11,6 +11,6 @@
 
         <property name="num" />
 
-        <property name="createtime" type="date" />
+        <property name="createTime" column="create_time" type="date" />
     </class>
 </hibernate-mapping>

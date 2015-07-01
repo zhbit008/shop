@@ -10,15 +10,15 @@ import java.util.Date;
 public class Favorite implements Serializable {
     private Integer productId;
     private Integer customerId;
-    private Date  createtime;
+    private Date  createTime;
 
     public Favorite() {
     }
 
-    public Favorite(Integer productId, Integer customerId, Date createtime) {
+    public Favorite(Integer productId, Integer customerId, Date createTime) {
         this.productId = productId;
         this.customerId = customerId;
-        this.createtime = createtime;
+        this.createTime = createTime;
     }
 
     public Integer getProductId() {
@@ -37,11 +37,11 @@ public class Favorite implements Serializable {
         this.customerId = customerId;
     }
 
-    public Date getCreatetime() {
-        return createtime;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 }

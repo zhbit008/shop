@@ -11,26 +11,27 @@ public class Order implements Serializable {
     private Integer id;
     private Integer status;
     private Integer customerId;
-    private String sendname;
-    private String sendadress;
-    private String sendtel;
-    private String paymet;
+    private String sendName;
+    private String sendAdress;
+    private String sendTel;
+    private String payment;
     private String remark;
-    private Date  createtime;
-
+    private Date  startTime;
+    private Date  endTime;
     public Order() {
     }
 
-    public Order(Integer id, Integer status, Integer customerId, String sendname, String sendadress, String sendtel, String paymet, String remark, Date createtime) {
+    public Order(Integer id, Integer status, Integer customerId, String sendName, String sendAdress, String sendTel, String payment, String remark, Date startTime, Date endTime) {
         this.id = id;
         this.status = status;
         this.customerId = customerId;
-        this.sendname = sendname;
-        this.sendadress = sendadress;
-        this.sendtel = sendtel;
-        this.paymet = paymet;
+        this.sendName = sendName;
+        this.sendAdress = sendAdress;
+        this.sendTel = sendTel;
+        this.payment = payment;
         this.remark = remark;
-        this.createtime = createtime;
+        this.startTime = startTime;
+        this.endTime = endTime;
     }
 
     public Integer getId() {
@@ -57,36 +58,36 @@ public class Order implements Serializable {
         this.customerId = customerId;
     }
 
-    public String getSendname() {
-        return sendname;
+    public String getSendName() {
+        return sendName;
     }
 
-    public void setSendname(String sendname) {
-        this.sendname = sendname;
+    public void setSendName(String sendName) {
+        this.sendName = sendName;
     }
 
-    public String getSendadress() {
-        return sendadress;
+    public String getSendAdress() {
+        return sendAdress;
     }
 
-    public void setSendadress(String sendadress) {
-        this.sendadress = sendadress;
+    public void setSendAdress(String sendAdress) {
+        this.sendAdress = sendAdress;
     }
 
-    public String getSendtel() {
-        return sendtel;
+    public String getSendTel() {
+        return sendTel;
     }
 
-    public void setSendtel(String sendtel) {
-        this.sendtel = sendtel;
+    public void setSendTel(String sendTel) {
+        this.sendTel = sendTel;
     }
 
-    public String getPaymet() {
-        return paymet;
+    public String getPayment() {
+        return payment;
     }
 
-    public void setPaymet(String paymet) {
-        this.paymet = paymet;
+    public void setPayment(String payment) {
+        this.payment = payment;
     }
 
     public String getRemark() {
@@ -97,11 +98,19 @@ public class Order implements Serializable {
         this.remark = remark;
     }
 
-    public Date getCreatetime() {
-        return createtime;
+    public Date getStartTime() {
+        return startTime;
     }
 
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
+    public void setStartTime(Date startTime) {
+        this.startTime = startTime;
+    }
+
+    public Date getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(Date endTime) {
+        this.endTime = endTime;
     }
 }

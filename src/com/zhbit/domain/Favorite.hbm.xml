@@ -9,6 +9,6 @@
             <key-property name="customerId" column="customer_id" />
         </composite-id>
 
-        <property name="createtime" type="timestamp"/>
+        <property name="createTime" column="create_time" type="timestamp"/>
     </class>
 </hibernate-mapping>

@@ -18,8 +18,6 @@ public class AdminProfileDapImpl implements AdminProfileDao{
     @Qualifier("sessionFactory")
     private SessionFactory sessionFactory;
 
-
-
     @Override
     public void save(AdminProfile adminprofile) {
         sessionFactory.getCurrentSession().save(adminprofile);
