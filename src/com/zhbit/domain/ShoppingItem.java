@@ -5,20 +5,20 @@ import java.util.Date;
 /**
  * Created by laujei1995-lz on 2015/6/26.
  */
-public class ShoppingCart implements Serializable  {
+public class ShoppingItem implements Serializable  {
     private Integer productId;
     private Integer customer;
     private Integer num;
-    private Date  createtime;
+    private Date  createTime;
 
-    public ShoppingCart() {
+    public ShoppingItem() {
     }
 
-    public ShoppingCart(Integer productId, Integer customer, Integer num, Date createtime) {
+    public ShoppingItem(Integer productId, Integer customer, Integer num, Date createTime) {
         this.productId = productId;
         this.customer = customer;
         this.num = num;
-        this.createtime = createtime;
+        this.createTime = createTime;
     }
 
     public Integer getProductId() {
@@ -45,11 +45,11 @@ public class ShoppingCart implements Serializable  {
         this.num = num;
     }
 
-    public Date getCreatetime() {
-        return createtime;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 }

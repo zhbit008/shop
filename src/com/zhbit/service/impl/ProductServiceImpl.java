@@ -41,6 +41,11 @@ public class ProductServiceImpl implements ProductService {
          return productDao.count(cid);
     }
 
+    @Override
+    public Product get(Integer id) {
+        return productDao.get(id);
+    }
+
     /**
      * getter and setter
      * @return

@@ -9,11 +9,12 @@
         </id>
         <property name="status" />
         <property name="customerId" column="customer_id" />
-        <property name="sendname" type ="string" length="255"/>
-        <property name="sendadress" type="string" length="255"/>
-        <property name="sendtel" type="string" length="255"/>
-        <property name="paymet" type="string" length="255"/>
+        <property name="sendName" column="send_name" type ="string" length="255"/>
+        <property name="sendAdress" column="send_adress" type="string" length="255"/>
+        <property name="sendTel" column="send_tel" type="string" length="255"/>
+        <property name="payment" type="string" length="255"/>
         <property name="remark" type="string" length="255"/>
-        <property name="createtime"  type="date" />
+        <property name="startTime" column="start_time" type="date" />
+        <property name="endTime" column="end_time" type="date" />
     </class>
 </hibernate-mapping>

@@ -14,28 +14,28 @@
 		<ul class="media-list">
 		    <li class="media">
 		        <a class="pull-left" href="#">
-		            <img class="media-object" src="/resource/home/img/037.jpg" alt="...">
+		            <img class="media-object" src="/upload/product/${requestScope.product.image}.jpg" alt="...">
 		        </a>
 		        <div class="media-body" style="">
 		        	<br/>
-		            <h3 class="media-heading"><strong>GE00010伊丽莎白餐厅家具</strong></h3>
+		            <h3 class="media-heading"><strong>${requestScope.product.name}</strong></h3>
 		            <br/>
 		            <div>
-			            <strong><h4>百搭时尚先锋，家之精品<br/><br/></h4></strong>
-						<h5><p>白色构筑的世界，黑色零星铺洒，搭配出舒适的视觉感受。家具精雕细琢，设计简练，使用黑白两色更为百搭。衣柜不是孤立存在的单一体，它加入电视柜和收纳柜的功能，与一旁的梳妆台并排嵌在墙上，让卧房更显整洁和有序。</p>
-						<p>推荐人群：酷爱时尚家具，追求独特品味的所有人士。</p>
+			            <strong><h4>${requestScope.product.title}<br/><br/></h4></strong>
+						<h5><p>${requestScope.product.describe}</p>
+						<p>推荐人群：${requestScope.product.love}</p>
 						<p>所属标签：卧房，伊丽莎白</p>
 						<p>网上优惠价：<em style="  font-size: 24px;
-	  color: #a51616;">￥0</em>（仅供参考 请以实际成交价为准）</p>
-						<p>优惠截止日期：2015/6/30</p>
-						<p>套餐所含件数：1件套</p>
+	  color: #a51616;">￥${requestScope.product.salePrice}</em>（仅供参考 请以实际成交价为准）</p>
+						<p>优惠截止日期：${requestScope.product.dateline}</p>
+						<p>套餐所含件数：${requestScope.product.saleNum}件套</p>
 						<p>定制周期：30天左右（视配送距离而定）</p></h5>
 					</div>
 					<br/><br/>
 					<center>
-					<button class="btn btn-danger" type="button">加入购物车</button>
+					<button class="btn btn-danger" type="button" href="${requestScope.product.id}">加入购物车</button>
 					&nbsp;&nbsp;&nbsp;&nbsp;
-					<button class="btn btn-danger" type="button">立即&nbsp;购买</button>
+                    <a href="/home/shoppingCart_index" class="btn btn-danger">立即&nbsp;购买</a>
 					</center>
 		        </div>
 		    </li>
@@ -54,9 +54,9 @@
 					    	<center><h4 style="  font-size: 24px;
 	  color: #a51616;">4.8&nbsp;&nbsp;&nbsp;  4.8 &nbsp;&nbsp;  5.0</h4></center>
 	  <center>
-					<button class="btn btn-success" type="button">进店逛逛</button>
+					<button class="btn btn-success" type="button" href="${requestScope.product.storeId}">进店逛逛</button>
 					&nbsp;&nbsp;&nbsp;&nbsp;
-					<button class="btn btn-success" type="button">收藏店铺</button>
+					<button class="btn btn-success" type="button" href="${requestScope.product.storeId}">收藏店铺</button>
 					</center>
 						</div>
 					</div>
