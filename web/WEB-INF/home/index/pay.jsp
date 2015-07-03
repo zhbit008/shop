@@ -1,4 +1,5 @@
 ﻿<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="/struts-tags" prefix="s"%>
 <jsp:include page="../layout/header.jsp">
     <jsp:param name="title" value="支付页面"/>
 </jsp:include>
@@ -29,7 +30,8 @@
 					<div class="hidden-xs col-sm-1">金额(元)</div>
 					<div class="hidden-xs col-sm-1">操作</div>
 	
-				</div>	
+				</div>
+                <s:iterator value="productList">
 				<div class="row" >
 					<div class="col-sm-12">
 						<h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -66,6 +68,7 @@
 						<h4><a href="#">删除</a></h4>
 					</div>
 				</div>
+                    </s:iterator>
 				<!-- =========================== -->
 				<div class="row" >
 					<div class="col-sm-12">

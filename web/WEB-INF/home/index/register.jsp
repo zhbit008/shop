@@ -27,7 +27,7 @@
                     </div>
                 </div>
                 <div class="col-sm-2">
-                    <span id="info_LoginName" class="hide tips_error">不能为空</span>
+                    <span id="info_LoginName" class="hide tips_error" style="margin-left: -5px;">不能为空</span>
                 </div>
                 <div class="col-sm-10">
                     <div class="form-group">
@@ -36,7 +36,7 @@
                     </div>
                 </div>
                 <div class="col-sm-2">
-                    <span id="info_PassWord1" class="hide tips_error">不能为空</span>
+                    <span id="info_PassWord1" class="hide tips_error" style="margin-left: -5px;">不能为空</span>
                 </div>
                 <div class="col-sm-10">
                     <div class="form-group">
@@ -45,7 +45,7 @@
                     </div>
                 </div>
                 <div class="col-sm-2">
-                    <span id="info_PassWord2" class="hide tips_error">不能为空</span>
+                    <span id="info_PassWord2" class="hide tips_error" style="margin-left: -5px;">不能为空</span>
                 </div>
                 <div class="col-sm-12">
                     <div class="radio-inline">
@@ -58,7 +58,7 @@
 
                 <div class="col-sm-12">
                     <center><h6>
-                        <label><input type="checkbox"/></label>
+                        <label><input type="checkbox" id="check"/></label>
                         请阅读《艾家网用户协议》</h6></center>
                     <button id="submit" class="btn btn-success" onclick="return false;">同意以上协议并注册</button>
                 </div>

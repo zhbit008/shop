@@ -19,13 +19,13 @@ public class ShoppingItemDaoImpl implements ShoppingItemDao {
     private SessionFactory sessionFactory;
 
     @Override
-    public void save(ShoppingItem shoppingCart) {
-        sessionFactory.getCurrentSession().save(shoppingCart);
+    public void save(ShoppingItem ShoppingItem) {
+        sessionFactory.getCurrentSession().save(ShoppingItem);
     }
 
     @Override
-    public void update(ShoppingItem shoppingCart) {
-        sessionFactory.getCurrentSession().update(shoppingCart);
+    public void update(ShoppingItem ShoppingItem) {
+        sessionFactory.getCurrentSession().update(ShoppingItem);
     }
 
     @Override
@@ -41,14 +41,19 @@ public class ShoppingItemDaoImpl implements ShoppingItemDao {
     @SuppressWarnings("unchecked")
     @Override
     public List<ShoppingItem> getShoppingCartList() {
-        return sessionFactory.getCurrentSession().createQuery("from ShoppingCart").list();
+        return sessionFactory.getCurrentSession().createQuery("from ShoppingItem").list();
     }
 
     @Override
-    public ShoppingItem getShoppingCartByProductId(String productId) {
-        return (ShoppingItem)sessionFactory.getCurrentSession().createQuery("from ShoppingCart where productId=:productId").setParameter("productId",productId).uniqueResult();
-
+    public List<ShoppingItem> getShoppingCartByProductId(String productId) {
+        return sessionFactory.getCurrentSession().createQuery("from ShoppingItem where productId=:productId").setParameter("productId",productId).list();
     }
+
+    @Override
+    public List<ShoppingItem> getShoppingCartByCustomerId(int customerId) {
+        return sessionFactory.getCurrentSession().createQuery("from ShoppingItem where customer=:customerId").setParameter("customerId",customerId).list();
+    }
+
 
     public SessionFactory getSessionFactory() {
         return sessionFactory;

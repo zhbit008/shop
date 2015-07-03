@@ -6,6 +6,13 @@
 
 <struts>
     <package name="home" extends="struts-default" namespace="/home">
+        <interceptors>
+            <interceptor name="permission" class="permissionInterceptor"/>
+            <interceptor-stack name="permissionStack">
+                <interceptor-ref name="defaultStack" />
+                <interceptor-ref name="permission" />
+            </interceptor-stack>
+        </interceptors>
         <global-results>
             <result name="index" type="redirectAction" >
                 <param name="namespace">/home</param>
@@ -17,8 +24,12 @@
             </result>
         </global-results>
         <!--暂时这样写着-->
-        <action name="customer_alter" class="customerActionHome" method="alter">
-            <result name="success">/WEB-INF/home/customer/index.jsp</result>
+        <action name="customer" class="customerAction" method="alter">
+            <result name="success">/WEB-INF/home/index/success.jsp</result>
+            <result name="input">/WEB-INF/home/index/success.jsp</result>
+            <result name="login">/WEB-INF/home/index/login.jsp</result>
+            <interceptor-ref name="defaultStack" />
+            <interceptor-ref name="permission" />
         </action>
         <action name="*_*" class="{1}ActionHome" method="{2}">
             <result name="success">/WEB-INF/home/{1}/{2}.jsp</result>

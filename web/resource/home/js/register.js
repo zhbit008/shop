@@ -6,10 +6,19 @@ $(function(){
     var u = $("#username");
     var p1 = $("#password1");
     var p2 = $("#password2");
+    var c = $("#check");
     var loginName = $("#info_LoginName");
     var passWord1 = $("#info_PassWord1");
     var passWord2 = $("#info_PassWord2");
+    $("#submit").prop('disabled', true);
+    $('#check').on('click',function(){
+        var $this = $(this);
+        if (!$this.prop('check')){
+            $('#submit').prop('disabled',false );
+        }
+    });
     $("#submit").on("click", function(){
+
         loginName.addClass('hide');
         passWord1.addClass('hide');
         passWord2.addClass('hide');

@@ -2,13 +2,19 @@ package com.zhbit.service.impl;
 
 import com.zhbit.dao.CustomerDao;
 import com.zhbit.dao.CustomerProfileDao;
+import com.zhbit.dao.ProductDao;
+import com.zhbit.dao.ShoppingItemDao;
 import com.zhbit.domain.Customer;
 import com.zhbit.domain.CustomerProfile;
+import com.zhbit.domain.Product;
+import com.zhbit.domain.ShoppingItem;
 import com.zhbit.service.CustomerService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by acer on 2015/6/27.
@@ -25,12 +31,16 @@ public class CustomerServiceImpl implements CustomerService{
     private Customer customer;
     private Customer customerObj;
     private CustomerProfile customerProfile;
-
+    List<Product> productsList =new ArrayList<Product>();
+    Product product;
     @Resource
     private CustomerDao customerDao;
     @Resource
     private CustomerProfileDao customerProfileDao;
-
+    @Resource
+    private ShoppingItemDao shoppingItemDao;
+    @Resource
+    private ProductDao productDao;
     @Override
     public void save(String username, String password) {
         customer = new Customer(null,username,password,null);
@@ -61,25 +71,35 @@ public class CustomerServiceImpl implements CustomerService{
     @Override
     public boolean registerValidate(String username, String password1, String password2) {
         if (!password1.equals(password2)) throw new RuntimeException("5000");
-        System.out.println("cccc");
         Customer customerObj =  customerDao.getCustomerByUsername(username.trim());
         if (null != customerObj) throw  new RuntimeException("5100");
         return true;
     }
 
     @Override
-    public void savemassage(String nickName, String username, String password, String realname, String rel, String email,String sex) {
+    public void alterMassage(String nickName, String username, String password) {
         customerObj = customerDao.getCustomerByUsername(username);
-        customer = new Customer(customerObj.getId(),username,password,nickName);
-        customerProfile = new CustomerProfile(customerObj.getId(),"realname",realname);
-        customerProfileDao.save(customerProfile);
-        customerProfile = new CustomerProfile(customerObj.getId(),"rel",rel);
-        customerProfileDao.save(customerProfile);
-        customerProfile = new CustomerProfile(customerObj.getId(),"email",email);
-        customerProfileDao.save(customerProfile);
-        customerProfile = new CustomerProfile(customerObj.getId(),"sex",sex);
-        customerProfileDao.save(customerProfile);
-        customerDao.update(customer);
+        customerObj.setNickname(nickName);
+        customerObj.setPassword(password);
+    }
+
+    @Override
+    public Customer getCustomerById(int id) {
+        return customerDao.getCustomer(id);
+
+    }
+
+    @Override
+    public List<Product> getCustomerBuyProduct(int customerId) {
+        List<ShoppingItem> shopingItemList = shoppingItemDao.getShoppingCartByCustomerId(customerId);
+
+       for (int i=0;i<shopingItemList.size();i++){
+           int t = shopingItemList.get(i).getProductId();
+            product = productDao.get(t);
+           productsList.add(product);
+
+       }
+        return  productsList;
     }
 
     @Override
@@ -125,5 +145,37 @@ public class CustomerServiceImpl implements CustomerService{
 
     public void setCustomerObj(Customer customerObj) {
         this.customerObj = customerObj;
+    }
+
+    public List<Product> getProductsList() {
+        return productsList;
+    }
+
+    public void setProductsList(List<Product> productsList) {
+        this.productsList = productsList;
+    }
+
+    public ShoppingItemDao getShoppingItemDao() {
+        return shoppingItemDao;
+    }
+
+    public void setShoppingItemDao(ShoppingItemDao shoppingItemDao) {
+        this.shoppingItemDao = shoppingItemDao;
+    }
+
+    public ProductDao getProductDao() {
+        return productDao;
+    }
+
+    public void setProductDao(ProductDao productDao) {
+        this.productDao = productDao;
+    }
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
     }
 }

@@ -29,7 +29,7 @@
                     </div>
                 </div>
                 <div class="col-sm-2">
-                    <span id="info_LoginName" class=" tips_error">不能为空</span>
+                    <span id="info_LoginName" class="hide tips_error" style="margin-left: -5px;">不能为空</span>
                 </div>
                 <br/><br/><br/><br/>
                 <div class="col-sm-10">
@@ -39,14 +39,14 @@
                     </div>
                 </div>
                 <div class="col-sm-2">
-                    <span id="info_PassWord" class=" tips_error">不能为空</span>
+                    <span id="info_PassWord" class="hide tips_error" style="margin-left: -5px;">不能为空</span>
                 </div>
                 <br/>
                 <br/>
                 <br/>
                 <div class="checkbox col-sm-12">
                     <label>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="check" /> 记住密码
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="check" name="check" /> 记住密码
                     </label>
                 </div>
                 <div class="col-sm-12">

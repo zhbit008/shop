@@ -32,7 +32,7 @@
                         </a>
                     </center>
 
-                    <center><h4><strong>亲爱的，铭尘沐风<br/>
+                    <center><h4><strong>亲爱的，<s:property value="customer.getNickname()" /><br/>
                         欢迎回来</strong></h4></center>
                     <center><h6>您是T2会员,距离升级还有: 6261经验值</h6></center>
                     <br/>
@@ -48,7 +48,7 @@
 
             <!-- /*个人订单*/ -->
 
-            <div class="col-sm-9 col-sm-offset-1" style="background: #FFF;" id="order">
+            <div class="col-sm-9 col-sm-offset-1" style="background: #FFF;display: none;" id="order">
                 <br/>
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -74,6 +74,8 @@
                     </div>
                 </div>
                 <br/>
+                <s:iterator value="productList">
+
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <div class="checkbox">
@@ -89,16 +91,16 @@
                             <img src="/resource/home/img/05.jpg" style="margin:15px 0;" />
                         </div>
                         <div class="col-sm-2">
-                            <p style="margin-top: 50px"><center>0001</center></p>
+                            <p style="margin-top: 50px"><center>0000<s:property value="id"></s:property> </center></p>
                         </div>
                         <div class="col-sm-1">
-                            <p style="margin-top: 50px"><center>200</center></p>
+                            <p style="margin-top: 50px"><center><s:property value="salePrice"></s:property></center></p>
                         </div>
                         <div class="col-sm-1">
-                            <p style="margin-top: 50px"><center>2</center></p>
+                            <p style="margin-top: 50px"><center>1</center></p>
                         </div>
                         <div class="col-sm-2">
-                            <p style="margin-top: 50px"><center>200(含运费：0.00 )</center></p>
+                            <p style="margin-top: 50px"><center><s:property value="salePrice"></s:property>(含运费：0.00 )</center></p>
                         </div>
                         <div class="col-sm-2">
                             <ul class="nav">
@@ -115,36 +117,26 @@
                         </div>
                     </div>
                 </div>
+                </s:iterator>
             </div>
             <!-- /*个人资料修改*/ -->
-            <div class="col-sm-9 col-sm-offset-1" style="background: #FFF;display: none;" id="massage">
-                <br/>
-                <section>
-                    ${errorMsg}
-                    <s:form role="form" action="customer_alter" method="post" namespace="/home" cssClass="form-horizontal">
+            <div class="col-sm-9 col-sm-offset-1" style="background: #FFF;display: block;" id="massage">
+                    <s:form role="form" action="customer" method="post" namespace="/home" cssClass="form-horizontal">
                          <div class="col-sm-5" >
                               <h4><strong>昵&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;称：</strong></h4>
                               <s:textfield  cssClass="form-control" id="nickName" name="nickName" placeholder="请输入昵称" key="nickName"/><br/>
-                              <s:radio list="#{'man':' 男','woman':'  女'}" value="sex" name="sex" id="sex"></s:radio><br/>
+                             <s:fielderror fieldName="nickName" cssClass="color:#990000"/>
                               <h4><strong>用户名：</strong></h4>
-                              <s:textfield  cssClass="form-control" id="username" name="username" key="username" placeholder="请输入用户名" /><br/>
+                              <s:textfield  cssClass="form-control" id="username" name="username" key="username" readonly="true" value="%{#request.customer.getUsername()}" /><br/>
                               <h4><strong>密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码：</strong></h4>
                               <s:password cssClass="form-control" id="password1" name="password1" key="password1" placeholder="请输入密码" /><br/>
+                             <s:fielderror fieldName="password1" cssClass="color:#990000"/>
                               <h4><strong>确认密码:</strong></h4>
                               <s:password cssClass="form-control" id="password2" name="password2" key="password2" placeholder="请再次输入密码"/><br/>
-                         </div>
-                        <div class="col-sm-5 col-sm-offset-2">
-                             <h4><strong>真实姓名：</strong></h4>
-                             <s:textfield cssClass="form-control" id="realname" name="realname" key="realname" placeholder="请输入真实名字" /><br/>
-                             <h4><strong>电&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;话：</strong></h4>
-                             <s:textfield cssClass="form-control" id="rel" name="rel" key="rel" placeholder="请输入电话"/><br/>
-                             <h4><strong>电子邮箱：</strong></h4>
-                             <s:textfield cssClass="form-control" id="email" name="email" key="email" placeholder="请输入您的邮箱地址"/><br/>
                              <s:submit cssClass="btn btn-success" value="确认提交" key="submit" /><br/>
-                        </div>
-
+                         </div>
                     </s:form>
-                </section>
+
             </div>
 
         </div>

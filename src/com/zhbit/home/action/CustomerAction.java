@@ -3,11 +3,13 @@ package com.zhbit.home.action;
 import com.opensymphony.xwork2.ActionContext;
 import com.zhbit.common.action.JsonActionSupport;
 import com.zhbit.domain.Customer;
+import com.zhbit.domain.Product;
 import com.zhbit.service.CustomerService;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
 import javax.annotation.Resource;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -22,9 +24,8 @@ public class CustomerAction extends JsonActionSupport{
     String username;
     String password1;
     String password2;
-    String realname;
-    String rel;
-    String email;
+    Integer customerId;
+    List<Product> productList;
     @Resource
     CustomerService customerService;
 
@@ -33,6 +34,8 @@ public class CustomerAction extends JsonActionSupport{
      * @return
      */
     public String index(){
+        customer = customerService.getCustomerById(customerId);
+        productList = customerService.getCustomerBuyProduct(customerId);
 
         return SUCCESS;
     }
@@ -43,8 +46,7 @@ public class CustomerAction extends JsonActionSupport{
     public String loginValidate(){
         Customer customerObj = null;
         try{
-            System.out.println("customer");
-//            customerObj = customerService.loginValidate(customer);
+            customerObj = customerService.loginValidate(customer);
         }catch (RuntimeException e){
 //          e.printStackTrace();
             ajaxFail(Integer.parseInt(e.getMessage()));
@@ -61,11 +63,7 @@ public class CustomerAction extends JsonActionSupport{
         return SUCCESS;
     }
 
-    public String alter(){
-        System.out.println(nickName+username+password1+password2);
 
-        return SUCCESS;
-    }
     /**
      * getter and setter
      * @return
@@ -119,27 +117,19 @@ public class CustomerAction extends JsonActionSupport{
         this.password2 = password2;
     }
 
-    public String getRealname() {
-        return realname;
+    public Integer getCustomerId() {
+        return customerId;
     }
 
-    public void setRealname(String realname) {
-        this.realname = realname;
+    public void setCustomerId(Integer customerId) {
+        this.customerId = customerId;
     }
 
-    public String getRel() {
-        return rel;
+    public List<Product> getProductList() {
+        return productList;
     }
 
-    public void setRel(String rel) {
-        this.rel = rel;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
+    public void setProductList(List<Product> productList) {
+        this.productList = productList;
     }
 }

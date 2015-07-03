@@ -9,9 +9,12 @@ $(function(){
     var u = $("#username");
     var p = $("#password");
     var c = $('#check');
+    var b = $('#submit');
     var loginName = $("#info_LoginName");
     var passWord = $("#info_PassWord");
-
+//    if(c.attr("checked")=="checked"){
+//        b
+//    }
 
     $("#submit").on("click", function(){
         loginName.addClass('hide');
@@ -37,7 +40,7 @@ $(function(){
         };
 
         var action = $('#login').attr('action');
-        alert(action);
+
         $this.enable(false);
         pass && $.post(action, { "customer.username": u.val(), "customer.password": p.val() },
             function(json){

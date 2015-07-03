@@ -10,5 +10,6 @@
         <property name="username" type ="string" length="255"/>
         <property name="password" length="32"/>
         <property name="nickname" type="string" length="255"/>
+
     </class>
 </hibernate-mapping>

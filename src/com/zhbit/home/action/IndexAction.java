@@ -2,7 +2,9 @@ package com.zhbit.home.action;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.zhbit.domain.Customer;
+import com.zhbit.domain.Product;
 import com.zhbit.domain.ProductCate;
+import com.zhbit.service.CustomerService;
 import com.zhbit.service.ProductCateService;
 import com.zhbit.service.ProductService;
 import org.springframework.context.annotation.Scope;
@@ -17,8 +19,13 @@ import java.util.List;
 @Controller("indexActionHome")
 @Scope("prototype")
 public class IndexAction extends ActionSupport {
+    Customer customer;
+    Integer customerId;
+    List<Product> productList;
     @Resource
     private ProductCateService productCateService;
+    @Resource
+    private CustomerService customerService;
 
     private List<ProductCate> productCateList;
 
@@ -46,7 +53,10 @@ public class IndexAction extends ActionSupport {
 
 
 //    支付页面
-    public String pay(){return SUCCESS;}
+    public String pay(){
+        productList = customerService.getCustomerBuyProduct(customerId);
+        return SUCCESS;
+    }
 
     //    成功展示页
     public String success(){return SUCCESS;}
@@ -69,5 +79,37 @@ public class IndexAction extends ActionSupport {
 
     public void setProductCateService(ProductCateService productCateService) {
         this.productCateService = productCateService;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
+    public Integer getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(Integer customerId) {
+        this.customerId = customerId;
+    }
+
+    public List<Product> getProductList() {
+        return productList;
+    }
+
+    public void setProductList(List<Product> productList) {
+        this.productList = productList;
+    }
+
+    public CustomerService getCustomerService() {
+        return customerService;
+    }
+
+    public void setCustomerService(CustomerService customerService) {
+        this.customerService = customerService;
     }
 }

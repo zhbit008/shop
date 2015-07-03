@@ -5,7 +5,6 @@
 <hibernate-mapping>
     <class name="com.zhbit.domain.CustomerProfile" table="bit_customer_prfile">
         <id name="customerId" column="customer_id">
-            <generator class="native" />
         </id>
         <property name="key" type ="string" length="255"/>
         <property name="value" type="string" length="255"/>
