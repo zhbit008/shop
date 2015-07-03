@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * Created by acer on 2015/6/27.
  */
-@Repository("shoppingCart")
+@Repository("shoppingItemDao")
 public class ShoppingItemDaoImpl implements ShoppingItemDao {
     @Autowired
     @Qualifier("sessionFactory")
@@ -45,7 +45,7 @@ public class ShoppingItemDaoImpl implements ShoppingItemDao {
     }
 
     @Override
-    public ShoppingItem getShoppingCartByProductId(String productId) {
+    public ShoppingItem getShoppingCartByProductId(Integer productId) {
         return (ShoppingItem)sessionFactory.getCurrentSession().createQuery("from ShoppingCart where productId=:productId").setParameter("productId",productId).uniqueResult();
 
     }

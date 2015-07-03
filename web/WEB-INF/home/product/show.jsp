@@ -1,6 +1,7 @@
 ﻿<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <jsp:include page="../layout/header.jsp">
     <jsp:param name="title" value="商品展示页"/>
+    <jsp:param name="js" value="product/show" />
 </jsp:include>
 <jsp:include page="../layout/nav.jsp"/>
 	
@@ -33,9 +34,9 @@
 					</div>
 					<br/><br/>
 					<center>
-					<button class="btn btn-danger" type="button" href="${requestScope.product.id}">加入购物车</button>
+					<button class="btn btn-danger add-item" type="button" href="/ajax/Home_shopping_addItem?productId=" data-id="${requestScope.product.id}">加入购物车</button>
 					&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href="/home/shoppingCart_index" class="btn btn-danger">立即&nbsp;购买</a>
+                    <a href="/home/shopping_cart" class="btn btn-danger">立即&nbsp;购买</a>
 					</center>
 		        </div>
 		    </li>
@@ -47,16 +48,16 @@
 					<div class="panel panel-default">
 					    <div class="panel-heading">
 					    沐风旗舰店
-					    <a href="#" style="background:url(/resource/home/img/qq.gif);background-position: -80px 0;  width: 20px;height: 20px;  display: inline-block;"></a>
+					    <a href="#" style="background: url(/resource/home/img/qq.gif) -80px 0;width: 20px;height: 20px;  display: inline-block;"></a>
 					    </div>
 					    <div class="panel-body">
 					    	<center><h4>信誉度 服务度 物流度</h4></center>
 					    	<center><h4 style="  font-size: 24px;
 	  color: #a51616;">4.8&nbsp;&nbsp;&nbsp;  4.8 &nbsp;&nbsp;  5.0</h4></center>
 	  <center>
-					<button class="btn btn-success" type="button" href="${requestScope.product.storeId}">进店逛逛</button>
+                     <a href="/home/store_index?storeId=${requestScope.product.storeId}"  class="btn btn-success"> 进店逛逛  </a>
 					&nbsp;&nbsp;&nbsp;&nbsp;
-					<button class="btn btn-success" type="button" href="${requestScope.product.storeId}">收藏店铺</button>
+					<button class="btn btn-success add-item" type="button" href="/ajax/Home_store_back?storeId=" data-id="${requestScope.product.storeId}">收藏店铺</button>
 					</center>
 						</div>
 					</div>
