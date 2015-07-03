@@ -15,4 +15,5 @@ public interface ShoppingItemDao {
     public List<ShoppingItem> getShoppingCartList();
     public List<ShoppingItem> getShoppingCartByProductId(String productId);
     public List<ShoppingItem> getShoppingCartByCustomerId(int customerId);
+    public ShoppingItem getShoppingCartByProductId(Integer productId);
 }

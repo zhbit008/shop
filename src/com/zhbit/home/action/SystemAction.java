@@ -55,6 +55,7 @@ public class SystemAction extends JsonActionSupport{
      * @return
      */
     public String exitHandle(){
+
         ActionContext actionContext = ActionContext.getContext();
         Map session = actionContext.getSession();
         session.put("customer", null);

@@ -19,7 +19,7 @@
                      <ul class="nav navbar-nav">
                         <li class="active"><a href="/home/index_index.html">首页 <span class="sr-only">(current)</span></a></li>
                         <li><a href="#">收藏夹</a></li>
-                        <li><a href="/home/index_pay.html?customerId=<s:property value="#session.customer.getId()" />">购物车</a></li>
+                        <li><a href="/home/shopping_cart.html">购物车</a></li>
                         <li><a href="#">联系客服</a></li>
                      </ul>
                      <form class="navbar-form navbar-left" role="search">
