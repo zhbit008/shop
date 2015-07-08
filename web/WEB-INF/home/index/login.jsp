@@ -29,7 +29,7 @@
                     </div>
                 </div>
                 <div class="col-sm-2">
-                    <span id="info_LoginName" class="hide tips_error" style="margin-left: -5px;">不能为空</span>
+                    <span id="info_LoginName" class="hide tips_error" style="margin-left: -35px;">不能为空</span>
                 </div>
                 <br/><br/><br/><br/>
                 <div class="col-sm-10">
@@ -39,7 +39,7 @@
                     </div>
                 </div>
                 <div class="col-sm-2">
-                    <span id="info_PassWord" class="hide tips_error" style="margin-left: -5px;">不能为空</span>
+                    <span id="info_PassWord" class="hide tips_error" style="margin-left: -35px;">不能为空</span>
                 </div>
                 <br/>
                 <br/>

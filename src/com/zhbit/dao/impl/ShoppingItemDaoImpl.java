@@ -54,6 +54,10 @@ public class ShoppingItemDaoImpl implements ShoppingItemDao {
         return sessionFactory.getCurrentSession().createQuery("from ShoppingItem where customer=:customerId").setParameter("customerId",customerId).list();
     }
 
+    @Override
+    public ShoppingItem getShoppingCartByProductId(Integer productId) {
+        return null;
+    }
 
     public SessionFactory getSessionFactory() {
         return sessionFactory;

@@ -27,7 +27,7 @@
                     </div>
                 </div>
                 <div class="col-sm-2">
-                    <span id="info_LoginName" class="hide tips_error" style="margin-left: -5px;">不能为空</span>
+                    <span id="info_LoginName" class="hide tips_error" style="margin-left: -35px;">不能为空</span>
                 </div>
                 <div class="col-sm-10">
                     <div class="form-group">
@@ -36,7 +36,7 @@
                     </div>
                 </div>
                 <div class="col-sm-2">
-                    <span id="info_PassWord1" class="hide tips_error" style="margin-left: -5px;">不能为空</span>
+                    <span id="info_PassWord1" class="hide tips_error" style="margin-left: -35px;">不能为空</span>
                 </div>
                 <div class="col-sm-10">
                     <div class="form-group">
@@ -45,7 +45,7 @@
                     </div>
                 </div>
                 <div class="col-sm-2">
-                    <span id="info_PassWord2" class="hide tips_error" style="margin-left: -5px;">不能为空</span>
+                    <span id="info_PassWord2" class="hide tips_error" style="margin-left: -35px;">不能为空</span>
                 </div>
                 <div class="col-sm-12">
                     <div class="radio-inline">

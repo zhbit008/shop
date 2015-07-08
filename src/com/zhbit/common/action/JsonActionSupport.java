@@ -1,7 +1,6 @@
 package com.zhbit.common.action;
 
 import com.opensymphony.xwork2.ActionSupport;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -21,7 +20,7 @@ public class JsonActionSupport extends ActionSupport {
         this.dataMap = dataMap;
     }
 
-    private Map<String,Object> dataMap = new HashMap<String, Object>();;
+    private Map<String,Object> dataMap = new HashMap<String, Object>();
     protected  void ajaxRedirect(String url){
         dataMap.clear();
         dataMap.put("stat", true);

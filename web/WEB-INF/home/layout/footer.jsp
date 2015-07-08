@@ -2,7 +2,6 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-12 hidden-xs"><img src="/resource/home/img/foot.jpg" class="thumbnail"/></div>
-
     </div>
 </div>
    <nav class="navbar navbar-inverse" style="margin-bottom:0;">
